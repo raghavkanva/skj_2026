@@ -1,0 +1,51 @@
+.wrapper {
+  width: 100%;
+  max-width: 900px;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 1600 / 565;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(40, 57, 111, 0.15);
+  background: var(--festival-gold-soft);
+}
+
+.img {
+  object-fit: cover;
+  transition: opacity 0.45s ease;
+}
+
+.toggleRow {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.toggleBtn {
+  background: var(--festival-cream-alt);
+  border: 1.5px solid var(--krishna-blue);
+  color: var(--krishna-blue);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  min-height: 44px;
+}
+.toggleBtn:hover {
+  background: rgba(40, 57, 111, 0.07);
+}
+
+.active {
+  background: var(--krishna-blue);
+  color: var(--festival-cream);
+}
+.active:hover {
+  background: var(--krishna-blue-dark);
+}

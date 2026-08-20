@@ -1,0 +1,39 @@
+.section {
+  background: var(--festival-cream);
+  padding-block: var(--section-py-desktop);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--section-py-mobile);
+  }
+}
+
+.inner {
+  max-width: var(--content-narrow);
+  margin-inline: auto;
+}
+
+.heading {
+  font-family: var(--font-rozha), "Rozha One", serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3.8vw, 40px);
+  color: var(--krishna-blue);
+  text-align: center;
+  margin-bottom: 36px;
+  line-height: 1.15;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 17px;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.harekrishna {
+  font-weight: 700;
+  color: var(--festival-red);
+}

@@ -1,0 +1,89 @@
+.footer {
+  background: var(--krishna-blue-dark);
+  color: rgba(255, 248, 231, 0.7);
+}
+
+.inner {
+  padding-block: 48px 28px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brandName {
+  font-family: var(--font-rozha), "Rozha One", serif;
+  font-size: 22px;
+  color: var(--festival-gold-soft);
+}
+
+.brandSub {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 248, 231, 0.55);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 248, 231, 0.7);
+  transition: color 0.15s ease;
+}
+.navLink:hover {
+  color: var(--festival-gold-soft);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 248, 231, 0.7);
+  transition: color 0.15s ease;
+}
+.extLink:hover {
+  color: var(--festival-gold-soft);
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 248, 231, 0.1);
+  padding-top: 20px;
+  font-size: 12.5px;
+  text-align: center;
+}
+
+.bottomLink {
+  color: rgba(255, 248, 231, 0.7);
+  transition: color 0.15s ease;
+}
+.bottomLink:hover {
+  color: var(--festival-gold-soft);
+}

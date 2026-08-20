@@ -1,0 +1,40 @@
+.wrapper {
+  text-align: center;
+}
+
+.caption {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.posterBtn {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  padding: 0;
+  transition: box-shadow 0.18s ease;
+}
+.posterBtn:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: var(--festival-cream-alt);
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 10px;
+}

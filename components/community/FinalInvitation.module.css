@@ -1,0 +1,52 @@
+.section {
+  background: var(--krishna-blue);
+  padding-block: 100px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: 72px;
+  }
+}
+
+.inner {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-rozha), "Rozha One", serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3.8vw, 40px);
+  color: var(--festival-gold-soft);
+  margin-bottom: 24px;
+  line-height: 1.12;
+}
+
+.body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--festival-cream);
+  margin-bottom: 32px;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--festival-gold-deep);
+  margin-bottom: 4px;
+}
+
+.venue {
+  font-size: 16px;
+  color: var(--festival-gold-soft);
+  margin-bottom: 24px;
+}
+
+.close {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--festival-gold-deep);
+}

@@ -1,0 +1,133 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 248, 231, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(40, 57, 111, 0.12);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: var(--header-height);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-family: var(--font-rozha), "Rozha One", serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--krishna-blue);
+  letter-spacing: 0.01em;
+}
+
+.brandSub {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+.navLink:hover {
+  color: var(--krishna-blue);
+}
+
+.navCta {
+  background: var(--krishna-blue);
+  color: var(--festival-cream) !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13.5px;
+  white-space: nowrap;
+  transition: background 0.18s ease;
+}
+.navCta:hover {
+  background: var(--krishna-blue-dark);
+  color: var(--festival-cream) !important;
+}
+
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--krishna-blue);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.barOpen1 {
+  transform: translateY(7px) rotate(45deg);
+}
+.barOpen2 {
+  opacity: 0;
+}
+.barOpen3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  background: var(--festival-cream-alt);
+  border-top: 1px solid rgba(40, 57, 111, 0.1);
+  padding: 12px 24px 20px;
+  gap: 4px;
+}
+
+.mobileLink {
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(40, 57, 111, 0.08);
+  transition: color 0.15s ease;
+}
+.mobileLink:hover {
+  color: var(--krishna-blue);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+  .menuBtn {
+    display: flex;
+  }
+}

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ISKCON Salem//Janmashtami 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:janmashtami-2026-iskcon-salem@iskconsalem
+DTSTART;TZID=Asia/Kolkata:20260904T080000
+DTEND;TZID=Asia/Kolkata:20260904T235900
+SUMMARY:Sri Krishna Janmashtami 2026 | ISKCON Salem
+DESCRIPTION:Join ISKCON Salem for Sri Krishna Janmashtami 2026 with darshan\, arati\, kirtan\, Krishna katha\, cultural programmes\, Maha Abhisheka and Feast Prasadam. Everyone is welcome to join with family and friends.
+LOCATION:Sona College Ground\, Salem
+URL:https://maps.app.goo.gl/h4jugsJbuYzx3Gzc9
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,31 @@
+.section {
+  background: var(--festival-cream);
+  padding-block: var(--section-py-desktop);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--section-py-mobile);
+  }
+}
+
+.inner {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-rozha), "Rozha One", serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3.6vw, 38px);
+  color: var(--krishna-blue);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.body {
+  font-size: 17px;
+  color: var(--text-primary);
+  line-height: 1.7;
+}

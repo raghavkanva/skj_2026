@@ -1,0 +1,100 @@
+.section {
+  background: var(--festival-gold-soft);
+  padding-block: var(--section-py-desktop);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--section-py-mobile);
+  }
+}
+
+.heading {
+  margin-bottom: 10px;
+}
+
+.sub {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 52px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.periodHeading {
+  font-family: var(--font-rozha), "Rozha One", serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--festival-red);
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--festival-red);
+  padding-bottom: 10px;
+}
+
+.timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  gap: 18px;
+  padding: 13px 0;
+  border-top: 1px solid rgba(40, 57, 111, 0.12);
+  align-items: flex-start;
+}
+
+.time {
+  flex: 0 0 96px;
+  font-weight: 700;
+  color: var(--krishna-blue);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.title {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.venueBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  background: var(--krishna-blue);
+  color: var(--festival-cream) !important;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 56px;
+  transition: background 0.18s ease;
+}
+.venueBlock:hover {
+  background: var(--krishna-blue-dark);
+  color: var(--festival-cream) !important;
+}
+
+.venueMain {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.4vw, 26px);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.venueSub {
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--festival-gold-deep);
+}
