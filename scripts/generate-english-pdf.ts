@@ -18,9 +18,30 @@ async function generatePDF() {
   console.log(`Opening ${PDF_URL} ...`);
   await page.goto(PDF_URL, { waitUntil: "networkidle", timeout: 60000 });
 
-  // Wait for network to settle, then give fonts and images time to render
+  // Scroll to bottom so every element is rendered, then wait for all images
+  await page.evaluate(() =>
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "instant" })
+  );
   await page.waitForLoadState("networkidle", { timeout: 30000 }).catch(() => {});
-  await page.waitForTimeout(3000);
+
+  // Wait for every <img> to finish loading
+  await page.evaluate(() =>
+    Promise.all(
+      Array.from(document.querySelectorAll("img")).map(
+        (img) =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise((resolve) => {
+                img.onload = resolve;
+                img.onerror = resolve;
+              })
+      )
+    )
+  );
+
+  // Scroll back to top, then give fonts a moment
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(2000);
 
   console.log(`Writing PDF to ${OUT_PATH} ...`);
   await page.pdf({

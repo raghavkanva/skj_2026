@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import { en } from "@/content/en";
 import { sevaOptions } from "@/data/sevaData";
@@ -21,14 +20,8 @@ export default function PDFEnglishPage() {
       {/* ── HERO ── */}
       <section className={styles.hero}>
         <div className={styles.logoWrap}>
-          <Image
-            src="/images/logo.png"
-            alt="ISKCON Salem"
-            width={64}
-            height={64}
-            className={styles.logo}
-            priority
-          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/logo.png" alt="ISKCON Salem" className={styles.logo} />
         </div>
         <p className={styles.organiserBadge}>{eventData.organiser}</p>
         <p className={styles.organiserSub}>Sri Gaura Radha-Gokulananda Temple</p>
@@ -41,13 +34,11 @@ export default function PDFEnglishPage() {
         <p className={styles.heroInvite}>{en.hero.mainInvitation}</p>
         <p className={styles.heroSub}>{en.hero.supportingCopy}</p>
         <div className={styles.heroImgWrap}>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/invitation-front-full.jpg"
             alt="Official ISKCON Salem Sri Krishna Janmashtami 2026 front invitation"
-            width={1600}
-            height={565}
             className={styles.heroImg}
-            priority
           />
         </div>
       </section>
@@ -108,12 +99,11 @@ export default function PDFEnglishPage() {
         <h2 className={styles.sectionHeading} style={{ marginBottom: "6mm" }}>
           {en.programme.heading}
         </h2>
-        <p style={{ textAlign: "center", fontSize: "12px", color: "var(--text-secondary)", marginBottom: "6mm" }}>
+        <p style={{ textAlign: "center", fontSize: "12px", color: "#3a3a3a", marginBottom: "6mm" }}>
           {en.venue.name}, {en.venue.city} &middot; {en.hero.date}
         </p>
 
         <div className={styles.programmeCols}>
-          {/* Morning */}
           <div className={styles.programmeGroup}>
             <h3 className={styles.periodHeading}>{en.programme.morningLabel}</h3>
             <ul className={styles.timeline}>
@@ -126,7 +116,6 @@ export default function PDFEnglishPage() {
             </ul>
           </div>
 
-          {/* Evening */}
           <div className={styles.programmeGroup}>
             <h3 className={styles.periodHeading}>{en.programme.eveningLabel}</h3>
             <ul className={styles.timeline}>
@@ -140,16 +129,14 @@ export default function PDFEnglishPage() {
           </div>
         </div>
 
-        {/* Programme artwork – starts a new page so it's never split */}
+        {/* Programme image – full page width */}
         <div className={styles.programmeImgBlock}>
           <p className={styles.programmeImgCaption}>Official full-day invitation, as printed</p>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/invitation-programme.jpg"
             alt="ISKCON Salem Janmashtami 2026 programme schedule – official printed invitation"
-            width={1600}
-            height={565}
             className={styles.programmeImg}
-            loading="lazy"
           />
         </div>
       </section>
@@ -164,11 +151,7 @@ export default function PDFEnglishPage() {
             <p className={styles.venueDate}>{en.hero.date}</p>
             <p className={styles.venueTime}>Programmes from 8:00 AM</p>
           </div>
-          <a
-            href={eventData.mapUrl}
-            rel="noopener noreferrer"
-            className={styles.mapsLink}
-          >
+          <a href={eventData.mapUrl} rel="noopener noreferrer" className={styles.mapsLink}>
             {en.venue.mapsLabel}
           </a>
         </div>
@@ -180,13 +163,11 @@ export default function PDFEnglishPage() {
         <h2 className={styles.sectionHeading} style={{ marginBottom: "5mm" }}>{en.dressContest.heading}</h2>
         <div className={styles.dressInner}>
           <div className={styles.dressImgWrap}>
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/dress-contest.jpg"
               alt="Krishna Dress Contest – official artwork for ISKCON Salem Janmashtami 2026"
-              width={320}
-              height={250}
               className={styles.dressImg}
-              loading="lazy"
             />
           </div>
           <div className={styles.dressContent}>
@@ -215,9 +196,7 @@ export default function PDFEnglishPage() {
           {sevaOptions.map((opt) => (
             <div key={opt.amount} className={styles.sevaCard}>
               <p className={styles.sevaPlates}>{opt.plates.toLocaleString("en-IN")} Plates</p>
-              <p className={styles.sevaAmount}>
-                ₹{opt.amount.toLocaleString("en-IN")}
-              </p>
+              <p className={styles.sevaAmount}>₹{opt.amount.toLocaleString("en-IN")}</p>
             </div>
           ))}
         </div>
@@ -240,19 +219,15 @@ export default function PDFEnglishPage() {
           <h2 className={styles.sectionHeading} style={{ marginBottom: "5mm" }}>{en.donationSection.heading}</h2>
 
           <div className={styles.qrRow}>
-            {/* Official QR code */}
             <div className={styles.qrBlock}>
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/images/qr-crop.jpg"
                 alt="Official QR code for ISKCON Salem Prasadam Seva donation"
-                width={280}
-                height={470}
                 className={styles.qrImg}
-                loading="lazy"
               />
             </div>
 
-            {/* Bank details */}
             <div className={styles.bankBlock}>
               <p className={styles.bankHeading}>{en.donationSection.accountDetailsHeading}</p>
               <dl className={styles.bankDl}>
@@ -278,7 +253,7 @@ export default function PDFEnglishPage() {
         </div>
       </section>
 
-      {/* ── OFFICIAL INVITATION (images, no buttons) ── */}
+      {/* ── OFFICIAL INVITATION IMAGES ── */}
       <section id="official-invitation" className={styles.officialInvitation}>
         <h2 className={styles.sectionHeading} style={{ marginBottom: "5mm" }}>
           {en.officialInvitation.heading}
@@ -292,47 +267,32 @@ export default function PDFEnglishPage() {
           ].map((item) => (
             <div key={item.src} className={styles.invCard}>
               <div className={styles.invImgWrap}>
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={0}
-                  height={0}
-                  sizes="200px"
-                  className={styles.invImg}
-                  loading="lazy"
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={item.src} alt={item.alt} className={styles.invImg} />
               </div>
               <p className={styles.invCaption}>{item.caption}</p>
             </div>
           ))}
         </div>
 
-        {/* Seva artwork full width */}
-        <div style={{ marginBottom: "6mm", break_inside: "avoid", pageBreakInside: "avoid" } as React.CSSProperties}>
-          <Image
+        {/* Seva full width */}
+        <div className={styles.sevaFullImg}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/invitation-seva.jpg"
             alt="Official ISKCON Salem Janmashtami 2026 Prasadam Seva details"
-            width={0}
-            height={0}
-            sizes="100vw"
-            loading="lazy"
-            style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px", boxShadow: "0 4px 18px rgba(40,57,111,0.12)" }}
+            className={styles.sevaFullImgEl}
           />
         </div>
 
         {/* Founder panel */}
         <div className={styles.founderBlock}>
           <div className={styles.founderImg}>
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/prabhupada-panel.jpg"
               alt="His Divine Grace A.C. Bhaktivedanta Swami Prabhupada – Founder-Acharya of ISKCON"
-              width={0}
-              height={0}
-              sizes="220px"
               className={styles.founderImgEl}
-              loading="lazy"
-              style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
           <div>

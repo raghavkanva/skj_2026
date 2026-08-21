@@ -788,6 +788,20 @@
   border-top: 1px solid rgba(40,57,111,0.12);
 }
 
+.sevaFullImg {
+  margin-bottom: 6mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.sevaFullImgEl {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(40,57,111,0.12);
+}
+
 .founderBlock {
   display: flex;
   gap: 6mm;
