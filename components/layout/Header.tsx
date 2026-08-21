@@ -6,10 +6,10 @@ import { eventData } from "@/data/eventData";
 import type { Locale } from "@/content/types";
 import styles from "./Header.module.css";
 
-const navLabels: Record<Locale, { programme: string; seva: string; invitation: string; share: string; venue: string; cta: string }> = {
-  en: { programme: "Programme", seva: "Prasadam Seva", invitation: "Invitation", share: "Share", venue: "Venue", cta: "Festival Details" },
-  ta: { programme: "நிகழ்ச்சி", seva: "பிரசாத சேவை", invitation: "அழைப்பிதழ்", share: "பகிரவும்", venue: "இடம்", cta: "விழா விவரங்கள்" },
-  hi: { programme: "कार्यक्रम", seva: "प्रसाद सेवा", invitation: "निमंत्रण", share: "साझा करें", venue: "स्थल", cta: "उत्सव विवरण" },
+const navLabels: Record<Locale, { highlights: string; programme: string; venue: string; seva: string; invitation: string; share: string; cta: string }> = {
+  en: { highlights: "2025 Highlights", programme: "Programme", venue: "Venue", seva: "Prasadam Seva", invitation: "Invitation", share: "Share", cta: "Festival Details" },
+  ta: { highlights: "2025 சிறப்பம்சங்கள்", programme: "நிகழ்ச்சி", venue: "இடம்", seva: "பிரசாத சேவை", invitation: "அழைப்பிதழ்", share: "பகிரவும்", cta: "விழா விவரங்கள்" },
+  hi: { highlights: "2025 झलकियाँ", programme: "कार्यक्रम", venue: "स्थल", seva: "प्रसाद सेवा", invitation: "निमंत्रण", share: "साझा करें", cta: "उत्सव विवरण" },
 };
 
 const langLinks: Record<Locale, { href: string; label: string }[]> = {
@@ -36,11 +36,12 @@ export default function Header({ locale = "en" }: Props) {
   const langs = locale !== "en" ? langLinks[locale] : [];
   const nav = navLabels[locale];
   const navLinks = [
+    { href: "#janmashtami-2025", label: nav.highlights },
     { href: "#programme", label: nav.programme },
+    { href: "#venue", label: nav.venue },
     { href: "#prasadam-seva", label: nav.seva },
     { href: "#official-invitation", label: nav.invitation },
     { href: "#share-invitation", label: nav.share },
-    { href: "#venue", label: nav.venue },
   ];
 
   return (
