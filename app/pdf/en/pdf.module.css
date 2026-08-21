@@ -1,18 +1,19 @@
 /* ================================================================
    ISKCON Salem Janmashtami 2026 – PDF Page Styles
-   A4 portrait, 14mm internal margins, website design language
+   A4 portrait, 14mm internal margins, all-yellow background
    ================================================================ */
 
 @page {
   size: A4 portrait;
   margin: 0;
+  background: #f6c941;
 }
 
 /* ---- Page wrapper ---- */
 .pdfRoot {
   width: 210mm;
   margin: 0 auto;
-  background: var(--festival-cream);
+  background: #f6c941;
   font-family: var(--font-inter), "Inter", system-ui, sans-serif;
   color: var(--text-primary);
   line-height: 1.6;
@@ -20,42 +21,43 @@
   print-color-adjust: exact;
 }
 
-/* ---- Shared inner padding ---- */
-.inner {
-  padding: 0 14mm;
-}
-
 /* ================================================================
-   HERO
+   HERO  –  fills the full first A4 page with gold-yellow background
    ================================================================ */
 .hero {
-  background: linear-gradient(180deg, #f9d778 0%, #f6c653 55%, #f9d778 100%);
-  padding: 12mm 14mm 10mm;
+  background: #f6c941;
+  min-height: 297mm;
+  padding: 10mm 14mm 8mm;
   text-align: center;
-  break-inside: avoid;
-  page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  break-after: page;
+  page-break-after: always;
+  box-sizing: border-box;
 }
 
 .logoWrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 6mm;
+  margin-bottom: 5mm;
 }
 
 .logo {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(40,57,111,0.18));
+  filter: drop-shadow(0 2px 8px rgba(40,57,111,0.22));
 }
 
 .organiserBadge {
   font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--krishna-blue);
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .organiserSub {
@@ -65,77 +67,81 @@
   color: var(--krishna-blue);
   font-weight: 700;
   opacity: 0.85;
-  margin-bottom: 8mm;
+  margin-bottom: 6mm;
 }
 
 .heroTitle {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   font-weight: 700;
-  font-size: 52px;
-  line-height: 1.05;
+  font-size: 60px;
+  line-height: 1.0;
   color: var(--krishna-blue);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   letter-spacing: -0.01em;
 }
 
 .heroYear {
   font-family: var(--font-cormorant), "Cormorant Garamond", serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 38px;
   color: var(--krishna-blue);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   margin-bottom: 5mm;
 }
 
 .heroDate {
   font-size: 17px;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 3px;
+  color: #1a1a1a;
+  margin-bottom: 2px;
 }
 
 .heroVenue {
   font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 6mm;
+  color: #3a3a3a;
+  margin-bottom: 5mm;
 }
 
 .heroInvite {
   font-size: 15px;
-  color: var(--text-primary);
+  color: #1a1a1a;
   line-height: 1.65;
-  max-width: 130mm;
-  margin: 0 auto 3mm;
+  max-width: 140mm;
+  margin: 0 auto 2mm;
 }
 
 .heroSub {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   line-height: 1.6;
-  max-width: 120mm;
-  margin: 0 auto 8mm;
+  max-width: 130mm;
+  margin: 0 auto 6mm;
 }
 
+/* Image fills the full content width */
 .heroImgWrap {
-  max-width: 160mm;
+  width: 100%;
   margin: 0 auto;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
 }
 
 .heroImg {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(40,57,111,0.18);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(40,57,111,0.22);
 }
 
 /* ================================================================
    PERSONAL INVITATION
    ================================================================ */
 .personalInvitation {
-  background: var(--festival-cream-alt);
+  background: #f6c941;
   padding: 10mm 14mm;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 2px solid rgba(40,57,111,0.15);
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -153,7 +159,7 @@
 
 .invitePara {
   font-size: 14px;
-  color: var(--text-primary);
+  color: #1a1a1a;
   line-height: 1.72;
   margin-bottom: 4mm;
   text-align: center;
@@ -174,7 +180,7 @@
    EVENT ESSENTIALS
    ================================================================ */
 .essentials {
-  background: var(--festival-cream);
+  background: #f6c941;
   padding: 10mm 14mm;
 }
 
@@ -188,12 +194,11 @@
 }
 
 .essCard {
-  background: var(--festival-cream-alt);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255,255,255,0.55);
+  border: 1.5px solid rgba(40,57,111,0.18);
   border-radius: 10px;
   padding: 4mm;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(54,42,34,0.06);
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -204,7 +209,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--krishna-blue);
-  opacity: 0.6;
+  opacity: 0.7;
   margin-bottom: 2mm;
 }
 
@@ -212,21 +217,21 @@
   font-family: var(--font-cormorant), "Cormorant Garamond", serif;
   font-size: 17px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #1a1a1a;
   margin-bottom: 1mm;
   line-height: 1.2;
 }
 
 .essLabel {
   font-size: 10px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   line-height: 1.4;
 }
 
 .essTagline {
   text-align: center;
   font-size: 14px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   font-style: italic;
 }
 
@@ -234,7 +239,7 @@
    CELEBRATION INTRO
    ================================================================ */
 .celebrationIntro {
-  background: var(--festival-cream);
+  background: #f6c941;
   padding: 8mm 14mm 4mm;
   text-align: center;
   break-inside: avoid;
@@ -252,7 +257,7 @@
 
 .celebBody {
   font-size: 15px;
-  color: var(--text-primary);
+  color: #1a1a1a;
   line-height: 1.7;
   max-width: 140mm;
   margin: 0 auto;
@@ -262,7 +267,7 @@
    2025 HIGHLIGHTS (no video)
    ================================================================ */
 .highlights {
-  background: var(--festival-cream);
+  background: #f6c941;
   padding: 6mm 14mm 10mm;
   text-align: center;
   break-inside: avoid;
@@ -290,7 +295,7 @@
 
 .highlightsSub {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   margin-bottom: 4mm;
 }
 
@@ -317,7 +322,7 @@
    PROGRAMME
    ================================================================ */
 .programme {
-  background: var(--festival-gold-soft);
+  background: #f6c941;
   padding: 10mm 14mm;
 }
 
@@ -329,6 +334,10 @@
 }
 
 .programmeGroup {
+  background: rgba(255,255,255,0.45);
+  border: 1.5px solid rgba(40,57,111,0.15);
+  border-radius: 10px;
+  padding: 4mm 5mm;
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -354,7 +363,7 @@
   grid-template-columns: 26mm 1fr;
   gap: 2mm;
   padding: 2mm 0;
-  border-bottom: 1px solid rgba(40,57,111,0.1);
+  border-bottom: 1px solid rgba(40,57,111,0.12);
   font-size: 11px;
   line-height: 1.4;
 }
@@ -367,7 +376,7 @@
 }
 
 .timeTitle {
-  color: var(--text-primary);
+  color: #1a1a1a;
 }
 
 .programmeImgBlock {
@@ -379,7 +388,7 @@
 .programmeImgCaption {
   text-align: center;
   font-size: 11px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   margin-bottom: 3mm;
 }
 
@@ -388,28 +397,27 @@
   height: auto;
   display: block;
   border-radius: 8px;
-  box-shadow: 0 4px 18px rgba(40,57,111,0.12);
+  box-shadow: 0 4px 18px rgba(40,57,111,0.15);
 }
 
 /* ================================================================
    VENUE
    ================================================================ */
 .venue {
-  background: var(--festival-cream);
+  background: #f6c941;
   padding: 10mm 14mm;
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
 .venueCard {
-  background: var(--festival-cream-alt);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(40,57,111,0.18);
   border-radius: 14px;
   padding: 6mm 8mm;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 18px rgba(54,42,34,0.08);
   margin-bottom: 4mm;
   break-inside: avoid;
   page-break-inside: avoid;
@@ -425,27 +433,27 @@
 
 .venueCity {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   margin-bottom: 1mm;
 }
 
 .venueDate {
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1a1a1a;
   margin-bottom: 1mm;
 }
 
 .venueTime {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
 }
 
 .mapsLink {
   display: inline-flex;
   align-items: center;
   background: var(--krishna-blue);
-  color: var(--festival-cream);
+  color: #f6c941;
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 12px;
@@ -456,7 +464,7 @@
 
 .venueNote {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   line-height: 1.6;
   text-align: center;
 }
@@ -465,7 +473,7 @@
    DRESS CONTEST
    ================================================================ */
 .dressContest {
-  background: var(--festival-gold-soft);
+  background: #f6c941;
   padding: 10mm 14mm;
   break-inside: avoid;
   page-break-inside: avoid;
@@ -475,6 +483,10 @@
   display: flex;
   gap: 8mm;
   align-items: center;
+  background: rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(40,57,111,0.18);
+  border-radius: 14px;
+  padding: 6mm;
 }
 
 .dressImgWrap {
@@ -492,31 +504,23 @@
   flex: 1;
 }
 
-.dressHeading {
-  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--krishna-blue);
-  margin-bottom: 2mm;
-}
-
 .dressAge {
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   margin-bottom: 2mm;
 }
 
 .dressBody {
   font-size: 13px;
-  color: var(--text-primary);
+  color: #1a1a1a;
   margin-bottom: 3mm;
 }
 
 .dressBadge {
   display: inline-block;
   background: var(--krishna-blue);
-  color: var(--festival-cream);
+  color: #f6c941;
   font-size: 11px;
   font-weight: 700;
   padding: 3px 10px;
@@ -528,7 +532,7 @@
    FEAST PRASADAM
    ================================================================ */
 .feastPrasadam {
-  background: var(--festival-cream);
+  background: #f6c941;
   padding: 10mm 14mm;
   text-align: center;
   break-inside: avoid;
@@ -545,7 +549,7 @@
 
 .feastBody {
   font-size: 14px;
-  color: var(--text-primary);
+  color: #1a1a1a;
   line-height: 1.7;
   margin-bottom: 3mm;
   max-width: 140mm;
@@ -557,14 +561,14 @@
    PRASADAM SEVA
    ================================================================ */
 .seva {
-  background: var(--festival-gold-soft);
+  background: #f6c941;
   padding: 10mm 14mm;
 }
 
 .sevaDesc {
   text-align: center;
   font-size: 14px;
-  color: var(--text-primary);
+  color: #1a1a1a;
   line-height: 1.7;
   margin-bottom: 3mm;
   max-width: 140mm;
@@ -590,12 +594,11 @@
 }
 
 .sevaCard {
-  background: var(--festival-cream-alt);
-  border: 1.5px solid var(--border-subtle);
+  background: rgba(255,255,255,0.55);
+  border: 1.5px solid rgba(40,57,111,0.18);
   border-radius: 10px;
   padding: 4mm;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(54,42,34,0.06);
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -603,7 +606,7 @@
 .sevaPlates {
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1a1a1a;
   margin-bottom: 1mm;
 }
 
@@ -615,8 +618,8 @@
 }
 
 .sevaCustomCard {
-  background: var(--festival-cream-alt);
-  border: 1.5px solid var(--border-medium);
+  background: rgba(255,255,255,0.55);
+  border: 1.5px solid rgba(40,57,111,0.18);
   border-radius: 10px;
   padding: 4mm 6mm;
   margin-bottom: 4mm;
@@ -633,12 +636,12 @@
 
 .sevaCustomBody {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
 }
 
 .sevaNetBanking {
-  background: rgba(40,57,111,0.06);
-  border: 1px solid var(--border-medium);
+  background: rgba(40,57,111,0.08);
+  border: 1.5px solid rgba(40,57,111,0.2);
   border-radius: 8px;
   padding: 3mm 5mm;
   font-size: 12px;
@@ -651,9 +654,9 @@
    DONATION DETAILS
    ================================================================ */
 .donation {
-  background: var(--festival-cream-alt);
+  background: #f6c941;
   padding: 10mm 14mm;
-  border-top: 2px solid var(--festival-gold);
+  border-top: 2px solid rgba(40,57,111,0.2);
 }
 
 .donationInner {
@@ -680,6 +683,7 @@
   height: auto;
   display: block;
   border-radius: 8px;
+  background: #fff;
 }
 
 .bankBlock {
@@ -692,7 +696,7 @@
   font-weight: 700;
   color: var(--krishna-blue);
   margin-bottom: 4mm;
-  border-bottom: 2px solid var(--festival-gold);
+  border-bottom: 2px solid rgba(40,57,111,0.25);
   padding-bottom: 2mm;
 }
 
@@ -700,6 +704,11 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0;
+  background: rgba(255,255,255,0.45);
+  border: 1.5px solid rgba(40,57,111,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2mm 4mm;
 }
 
 .bankRow {
@@ -709,20 +718,20 @@
 .bankRow dt,
 .bankRow dd {
   padding: 2.5mm 0;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid rgba(40,57,111,0.1);
   font-size: 13px;
   line-height: 1.4;
 }
 
 .bankRow dt {
   font-weight: 600;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   padding-right: 4mm;
   white-space: nowrap;
 }
 
 .bankRow dd {
-  color: var(--text-primary);
+  color: #1a1a1a;
   font-weight: 700;
   margin-left: 0;
   font-family: monospace;
@@ -731,7 +740,7 @@
 
 .bankNote {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   line-height: 1.55;
   margin-top: 3mm;
 }
@@ -740,7 +749,7 @@
    OFFICIAL INVITATION (images only)
    ================================================================ */
 .officialInvitation {
-  background: var(--festival-gold-soft);
+  background: #f6c941;
   padding: 10mm 14mm;
 }
 
@@ -752,11 +761,10 @@
 }
 
 .invCard {
-  background: var(--festival-cream-alt);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(40,57,111,0.15);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(54,42,34,0.07);
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -774,21 +782,20 @@
 .invCaption {
   padding: 2mm 3mm;
   font-size: 11px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   font-weight: 600;
   text-align: center;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid rgba(40,57,111,0.12);
 }
 
 .founderBlock {
   display: flex;
   gap: 6mm;
   align-items: center;
-  background: var(--festival-cream-alt);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(40,57,111,0.15);
   border-radius: 14px;
   padding: 5mm 6mm;
-  box-shadow: 0 2px 10px rgba(54,42,34,0.07);
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -817,7 +824,7 @@
 
 .founderRole {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   line-height: 1.55;
 }
 
@@ -825,7 +832,7 @@
    STAY CONNECTED
    ================================================================ */
 .stayConnected {
-  background: var(--festival-cream);
+  background: #f6c941;
   padding: 10mm 14mm;
   text-align: center;
   break-inside: avoid;
@@ -842,7 +849,7 @@
 
 .stayDesc {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   line-height: 1.65;
   max-width: 140mm;
   margin: 0 auto 6mm;
@@ -861,8 +868,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--festival-cream-alt);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(40,57,111,0.15);
   border-radius: 8px;
   padding: 3mm 5mm;
   font-size: 12px;
@@ -871,7 +878,7 @@
 
 .stayLinkLabel {
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1a1a1a;
 }
 
 .stayLinkUrl {
@@ -881,8 +888,8 @@
 }
 
 .contactCard {
-  background: var(--festival-cream-alt);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255,255,255,0.5);
+  border: 1.5px solid rgba(40,57,111,0.15);
   border-radius: 10px;
   padding: 4mm 6mm;
   max-width: 100mm;
@@ -896,7 +903,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-secondary);
+  color: #3a3a3a;
   margin-bottom: 2mm;
 }
 
@@ -910,15 +917,15 @@
 .contactPhone {
   font-size: 16px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #1a1a1a;
 }
 
 /* ================================================================
    FINAL INVITATION
    ================================================================ */
 .finalInvitation {
-  background: linear-gradient(180deg, var(--festival-gold-soft) 0%, var(--festival-gold-deep) 100%);
-  padding: 10mm 14mm 12mm;
+  background: #f6c941;
+  padding: 10mm 14mm 14mm;
   text-align: center;
   break-inside: avoid;
   page-break-inside: avoid;
@@ -935,7 +942,7 @@
 
 .finalBody {
   font-size: 14px;
-  color: var(--text-primary);
+  color: #1a1a1a;
   line-height: 1.75;
   max-width: 140mm;
   margin: 0 auto 4mm;
@@ -949,29 +956,19 @@
 }
 
 /* ================================================================
-   SECTION DIVIDER / SHARED
-   ================================================================ */
-.sectionDivider {
-  width: 40mm;
-  height: 2px;
-  background: var(--festival-gold);
-  margin: 0 auto 5mm;
-  border-radius: 2px;
-}
-
-/* ================================================================
    PRINT MEDIA
    ================================================================ */
 @media print {
   html, body {
     margin: 0;
     padding: 0;
-    background: var(--festival-cream);
+    background: #f6c941;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
   .pdfRoot {
     width: 210mm;
+    background: #f6c941;
   }
 }
