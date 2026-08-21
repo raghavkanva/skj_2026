@@ -1,15 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import ImageViewer from "@/components/media/ImageViewer";
+import type { LocaleContent } from "@/content/types";
 import {
-  officialImages,
   shareWithImages,
   buildWhatsAppShareUrl,
   buildShareMessageWithoutImages,
 } from "@/lib/share";
 import styles from "./ShareInvitation.module.css";
 
-function CopyButton({ text }: { text: string }) {
+interface ShareImages {
+  front: string;
+  programme: string;
+  seva: string;
+}
+
+interface Props {
+  content: LocaleContent["shareInvitation"];
+  images: ShareImages;
+}
+
+function CopyButton({ text, label, copiedLabel }: { text: string; label: string; copiedLabel: string }) {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
@@ -24,17 +37,32 @@ function CopyButton({ text }: { text: string }) {
 
   return (
     <button onClick={handleCopy} className={styles.actionBtn}>
-      {copied ? "Copied!" : "Copy Invitation Message"}
+      {copied ? copiedLabel : label}
     </button>
   );
 }
 
-function ShareWithImagesButton() {
+function ShareWithImagesButton({
+  sharingLabel,
+  sharedLabel,
+  shareLabel,
+  fallbackNote,
+  images,
+  eventUrl,
+}: {
+  sharingLabel: string;
+  sharedLabel: string;
+  shareLabel: string;
+  fallbackNote: string;
+  images: ShareImages;
+  eventUrl: string;
+}) {
   const [status, setStatus] = useState<"idle" | "sharing" | "done" | "fallback">("idle");
 
   async function handleShare() {
     setStatus("sharing");
-    const result = await shareWithImages();
+    const imageSrcs = [images.front, images.programme, images.seva];
+    const result = await shareWithImages(imageSrcs, eventUrl);
     if (result === "success") setStatus("done");
     else setStatus("fallback");
     setTimeout(() => setStatus("idle"), 3000);
@@ -42,9 +70,7 @@ function ShareWithImagesButton() {
 
   if (status === "fallback") {
     return (
-      <span className={styles.fallbackNote}>
-        Your device does not support sharing files. Use the WhatsApp button or copy the invitation message below.
-      </span>
+      <span className={styles.fallbackNote}>{fallbackNote}</span>
     );
   }
 
@@ -56,72 +82,131 @@ function ShareWithImagesButton() {
       aria-busy={status === "sharing"}
     >
       {status === "sharing"
-        ? "Preparing..."
+        ? sharingLabel
         : status === "done"
-        ? "Shared!"
-        : "Share with Images"}
+        ? sharedLabel
+        : shareLabel}
     </button>
   );
 }
 
-export default function ShareInvitation() {
-  const whatsappUrl = buildWhatsAppShareUrl();
-  const copyText = buildShareMessageWithoutImages();
+export default function ShareInvitation({ content, images }: Props) {
+  const [viewerSrc, setViewerSrc] = useState<string | null>(null);
+  const [viewerAlt, setViewerAlt] = useState("");
+
+  const srcList = [images.front, images.programme, images.seva];
+  const whatsappUrl = buildWhatsAppShareUrl(content.eventUrl);
+  const copyText = buildShareMessageWithoutImages(content.eventUrl);
+
+  function openViewer(src: string, caption: string) {
+    setViewerSrc(src);
+    setViewerAlt(caption);
+  }
 
   return (
-    <section
-      id="share-invitation"
-      className={styles.section}
-      aria-labelledby="share-heading"
-    >
-      <div className="container">
-        <div className={styles.inner}>
-          <h2 id="share-heading" className={`section-heading ${styles.heading}`}>
-            Share the Invitation
-          </h2>
-          <p className={styles.desc}>
-            Help us spread the joy of Janmashtami. Share this invitation with
-            your family, friends and community.
-          </p>
+    <>
+      <section
+        id="share-invitation"
+        className={styles.section}
+        aria-labelledby="share-heading"
+      >
+        <div className="container">
+          <div className={styles.inner}>
+            <h2 id="share-heading" className={`section-heading ${styles.heading}`}>
+              {content.heading}
+            </h2>
+            <p className={styles.desc}>{content.desc}</p>
 
-          <div className={styles.previewRow}>
-            {officialImages.map((img) => (
-              <div key={img.src} className={styles.previewCard}>
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className={styles.previewImg}
-                  loading="lazy"
-                />
-                <p className={styles.previewLabel}>{img.caption}</p>
-              </div>
-            ))}
-          </div>
+            <div className={styles.previewRow}>
+              {content.items.map((item, idx) => {
+                const src = srcList[idx];
+                return (
+                  <div key={src} className={styles.previewCard}>
+                    <button
+                      className={styles.previewImgBtn}
+                      onClick={() => openViewer(src, item.caption)}
+                      aria-label={`View full: ${item.caption}`}
+                    >
+                      <div className={styles.previewImgWrap}>
+                        <Image
+                          src={src}
+                          alt={item.caption}
+                          fill
+                          className={styles.previewImg}
+                          loading="lazy"
+                          sizes="(max-width: 768px) 90vw, 300px"
+                        />
+                      </div>
+                    </button>
+                    <div className={styles.previewFooter}>
+                      <p className={styles.previewLabel}>{item.caption}</p>
+                      <div className={styles.previewActions}>
+                        <button
+                          className={styles.previewActionBtn}
+                          onClick={() => openViewer(src, item.caption)}
+                        >
+                          {content.viewFullLabel}
+                        </button>
+                        <a
+                          href={src}
+                          download
+                          className={styles.previewActionBtn}
+                          rel="noopener noreferrer"
+                        >
+                          {content.downloadLabel}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
 
-          <div className={styles.actions}>
-            <ShareWithImagesButton />
+            <div className={styles.actions}>
+              <ShareWithImagesButton
+                sharingLabel={content.sharingLabel}
+                sharedLabel={content.sharedLabel}
+                shareLabel={content.shareWithImagesBtn}
+                fallbackNote={content.fallbackNote}
+                images={images}
+                eventUrl={content.eventUrl}
+              />
 
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${styles.actionBtn} ${styles.waBtn}`}
-            >
-              Share via WhatsApp
-            </a>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.actionBtn} ${styles.waBtn}`}
+              >
+                {content.shareWhatsAppBtn}
+              </a>
 
-            <CopyButton text={copyText} />
+              <CopyButton
+                text={copyText}
+                label={content.copyMessageBtn}
+                copiedLabel={content.copiedLabel}
+              />
 
-            <a
-              href="/downloads/ISKCON-Salem-Janmashtami-2026-Invitation.zip"
-              download
-              className={styles.actionBtn}
-            >
-              Download All Images
-            </a>
+              <a
+                href="/downloads/ISKCON-Salem-Janmashtami-2026-Invitation.zip"
+                download
+                className={styles.actionBtn}
+              >
+                {content.downloadAllBtn}
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <ImageViewer
+        src={viewerSrc ?? ""}
+        alt={viewerAlt}
+        open={viewerSrc !== null}
+        onClose={() => setViewerSrc(null)}
+        downloadLabel="Download"
+        downloadSrc={viewerSrc ?? ""}
+      />
+    </>
   );
 }

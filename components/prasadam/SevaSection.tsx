@@ -5,9 +5,15 @@ import SevaSelector from "./SevaSelector";
 import DonationSection from "./DonationSection";
 import { formatINR } from "@/lib/formatCurrency";
 import type { SevaOption } from "@/types/seva";
+import type { LocaleContent } from "@/content/types";
 import styles from "./SevaSection.module.css";
 
-export default function SevaSection() {
+interface Props {
+  sevaContent: LocaleContent["prasadamSeva"];
+  donationContent: LocaleContent["donationSection"];
+}
+
+export default function SevaSection({ sevaContent, donationContent }: Props) {
   const [selectedOptions, setSelectedOptions] = useState<SevaOption[]>([]);
   const [customPlates, setCustomPlates] = useState<number>(0);
 
@@ -35,26 +41,26 @@ export default function SevaSection() {
         <div className="container">
           <div className={styles.inner}>
             <h2 id="seva-heading" className={styles.heading}>
-              Offer Prasadam Seva
+              {sevaContent.heading}
             </h2>
-            <p className={styles.desc}>
-              On Sri Krishna Janmashtami, you may also participate by helping
-              us serve prasadam to the devotees attending the celebration.
-            </p>
+            <p className={styles.desc}>{sevaContent.desc}</p>
             <p className={styles.cost}>
-              The seva for one prasadam plate is{" "}
-              <strong>&#8377;50</strong>.
+              {sevaContent.costHighlight}
             </p>
 
             <SevaSelector
               onSelectionChange={handleChange}
               customPlates={customPlates}
               onCustomChange={handleCustomChange}
+              customHeading={sevaContent.customHeading}
+              customInputLabel={sevaContent.customInputLabel}
+              customHelper={sevaContent.customHelper}
+              customValidation={sevaContent.customValidation}
             />
 
             {totalPlates > 0 && (
               <div className={styles.summary}>
-                <p className={styles.summaryLabel}>Your Seva</p>
+                <p className={styles.summaryLabel}>{sevaContent.summaryLabel}</p>
                 <p className={styles.summaryPlates}>
                   {totalPlates.toLocaleString("en-IN")} Plates
                 </p>
@@ -64,7 +70,7 @@ export default function SevaSection() {
 
             <div className={styles.ctaRow}>
               <a href="#donation" className="btn-primary">
-                Donate Now
+                {sevaContent.donateNow}
               </a>
             </div>
           </div>
@@ -74,6 +80,7 @@ export default function SevaSection() {
       <DonationSection
         totalPlates={totalPlates}
         totalAmount={totalAmount}
+        content={donationContent}
       />
     </>
   );

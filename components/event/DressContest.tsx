@@ -1,7 +1,13 @@
 import Image from "next/image";
+import type { LocaleContent } from "@/content/types";
 import styles from "./DressContest.module.css";
 
-export default function DressContest() {
+interface Props {
+  content: LocaleContent["dressContest"];
+  imageSrc: string;
+}
+
+export default function DressContest({ content, imageSrc }: Props) {
   return (
     <section
       id="dress-contest"
@@ -12,7 +18,7 @@ export default function DressContest() {
         <div className={styles.inner}>
           <div className={styles.imageWrap}>
             <Image
-              src="/images/dress-contest.jpg"
+              src={imageSrc}
               alt="Krishna Dress Contest – official artwork for ISKCON Salem Janmashtami 2026"
               width={320}
               height={250}
@@ -21,17 +27,12 @@ export default function DressContest() {
             />
           </div>
           <div className={styles.content}>
-            <h2
-              id="dress-heading"
-              className={styles.heading}
-            >
-              Krishna Dress Contest
+            <h2 id="dress-heading" className={styles.heading}>
+              {content.heading}
             </h2>
-            <p className={styles.age}>For children aged 3 to 11</p>
-            <p className={styles.desc}>
-              Let your little Krishna be part of the Janmashtami celebration.
-            </p>
-            <span className={styles.badge}>Whole Day Event</span>
+            <p className={styles.age}>{content.age}</p>
+            <p className={styles.desc}>{content.body}</p>
+            <span className={styles.badge}>{content.badge}</span>
           </div>
         </div>
       </div>

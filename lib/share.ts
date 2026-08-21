@@ -8,7 +8,8 @@ export const shareConfig = {
   officialLinks: siteLinks.officialLinks,
 };
 
-const BASE_MESSAGE = `Hare Krishna! 🙏
+function buildBaseMessage(eventUrl: string): string {
+  return `Hare Krishna! 🙏
 
 ISKCON Salem warmly invites you and your family to join the Sri Krishna Janmashtami celebrations on Friday, 4 September 2026 at Sona College Ground, Salem.
 
@@ -19,9 +20,11 @@ We would be very happy to have you and your family with us on this auspicious da
 📅 Friday, 4 September 2026
 ⏰ From 8:00 AM
 📍 Sona College Ground, Salem`;
+}
 
-const LINKS_BLOCK = `Janmashtami 2026 Event Website:
-${siteLinks.janmashtami2026}
+function buildLinksBlock(eventUrl: string): string {
+  return `Janmashtami 2026 Event Website:
+${eventUrl}
 
 ISKCON Salem Official Website:
 ${siteLinks.officialWebsite}
@@ -32,23 +35,24 @@ ${siteLinks.officialLinks}
 Please share this invitation with your family and friends.
 
 Hare Krishna! 🙏`;
+}
 
-export function buildShareMessageWithImages(): string {
-  return `${BASE_MESSAGE}
+export function buildShareMessageWithImages(eventUrl: string = siteLinks.janmashtami2026): string {
+  return `${buildBaseMessage(eventUrl)}
 
 Please find the official Janmashtami invitation, programme and prasadam seva details attached.
 
-${LINKS_BLOCK}`;
+${buildLinksBlock(eventUrl)}`;
 }
 
-export function buildShareMessageWithoutImages(): string {
-  return `${BASE_MESSAGE}
+export function buildShareMessageWithoutImages(eventUrl: string = siteLinks.janmashtami2026): string {
+  return `${buildBaseMessage(eventUrl)}
 
-${LINKS_BLOCK}`;
+${buildLinksBlock(eventUrl)}`;
 }
 
-export function buildWhatsAppShareUrl(): string {
-  return `https://wa.me/?text=${encodeURIComponent(buildShareMessageWithoutImages())}`;
+export function buildWhatsAppShareUrl(eventUrl: string = siteLinks.janmashtami2026): string {
+  return `https://wa.me/?text=${encodeURIComponent(buildShareMessageWithoutImages(eventUrl))}`;
 }
 
 export function buildWhatsAppContactUrl(total?: number): string {
@@ -81,18 +85,25 @@ export const officialImages = [
   },
 ];
 
-export async function shareWithImages(): Promise<"success" | "fallback" | "error"> {
+export async function shareWithImages(
+  imageSrcs?: string[],
+  eventUrl: string = siteLinks.janmashtami2026
+): Promise<"success" | "fallback" | "error"> {
   try {
     if (!navigator.share) return "fallback";
 
-    const response = await fetch(officialImages[0].src);
+    const srcs = imageSrcs ?? officialImages.map((i) => i.src);
+    const filenames = officialImages.map((i) => i.filename);
+
+    const response = await fetch(srcs[0]);
     if (!response.ok) return "fallback";
 
     const files = await Promise.all(
-      officialImages.map(async (img) => {
-        const res = await fetch(img.src);
+      srcs.map(async (src, idx) => {
+        const res = await fetch(src);
         const blob = await res.blob();
-        return new File([blob], img.filename, { type: blob.type });
+        const name = filenames[idx] ?? `image-${idx + 1}.jpg`;
+        return new File([blob], name, { type: blob.type });
       })
     );
 
@@ -100,7 +111,7 @@ export async function shareWithImages(): Promise<"success" | "fallback" | "error
 
     await navigator.share({
       title: shareConfig.title,
-      text: buildShareMessageWithImages(),
+      text: buildShareMessageWithImages(eventUrl),
       files,
     });
 

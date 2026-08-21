@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { eventData } from "@/data/eventData";
+import type { Locale } from "@/content/types";
 import styles from "./Header.module.css";
 
 const navLinks = [
@@ -13,8 +14,28 @@ const navLinks = [
   { href: "#venue", label: "Venue" },
 ];
 
-export default function Header() {
+const langLinks: Record<Locale, { href: string; label: string }[]> = {
+  en: [
+    { href: "/ta", label: "தமிழ்" },
+    { href: "/hi", label: "हिन्दी" },
+  ],
+  ta: [
+    { href: "/", label: "English" },
+    { href: "/hi", label: "हिन्दी" },
+  ],
+  hi: [
+    { href: "/", label: "English" },
+    { href: "/ta", label: "தமிழ்" },
+  ],
+};
+
+interface Props {
+  locale?: Locale;
+}
+
+export default function Header({ locale = "en" }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const langs = langLinks[locale];
 
   return (
     <header className={styles.header}>
@@ -35,6 +56,12 @@ export default function Header() {
         </a>
 
         <nav className={styles.nav} aria-label="Main navigation">
+          {langs.map((lang) => (
+            <a key={lang.href} href={lang.href} className={styles.langLink}>
+              {lang.label}
+            </a>
+          ))}
+          <span className={styles.navDivider} aria-hidden="true" />
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className={styles.navLink}>
               {link.label}
@@ -60,6 +87,15 @@ export default function Header() {
 
       {menuOpen && (
         <nav id="mobile-menu" className={styles.mobileMenu} aria-label="Mobile navigation">
+          {langs.map((lang) => (
+            <a
+              key={lang.href}
+              href={lang.href}
+              className={`${styles.mobileLink} ${styles.mobileLangLink}`}
+            >
+              {lang.label}
+            </a>
+          ))}
           {navLinks.map((link) => (
             <a
               key={link.href}

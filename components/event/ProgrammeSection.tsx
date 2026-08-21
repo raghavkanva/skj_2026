@@ -1,9 +1,18 @@
-import { morningProgramme, eveningProgramme } from "@/data/programmeData";
 import { eventData } from "@/data/eventData";
 import OfficialPosterViewer from "./OfficialPosterViewer";
+import type { LocaleContent } from "@/content/types";
 import styles from "./ProgrammeSection.module.css";
 
-export default function ProgrammeSection() {
+interface Props {
+  content: LocaleContent["programme"];
+  venue: string;
+  date: string;
+}
+
+export default function ProgrammeSection({ content, venue, date }: Props) {
+  const morningItems = content.items.filter((i) => i.period === "morning");
+  const eveningItems = content.items.filter((i) => i.period === "evening");
+
   return (
     <section
       id="programme"
@@ -12,17 +21,17 @@ export default function ProgrammeSection() {
     >
       <div className="container">
         <h2 id="programme-heading" className={`${styles.heading} section-heading`}>
-          Janmashtami Programme
+          {content.heading}
         </h2>
         <p className={styles.sub}>
-          {eventData.venue} &middot; {eventData.displayDate}
+          {venue} &middot; {date}
         </p>
 
         <div className={styles.columns}>
           <div>
-            <h3 className={styles.periodHeading}>Morning Programme</h3>
+            <h3 className={styles.periodHeading}>{content.morningLabel}</h3>
             <ul className={styles.timeline}>
-              {morningProgramme.map((item) => (
+              {morningItems.map((item) => (
                 <li key={item.time + item.title} className={styles.item}>
                   <span className={styles.time}>{item.time}</span>
                   <span className={styles.title}>{item.title}</span>
@@ -32,9 +41,9 @@ export default function ProgrammeSection() {
           </div>
 
           <div>
-            <h3 className={styles.periodHeading}>Evening Programme</h3>
+            <h3 className={styles.periodHeading}>{content.eveningLabel}</h3>
             <ul className={styles.timeline}>
-              {eveningProgramme.map((item) => (
+              {eveningItems.map((item) => (
                 <li key={item.time + item.title} className={styles.item}>
                   <span className={styles.time}>{item.time}</span>
                   <span className={styles.title}>{item.title}</span>

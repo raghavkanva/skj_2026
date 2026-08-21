@@ -60,6 +60,25 @@
   flex-wrap: wrap;
 }
 
+.langLink {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--krishna-blue);
+  white-space: nowrap;
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+  text-decoration: none;
+}
+.langLink:hover { opacity: 1; }
+
+.navDivider {
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background: rgba(40, 57, 111, 0.2);
+  align-self: center;
+}
+
 .navLink {
   font-size: 14px;
   font-weight: 500;
@@ -128,8 +147,15 @@
   color: var(--text-primary);
   border-bottom: 1px solid rgba(40, 57, 111, 0.08);
   transition: color 0.15s ease;
+  text-decoration: none;
 }
 .mobileLink:hover { color: var(--krishna-blue); }
+
+.mobileLangLink {
+  font-weight: 700;
+  color: var(--krishna-blue);
+  font-size: 15px;
+}
 
 @media (max-width: 900px) {
   .nav { display: none; }

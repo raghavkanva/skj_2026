@@ -1,7 +1,13 @@
 import { eventData } from "@/data/eventData";
+import type { LocaleContent } from "@/content/types";
 import styles from "./VenueSection.module.css";
 
-export default function VenueSection() {
+interface Props {
+  content: LocaleContent["venue"];
+  date: string;
+}
+
+export default function VenueSection({ content, date }: Props) {
   return (
     <section
       id="venue"
@@ -11,14 +17,14 @@ export default function VenueSection() {
       <div className="container">
         <div className={styles.inner}>
           <h2 id="venue-heading" className={`section-heading ${styles.heading}`}>
-            Venue
+            {content.heading}
           </h2>
 
           <div className={styles.card}>
             <div className={styles.venueInfo}>
-              <p className={styles.venueName}>Sona College Ground</p>
-              <p className={styles.venueCity}>Salem, Tamil Nadu</p>
-              <p className={styles.venueDate}>{eventData.displayDate}</p>
+              <p className={styles.venueName}>{content.name}</p>
+              <p className={styles.venueCity}>{content.city}</p>
+              <p className={styles.venueDate}>{date}</p>
               <p className={styles.venueTime}>Programmes from 8:00 AM</p>
             </div>
 
@@ -29,15 +35,11 @@ export default function VenueSection() {
               className={`btn-primary ${styles.mapsBtn}`}
               aria-label="Open Sona College Ground, Salem in Google Maps"
             >
-              Open in Google Maps
+              {content.mapsLabel}
             </a>
           </div>
 
-          <p className={styles.note}>
-            The venue is centrally located in Salem and is accessible by
-            public transport, auto-rickshaw and private vehicles. Ample
-            parking space is available nearby.
-          </p>
+          <p className={styles.note}>{content.note}</p>
         </div>
       </div>
     </section>

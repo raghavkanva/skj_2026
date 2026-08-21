@@ -1,12 +1,17 @@
 import { siteLinks } from "@/lib/siteLinks";
 import { eventData } from "@/data/eventData";
+import type { LocaleContent } from "@/content/types";
 import styles from "./StayConnected.module.css";
+
+interface Props {
+  content: LocaleContent["stayConnected"];
+}
 
 const WHATSAPP_CONTACT = `https://wa.me/919710772621?text=${encodeURIComponent(
   "Hare Krishna. I would like to know more about the ISKCON Salem Sri Krishna Janmashtami 2026 celebration."
 )}`;
 
-export default function StayConnected() {
+export default function StayConnected({ content }: Props) {
   return (
     <section
       id="stay-connected"
@@ -16,13 +21,9 @@ export default function StayConnected() {
       <div className="container">
         <div className={styles.inner}>
           <h2 id="connect-heading" className={styles.heading}>
-            Stay Connected with ISKCON Salem
+            {content.heading}
           </h2>
-          <p className={styles.desc}>
-            For temple information, Bhagavad Gita classes, upcoming festivals
-            and community updates, stay connected through the official ISKCON
-            Salem channels.
-          </p>
+          <p className={styles.desc}>{content.desc}</p>
 
           <div className={styles.ctas}>
             <a
@@ -31,7 +32,7 @@ export default function StayConnected() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Janmashtami 2026 Event Site
+              {content.eventSiteLabel}
             </a>
             <a
               href={eventData.officialWebsite}
@@ -39,7 +40,7 @@ export default function StayConnected() {
               rel="noopener noreferrer"
               className="btn-secondary"
             >
-              Visit ISKCON Salem Website
+              {content.websiteLabel}
             </a>
             <a
               href={eventData.officialLinks}
@@ -47,12 +48,12 @@ export default function StayConnected() {
               rel="noopener noreferrer"
               className="btn-secondary"
             >
-              View All Official Links
+              {content.linksLabel}
             </a>
           </div>
 
           <div className={styles.contactCard}>
-            <p className={styles.contactLabel}>For More Information</p>
+            <p className={styles.contactLabel}>{content.contactLabel}</p>
             <p className={styles.contactName}>{eventData.contact.name}</p>
             <p className={styles.contactPhone}>
               +91 {eventData.contact.displayPhone}
@@ -63,7 +64,7 @@ export default function StayConnected() {
               rel="noopener noreferrer"
               className={styles.waBtn}
             >
-              Chat on WhatsApp
+              {content.chatLabel}
             </a>
           </div>
         </div>

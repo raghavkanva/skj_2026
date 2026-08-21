@@ -1,9 +1,14 @@
 import Image from "next/image";
 import { eventData } from "@/data/eventData";
 import InvitationFlipCard from "./InvitationFlipCard";
+import type { LocaleContent } from "@/content/types";
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+interface Props {
+  content: LocaleContent["hero"];
+}
+
+export default function Hero({ content }: Props) {
   return (
     <section
       id="home"
@@ -27,33 +32,30 @@ export default function Hero() {
           <p className={styles.organiserSub}>Sri Gaura Radha-Gokulananda Temple</p>
 
           <h1 className={styles.title}>
-            Sri Krishna
-            <br />
-            Janmashtami
+            {content.heading.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < content.heading.split("\n").length - 1 && <br />}
+              </span>
+            ))}
           </h1>
 
-          <p className={styles.year}>2026</p>
+          <p className={styles.year}>{content.year}</p>
 
           <div className={styles.dateLine}>
-            <p className={styles.dateMain}>{eventData.displayDate}</p>
-            <p className={styles.dateSub}>{eventData.venue}</p>
+            <p className={styles.dateMain}>{content.date}</p>
+            <p className={styles.dateSub}>{content.venue}</p>
           </div>
 
-          <p className={styles.inviteMain}>
-            You and your family are warmly invited to join us in celebrating
-            the divine appearance of Sri Krishna.
-          </p>
-          <p className={styles.inviteSub}>
-            A full day of darshan, kirtan, Krishna katha, cultural programmes
-            and feast prasadam.
-          </p>
+          <p className={styles.inviteMain}>{content.mainInvitation}</p>
+          <p className={styles.inviteSub}>{content.supportingCopy}</p>
 
           <div className={styles.ctas}>
             <a href="#programme" className="btn-primary">
-              View Festival Programme
+              {content.ctaProgramme}
             </a>
             <a href="#prasadam-seva" className="btn-secondary">
-              Offer Prasadam Seva
+              {content.ctaSeva}
             </a>
           </div>
         </div>

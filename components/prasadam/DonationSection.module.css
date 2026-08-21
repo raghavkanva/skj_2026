@@ -111,6 +111,14 @@
   margin-inline: auto;
 }
 
+.bankDetailsHeading {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--krishna-blue);
+  margin-bottom: 14px;
+}
+
 .dl {
   display: flex;
   flex-direction: column;

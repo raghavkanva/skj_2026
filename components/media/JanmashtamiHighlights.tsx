@@ -1,7 +1,12 @@
 import { eventData } from "@/data/eventData";
+import type { LocaleContent } from "@/content/types";
 import styles from "./VideoInvitation.module.css";
 
-export default function JanmashtamiHighlights() {
+interface Props {
+  content: LocaleContent["highlights"];
+}
+
+export default function JanmashtamiHighlights({ content }: Props) {
   return (
     <section
       id="janmashtami-2025"
@@ -10,13 +15,11 @@ export default function JanmashtamiHighlights() {
     >
       <div className="container">
         <div className={styles.inner}>
-          <p className={styles.kicker}>A Glimpse of Janmashtami at ISKCON Salem</p>
+          <p className={styles.kicker}>{content.kicker}</p>
           <h2 id="highlights-heading" className={styles.heading}>
-            Highlights from Sri Krishna Janmashtami 2025
+            {content.heading}
           </h2>
-          <p className={styles.subheading}>
-            Take a glimpse at the joyful Janmashtami celebrations at ISKCON Salem from 2025.
-          </p>
+          <p className={styles.subheading}>{content.subheading}</p>
 
           <div className={styles.videoWrap}>
             <div className={styles.embed}>
@@ -31,12 +34,8 @@ export default function JanmashtamiHighlights() {
             </div>
           </div>
 
-          <p className={styles.caption}>
-            Watch and share with your family and friends.
-          </p>
-          <p className={styles.joinLine}>
-            Join us again this year on {eventData.displayDate} at {eventData.venue}.
-          </p>
+          <p className={styles.caption}>{content.body}</p>
+          <p className={styles.joinLine}>{content.joinLine}</p>
         </div>
       </div>
     </section>

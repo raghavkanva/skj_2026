@@ -3,29 +3,26 @@
 import { useState } from "react";
 import Image from "next/image";
 import ImageViewer from "@/components/media/ImageViewer";
+import type { LocaleContent } from "@/content/types";
 import styles from "./OfficialInvitationGallery.module.css";
 
-const galleryItems = [
-  {
-    src: "/images/invitation-front-full.jpg",
-    alt: "Official ISKCON Salem Sri Krishna Janmashtami 2026 front invitation – Founder-Acharya and Sri Krishna",
-    caption: "Front Invitation – Founder-Acharya & Sri Krishna",
-  },
-  {
-    src: "/images/invitation-programme.jpg",
-    alt: "ISKCON Salem Janmashtami 2026 programme schedule – official printed invitation",
-    caption: "Full-Day Programme",
-  },
-  {
-    src: "/images/invitation-seva.jpg",
-    alt: "ISKCON Salem Janmashtami 2026 Prasadam Seva and donation details",
-    caption: "Prasadam Seva & Donation Details",
-  },
-];
+interface GalleryImages {
+  front: string;
+  programme: string;
+  seva: string;
+  prabhupadaPanel: string;
+}
 
-export default function OfficialInvitationGallery() {
+interface Props {
+  content: LocaleContent["officialInvitation"];
+  images: GalleryImages;
+}
+
+export default function OfficialInvitationGallery({ content, images }: Props) {
   const [viewerSrc, setViewerSrc] = useState<string | null>(null);
   const [viewerAlt, setViewerAlt] = useState("");
+
+  const srcList = [images.front, images.programme, images.seva];
 
   function openViewer(src: string, alt: string) {
     setViewerSrc(src);
@@ -41,36 +38,58 @@ export default function OfficialInvitationGallery() {
       >
         <div className="container">
           <h2 id="gallery-heading" className={`section-heading ${styles.heading}`}>
-            Official Janmashtami Invitation
+            {content.heading}
           </h2>
 
           <div className={styles.grid}>
-            {galleryItems.map((item) => (
-              <button
-                key={item.src}
-                className={styles.card}
-                onClick={() => openViewer(item.src, item.alt)}
-                aria-label={`View full screen: ${item.caption}`}
-              >
-                <div className={styles.imgWrap}>
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className={styles.img}
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 380px"
-                  />
+            {content.items.map((item, idx) => {
+              const src = srcList[idx];
+              return (
+                <div key={src} className={styles.card}>
+                  <button
+                    className={styles.imgBtn}
+                    onClick={() => openViewer(src, item.alt)}
+                    aria-label={`${content.viewFullLabel}: ${item.caption}`}
+                  >
+                    <div className={styles.imgWrap}>
+                      <Image
+                        src={src}
+                        alt={item.alt}
+                        fill
+                        className={styles.img}
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 380px"
+                      />
+                    </div>
+                  </button>
+                  <div className={styles.cardFooter}>
+                    <p className={styles.caption}>{item.caption}</p>
+                    <div className={styles.cardActions}>
+                      <button
+                        className={styles.cardActionBtn}
+                        onClick={() => openViewer(src, item.alt)}
+                      >
+                        {content.viewFullLabel}
+                      </button>
+                      <a
+                        href={src}
+                        download
+                        className={styles.cardActionBtn}
+                        rel="noopener noreferrer"
+                      >
+                        {content.downloadLabel}
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <p className={styles.caption}>{item.caption}</p>
-              </button>
-            ))}
+              );
+            })}
           </div>
 
           <div className={styles.founder}>
             <div className={styles.founderImg}>
               <Image
-                src="/images/prabhupada-panel.jpg"
+                src={images.prabhupadaPanel}
                 alt="His Divine Grace A.C. Bhaktivedanta Swami Prabhupada – Founder-Acharya of ISKCON"
                 fill
                 className={styles.founderImgEl}
@@ -79,13 +98,8 @@ export default function OfficialInvitationGallery() {
               />
             </div>
             <div className={styles.founderText}>
-              <p className={styles.founderName}>
-                His Divine Grace A.C. Bhaktivedanta Swami Prabhupada
-              </p>
-              <p className={styles.founderRole}>
-                Founder-Acharya of the International Society for Krishna
-                Consciousness
-              </p>
+              <p className={styles.founderName}>{content.founderName}</p>
+              <p className={styles.founderRole}>{content.founderRole}</p>
             </div>
           </div>
         </div>
@@ -96,6 +110,8 @@ export default function OfficialInvitationGallery() {
         alt={viewerAlt}
         open={viewerSrc !== null}
         onClose={() => setViewerSrc(null)}
+        downloadLabel={content.downloadLabel}
+        downloadSrc={viewerSrc ?? ""}
       />
     </>
   );

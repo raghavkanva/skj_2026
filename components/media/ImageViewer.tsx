@@ -9,9 +9,11 @@ interface ImageViewerProps {
   alt: string;
   open: boolean;
   onClose: () => void;
+  downloadLabel?: string;
+  downloadSrc?: string;
 }
 
-export default function ImageViewer({ src, alt, open, onClose }: ImageViewerProps) {
+export default function ImageViewer({ src, alt, open, onClose, downloadLabel, downloadSrc }: ImageViewerProps) {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -46,17 +48,29 @@ export default function ImageViewer({ src, alt, open, onClose }: ImageViewerProp
       aria-label={alt}
       onClick={onClose}
     >
-      <button
-        ref={closeBtnRef}
-        className={styles.closeBtn}
-        onClick={(e) => {
-          e.stopPropagation();
-          onClose();
-        }}
-        aria-label="Close full screen view"
-      >
-        &times;
-      </button>
+      <div className={styles.topBar} onClick={(e) => e.stopPropagation()}>
+        {downloadLabel && downloadSrc && (
+          <a
+            href={downloadSrc}
+            download
+            className={styles.downloadBtn}
+            rel="noopener noreferrer"
+          >
+            {downloadLabel}
+          </a>
+        )}
+        <button
+          ref={closeBtnRef}
+          className={styles.closeBtn}
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          aria-label="Close full screen view"
+        >
+          &times;
+        </button>
+      </div>
       <div
         className={styles.imageWrap}
         onClick={(e) => e.stopPropagation()}

@@ -1,18 +1,19 @@
+import type { LocaleContent } from "@/content/types";
 import styles from "./CelebrationIntro.module.css";
 
-export default function CelebrationIntro() {
+interface Props {
+  content: LocaleContent["celebrationIntro"];
+}
+
+export default function CelebrationIntro({ content }: Props) {
   return (
     <section className={styles.section} aria-labelledby="celebration-heading">
       <div className="container">
         <div className={styles.inner}>
           <h2 id="celebration-heading" className={styles.heading}>
-            Come Celebrate Sri Krishna Janmashtami
+            {content.heading}
           </h2>
-          <p className={styles.body}>
-            Join devotees from across Salem for a joyful day dedicated to Sri
-            Krishna, with darshan, arati, bhajan, Krishna katha, cultural
-            programmes, maha abhisheka and feast prasadam.
-          </p>
+          <p className={styles.body}>{content.body}</p>
         </div>
       </div>
     </section>

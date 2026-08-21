@@ -5,11 +5,13 @@ import QRCodeBlock from "./QRCodeBlock";
 import { buildBaseUpiUri, buildUpiUriWithAmount } from "@/lib/upi";
 import { formatINR } from "@/lib/formatCurrency";
 import { eventData } from "@/data/eventData";
+import type { LocaleContent } from "@/content/types";
 import styles from "./DonationSection.module.css";
 
 interface DonationSectionProps {
   totalPlates: number;
   totalAmount: number;
+  content: LocaleContent["donationSection"];
 }
 
 function buildWhatsAppUrl(totalAmount: number): string {
@@ -24,6 +26,7 @@ function buildWhatsAppUrl(totalAmount: number): string {
 export default function DonationSection({
   totalPlates,
   totalAmount,
+  content,
 }: DonationSectionProps) {
   const requiresNetBanking = totalAmount > 100000;
   const upiUri =
@@ -38,12 +41,12 @@ export default function DonationSection({
       <div className="container">
         <div className={styles.inner}>
           <h2 id="donation-heading" className={styles.heading}>
-            Prasadam Seva Details
+            {content.heading}
           </h2>
 
           {totalPlates > 0 && (
             <div className={styles.summary}>
-              <p className={styles.summaryLabel}>Your Selected Seva</p>
+              <p className={styles.summaryLabel}>{content.selectedSevaLabel}</p>
               <p className={styles.summaryPlates}>
                 {totalPlates.toLocaleString("en-IN")} Plates
               </p>
@@ -53,13 +56,8 @@ export default function DonationSection({
 
           {requiresNetBanking ? (
             <div className={styles.netBankingNote}>
-              <p className={styles.netBankingTitle}>
-                For amounts above &#8377;1,00,000, please use Net Banking or NEFT/RTGS.
-              </p>
-              <p className={styles.netBankingBody}>
-                Please use the bank account details below to transfer the seva
-                amount, then share the details with us on WhatsApp.
-              </p>
+              <p className={styles.netBankingTitle}>{content.netBankingTitle}</p>
+              <p className={styles.netBankingBody}>{content.netBankingBody}</p>
             </div>
           ) : (
             <div id="qr-section" className={styles.qrRow}>
@@ -78,6 +76,7 @@ export default function DonationSection({
           )}
 
           <div className={styles.bankDetails}>
+            <p className={styles.bankDetailsHeading}>{content.accountDetailsHeading}</p>
             <dl className={styles.dl}>
               <div className={styles.dlRow}>
                 <dt>A/C Name</dt>
@@ -105,15 +104,9 @@ export default function DonationSection({
               </div>
             </dl>
 
-            <p className={styles.note}>
-              For your kind contribution, an appropriate gift and receipt will
-              be provided.
-            </p>
-            <p className={styles.note}>
-              After offering your seva, please WhatsApp the donation details
-              to{" "}
-              <strong>+91 {eventData.contact.displayPhone}</strong>.
-            </p>
+            {content.noteLines.map((line, i) => (
+              <p key={i} className={styles.note}>{line}</p>
+            ))}
 
             <a
               href={buildWhatsAppUrl(totalAmount)}
@@ -121,7 +114,7 @@ export default function DonationSection({
               rel="noopener noreferrer"
               className={`btn-primary ${styles.waBtn}`}
             >
-              Send Donation Details on WhatsApp
+              {content.whatsappBtn}
             </a>
           </div>
         </div>

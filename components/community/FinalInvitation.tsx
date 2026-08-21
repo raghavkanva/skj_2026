@@ -1,22 +1,25 @@
 import { eventData } from "@/data/eventData";
+import type { LocaleContent } from "@/content/types";
 import styles from "./FinalInvitation.module.css";
 
-export default function FinalInvitation() {
+interface Props {
+  content: LocaleContent["finalInvitation"];
+  date: string;
+  venue: string;
+}
+
+export default function FinalInvitation({ content, date, venue }: Props) {
   return (
     <section className={styles.section} aria-labelledby="final-heading">
       <div className="container">
         <div className={styles.inner}>
           <h2 id="final-heading" className={styles.heading}>
-            We Look Forward to Welcoming You
+            {content.heading}
           </h2>
-          <p className={styles.body}>
-            Please come with your family and friends and spend this auspicious
-            Janmashtami in the association of devotees, hearing about Sri
-            Krishna, chanting His holy names and honouring Krishna prasadam.
-          </p>
-          <p className={styles.date}>{eventData.displayDate}</p>
-          <p className={styles.venue}>{eventData.venue}</p>
-          <p className={styles.close}>Hare Krishna.</p>
+          <p className={styles.body}>{content.body}</p>
+          <p className={styles.date}>{date}</p>
+          <p className={styles.venue}>{venue}</p>
+          <p className={styles.close}>{content.closing}</p>
         </div>
       </div>
     </section>

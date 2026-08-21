@@ -1,30 +1,15 @@
 import CalendarMenu from "./CalendarMenu";
+import type { LocaleContent } from "@/content/types";
 import styles from "./EventEssentials.module.css";
 
-const cards = [
-  {
-    kicker: "Date",
-    value: "4 September 2026",
-    label: "Friday",
-  },
-  {
-    kicker: "Timing",
-    value: "From 8:00 AM",
-    label: "Programmes throughout the day",
-  },
-  {
-    kicker: "Venue",
-    value: "Sona College Ground",
-    label: "Salem, Tamil Nadu",
-  },
-  {
-    kicker: "Prasadam",
-    value: "Feast Prasadam",
-    label: "Served throughout the event",
-  },
-];
+interface Props {
+  content: LocaleContent["eventEssentials"];
+}
 
-export default function EventEssentials() {
+export default function EventEssentials({ content }: Props) {
+  const { cards } = content;
+  const cardList = [cards.date, cards.timing, cards.venue, cards.prasadam];
+
   return (
     <section id="event-details" className={styles.section} aria-labelledby="essentials-heading">
       <div className="container">
@@ -32,7 +17,7 @@ export default function EventEssentials() {
           Event Details
         </h2>
         <div className={styles.grid}>
-          {cards.map((card) => (
+          {cardList.map((card) => (
             <div key={card.kicker} className={styles.card}>
               <p className={styles.kicker}>{card.kicker}</p>
               <p className={styles.value}>{card.value}</p>
@@ -41,9 +26,7 @@ export default function EventEssentials() {
           ))}
         </div>
 
-        <p className={styles.tagline}>
-          Everyone is welcome. Please come with your family and friends.
-        </p>
+        <p className={styles.tagline}>{content.tagline}</p>
 
         <div className={styles.calendarRow}>
           <CalendarMenu />

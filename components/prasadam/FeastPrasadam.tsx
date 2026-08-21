@@ -1,6 +1,11 @@
+import type { LocaleContent } from "@/content/types";
 import styles from "./FeastPrasadam.module.css";
 
-export default function FeastPrasadam() {
+interface Props {
+  content: LocaleContent["feastPrasadam"];
+}
+
+export default function FeastPrasadam({ content }: Props) {
   return (
     <section
       id="prasadam"
@@ -10,16 +15,11 @@ export default function FeastPrasadam() {
       <div className="container">
         <div className={styles.inner}>
           <h2 id="feast-heading" className={styles.heading}>
-            Feast Prasadam for Everyone
+            {content.heading}
           </h2>
-          <p className={styles.body}>
-            As part of the Sri Krishna Janmashtami celebrations, feast prasadam
-            will be served throughout the event.
-          </p>
-          <p className={styles.body}>
-            More than 1 lakh devotees are expected to participate in the
-            celebration.
-          </p>
+          {content.paragraphs.map((p, i) => (
+            <p key={i} className={styles.body}>{p}</p>
+          ))}
         </div>
       </div>
     </section>

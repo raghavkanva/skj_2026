@@ -10,12 +10,20 @@ interface SevaSelectorProps {
   onSelectionChange: (selected: SevaOption[]) => void;
   customPlates: number;
   onCustomChange: (plates: number) => void;
+  customHeading?: string;
+  customInputLabel?: string;
+  customHelper?: string;
+  customValidation?: string;
 }
 
 export default function SevaSelector({
   onSelectionChange,
   customPlates,
   onCustomChange,
+  customHeading,
+  customInputLabel,
+  customHelper,
+  customValidation,
 }: SevaSelectorProps) {
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const [inputValue, setInputValue] = useState("");
@@ -47,7 +55,7 @@ export default function SevaSelector({
       setError("Please enter a valid number of plates.");
       onCustomChange(0);
     } else if (num < 50) {
-      setError("Minimum 50 plates for custom seva.");
+      setError(customValidation || "Minimum 50 plates for custom seva.");
       onCustomChange(0);
     } else {
       setError("");
@@ -88,7 +96,7 @@ export default function SevaSelector({
 
       <div className={styles.customCard}>
         <label htmlFor="custom-plates" className={styles.customLabel}>
-          Custom Seva (min. 50 plates, {formatINR(PLATE_COST)}/plate)
+          {customInputLabel || `Custom Seva (min. 50 plates, ${formatINR(PLATE_COST)}/plate)`}
         </label>
         <div className={styles.customInputRow}>
           <input
