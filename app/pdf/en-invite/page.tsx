@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./pdf-en-invite.module.css";
-import { eventData } from "@/data/eventData";
-import { en } from "@/content/en";
 
 export const metadata = {
   title: "ISKCON Salem Sri Krishna Janmashtami 2026 – English Invitation",
@@ -9,8 +7,10 @@ export const metadata = {
 };
 
 const MAPS_URL = "https://maps.app.goo.gl/h4jugsJbuYzx3Gzc9";
-const WA_URL = "https://wa.me/919710772621";
 const YT_URL = "https://youtu.be/GfmlWuVKVEE?si=jNn7weBA6Xu2Csme";
+const SITES_URL = "https://sites.google.com/view/iskconstonetemple/home";
+const WA_URL =
+  "https://wa.me/919710772621?text=Hare%20Krishna%20Prabhu%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20know%20more%20about%20the%20Sri%20Krishna%20Janmashtami%202026%20celebration%20at%20ISKCON%20Salem.%0A%0AHare%20Krishna%20%F0%9F%99%8F";
 
 export default function EnInvite() {
   return (
@@ -20,7 +20,7 @@ export default function EnInvite() {
           PAGE 1
           ═══════════════════════════════════════════ */}
 
-      {/* Identity line: Logo | ISKCON Salem | Temple Name */}
+      {/* 1. Identity Line */}
       <div className={styles.identityLine}>
         <img src="/images/logo.png" alt="ISKCON Salem" className={styles.logo} />
         <div className={styles.identityDivider} aria-hidden="true" />
@@ -30,53 +30,48 @@ export default function EnInvite() {
         </div>
       </div>
 
-      {/* Event title + year */}
+      {/* 2–3. Event title + year */}
       <div className={styles.titleSection}>
-        <h1 className={styles.eventTitle}>
-          Sri Krishna<br />Janmashtami
-        </h1>
+        <h1 className={styles.eventTitle}>Sri Krishna<br />Janmashtami</h1>
         <p className={styles.eventYear}>2026</p>
       </div>
 
-      {/* Date (prominent) + Venue */}
+      {/* 4–6. Date + Venue + Maps */}
       <div className={styles.dateVenueSection}>
         <p className={styles.eventDate}>Friday, 4 September 2026</p>
         <p className={styles.eventVenue}>Sona College Ground, Salem</p>
+        <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className={styles.mapsLink}>
+          Open in Google Maps
+        </a>
       </div>
 
-      {/* Short cover invitation */}
-      <div className={styles.coverInvitation}>
-        <p className={styles.coverPara}>
+      {/* 7. Short invitation */}
+      <div className={styles.shortInvite}>
+        <p className={styles.shortInvitePara}>
           You and your family are warmly invited to join ISKCON Salem in celebrating the divine appearance of Bhagavan Sri Krishna.
         </p>
       </div>
 
-      {/* Front invitation artwork */}
+      {/* 8. Front invitation artwork */}
       <div className={styles.artworkWrap}>
         <img
           src="/images/invitation-front-full.jpg"
           alt="ISKCON Salem Sri Krishna Janmashtami 2026 – Official Invitation"
-          className={styles.frontImg}
+          className={styles.artImg}
         />
       </div>
 
-      {/* Warm invitation */}
-      <div className={styles.warmInvitation}>
-        <h2 className={styles.warmHeading}>{en.personalInvitation.heading}</h2>
-        <p className={styles.greeting}>{en.personalInvitation.openingGreeting}</p>
-        <p className={styles.warmPara}>
-          With great happiness, we invite you and your family to join us for the Sri Krishna Janmashtami celebrations organised by ISKCON Salem on Friday, 4 September 2026, from 8:00 AM at Sona College Ground, Salem.
-        </p>
-        <p className={styles.warmPara}>
-          Janmashtami is a very special occasion to come together, remember Sri Krishna, hear about His pastimes, chant His holy names, participate in kirtan, take darshan and honour Krishna prasadam.
-        </p>
-        <p className={styles.warmPara}>
-          We would be very happy to have you with us and share this auspicious celebration together. Please come with your family and friends.
-        </p>
-        <p className={styles.greeting}>Hare Krishna.</p>
+      {/* 9–10. Programme heading + artwork */}
+      <div className={styles.progSection}>
+        <h2 className={styles.sectionHeading}>Janmashtami Programme</h2>
+        <img
+          src="/images/invitation-programme.jpg"
+          alt="ISKCON Salem Janmashtami 2026 – Full-Day Programme"
+          className={styles.artImg}
+        />
       </div>
 
-      {/* Janmashtami 2025 Highlights – one compact line */}
+      {/* 11. 2025 Highlights one-line */}
       <div className={styles.highlightsLine}>
         <p className={styles.highlightsText}>
           Janmashtami 2025 Highlights &middot;{" "}
@@ -91,60 +86,79 @@ export default function EnInvite() {
           ═══════════════════════════════════════════ */}
       <div className={styles.page2}>
 
-        {/* Programme */}
-        <h2 className={styles.sectionHeading}>{en.programme.heading}</h2>
-        <img
-          src="/images/invitation-programme.jpg"
-          alt="ISKCON Salem Janmashtami 2026 – Full-Day Programme"
-          className={styles.programmeImg}
-        />
+        {/* 1. Warm invitation heading */}
+        <h2 className={styles.warmHeading}>A Warm Invitation to You and Your Family</h2>
 
-        {/* Venue + Feast two-col */}
-        <div className={styles.twoColSection}>
-          {/* Venue */}
-          <div className={styles.card}>
-            <h3 className={styles.cardHeading}>{en.venue.heading}</h3>
-            <p className={styles.cardSub}>{en.venue.name}</p>
-            <p className={styles.cardDetail}>{en.venue.city}</p>
-            <p className={styles.cardDetail}>
-              The venue is centrally located in Salem and can be reached by public transport, auto-rickshaw and private vehicles.
-            </p>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className={styles.mapsLink}>
-              {en.venue.mapsLabel}
-            </a>
-          </div>
-
-          {/* Feast Prasadam */}
-          <div className={styles.card}>
-            <h3 className={styles.cardHeading}>{en.feastPrasadam.heading}</h3>
-            <p className={styles.cardDetail}>
-              Feast Prasadam will be served throughout the Sri Krishna Janmashtami celebration. More than 1 lakh devotees are expected to participate.
-            </p>
-          </div>
+        {/* 2. Wide compact warm invitation panel */}
+        <div className={styles.warmPanel}>
+          <p className={styles.warmPara}>
+            ISKCON Salem warmly welcomes you to the Grand Celebrations of Sri Krishna Janmashtami!
+          </p>
+          <p className={styles.warmPara}>
+            More than 1 lakh devotees are expected to participate! Full FEAST PRASADAM will be distributed to all.
+          </p>
+          <p className={styles.warmPara}>
+            Take part in this auspicious celebration by offering your service and contribution and receive the blessings of Sri Krishna.
+          </p>
         </div>
 
-        {/* Prasadam Seva */}
-        <div className={styles.sevaSection}>
-          <h2 className={styles.sectionHeading}>{en.prasadamSeva.heading}</h2>
+        {/* 3–4. Prasadam Seva */}
+        <h2 className={styles.sectionHeading}>Prasadam Seva</h2>
+        <div className={styles.artworkWrap2}>
           <img
             src="/images/invitation-seva.jpg"
             alt="ISKCON Salem Janmashtami 2026 – Prasadam Seva"
-            className={styles.sevaImg}
+            className={styles.artImg}
           />
         </div>
 
-        {/* Closing */}
-        <div className={styles.closing}>
-          <h2 className={styles.closingHeading}>{en.finalInvitation.heading}</h2>
-          <p className={styles.closingBody}>
-            Please come with your family and friends and spend this auspicious Janmashtami in the association of devotees, hearing about Sri Krishna, chanting His holy names and honouring Krishna prasadam.
+        {/* 5–6. VIP Pass */}
+        <div className={styles.vipSection}>
+          <h2 className={styles.vipHeading}>Donate &amp; Receive a VIP Pass</h2>
+          <p className={styles.vipSub}>
+            For your contribution towards the Sri Krishna Janmashtami 2026 celebration, receive a VIP Pass for:
           </p>
-          <p className={styles.closingGreeting}>Hare Krishna.</p>
-          <p className={styles.contactLine}>
-            <span className={styles.contactName}>{eventData.contact.name}</span>
-            {" · +91 "}
-            {eventData.contact.displayPhone}
+          <div className={styles.vipGrid}>
+            <div className={styles.vipItem}>
+              <span className={styles.vipCheck}>&#10003;</span> Special Darshan
+            </div>
+            <div className={styles.vipItem}>
+              <span className={styles.vipCheck}>&#10003;</span> Cultural &amp; devotional programs
+            </div>
+            <div className={styles.vipItem}>
+              <span className={styles.vipCheck}>&#10003;</span> Feast Prasadam
+            </div>
+            <div className={styles.vipItem}>
+              <span className={styles.vipCheck}>&#10003;</span> Parking facility
+            </div>
+          </div>
+        </div>
+
+        {/* 7–11. Stay Connected */}
+        <div className={styles.staySection}>
+          <h2 className={styles.stayHeading}>Stay Connected with ISKCON Salem</h2>
+          <p className={styles.staySub}>
+            To know more about our temple, Bhagavad Gita classes and upcoming festivals, click below:
           </p>
+          <a href={SITES_URL} target="_blank" rel="noopener noreferrer" className={styles.sitesBtn}>
+            Temple, Gita Classes &amp; Festivals
+          </a>
+          <p className={styles.sitesUrl}>
+            <a href={SITES_URL} target="_blank" rel="noopener noreferrer" className={styles.sitesUrlLink}>
+              {SITES_URL}
+            </a>
+          </p>
+          <p className={styles.trustLine}>
+            <strong>Safe to open:</strong> This link contains only our official YouTube, WhatsApp &amp; Facebook links.
+          </p>
+        </div>
+
+        {/* 12. WhatsApp contact strip */}
+        <div className={styles.contactStrip}>
+          <span className={styles.contactFor}>For more information</span>
+          <span className={styles.contactName}>Srinivasa Krishna Dasa</span>
+          <span className={styles.contactPhone}>+91 97107 72621</span>
+          <span className={styles.contactDot} aria-hidden="true">&middot;</span>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className={styles.waLink}>
             WhatsApp
           </a>
