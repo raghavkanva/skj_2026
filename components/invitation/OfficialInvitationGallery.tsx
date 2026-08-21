@@ -88,6 +88,16 @@ export default function OfficialInvitationGallery({ content, images }: Props) {
             })}
           </div>
 
+          <div className={styles.pdfDownload}>
+            <a
+              href="/downloads/ISKCON-Salem-Janmashtami-2026-English.pdf"
+              download
+              className={styles.pdfDownloadBtn}
+            >
+              Download PDF Invitation
+            </a>
+          </div>
+
           <div className={styles.founder}>
             <div className={styles.founderImg}>
               <Image

@@ -188,3 +188,12 @@
   display: block;
   text-align: center;
 }
+
+.pdfDownloadBtn {
+  background: var(--krishna-blue);
+  color: #fff;
+}
+
+.pdfDownloadBtn:hover {
+  background: #1a2a6e;
+}

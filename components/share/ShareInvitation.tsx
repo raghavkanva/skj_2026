@@ -196,6 +196,14 @@ export default function ShareInvitation({ content, images }: Props) {
               >
                 {content.downloadAllBtn}
               </a>
+
+              <a
+                href="/downloads/ISKCON-Salem-Janmashtami-2026-English.pdf"
+                download
+                className={`${styles.actionBtn} ${styles.pdfDownloadBtn}`}
+              >
+                Download PDF Invitation
+              </a>
             </div>
           </div>
         </div>
