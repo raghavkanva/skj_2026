@@ -193,22 +193,43 @@
 /* ── Highlights Line ── */
 .highlightsLine {
   background: #f6c941;
-  padding: 2mm 14mm 7mm;
+  padding: 2mm 11mm 6mm;
   text-align: center;
 }
 
-.highlightsText {
-  font-size: 11px;
-  color: #3a3a3a;
-  margin: 0;
-  line-height: 1.4;
+.highlightsBanner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(40, 57, 111, 0.08);
+  border: 1.5px solid rgba(40, 57, 111, 0.22);
+  border-radius: 40px;
+  padding: 5px 20px;
+}
+
+.highlightsLabel {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #28396f;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.highlightsDot {
+  font-size: 30px;
+  color: rgba(40, 57, 111, 0.45);
+  line-height: 1;
 }
 
 .ytLink {
-  color: #28396f;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 28px;
   font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  color: #c0392b;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
 }
 
 /* ═══════════════════════════════
@@ -234,13 +255,15 @@
 }
 
 .warmPanel {
-  background: rgba(255, 248, 220, 0.72);
-  border: 1.5px solid rgba(40, 57, 111, 0.18);
+  background: linear-gradient(135deg, rgba(255,248,215,0.88) 0%, rgba(255,235,160,0.72) 100%);
+  border: 1.5px solid rgba(40, 57, 111, 0.22);
+  border-top: 3px solid #28396f;
   border-radius: 10px;
   padding: 4mm 7mm;
   margin: 0 0 4mm;
   break-inside: avoid;
   page-break-inside: avoid;
+  position: relative;
 }
 
 .warmPara {
@@ -252,6 +275,25 @@
 
 .warmPara:last-child {
   margin-bottom: 0;
+}
+
+.warmHighlight {
+  font-size: 13.5px;
+  color: #1a1a1a;
+  line-height: 1.55;
+  margin: 0 0 2mm;
+  text-align: center;
+}
+
+.lakhNum {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #28396f;
+  background: rgba(246, 201, 65, 0.55);
+  border-radius: 4px;
+  padding: 0 5px;
+  letter-spacing: 0.02em;
 }
 
 /* ── Prasadam Seva ── */
@@ -342,15 +384,16 @@
 
 .sitesBtn {
   display: inline-block;
-  background: #28396f;
+  background: linear-gradient(135deg, #28396f 0%, #1e2d59 100%);
   color: #f6c941;
-  padding: 6px 18px;
-  border-radius: 7px;
-  font-size: 12px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 13.5px;
   font-weight: 700;
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   margin-bottom: 2.5mm;
+  box-shadow: 0 3px 10px rgba(40, 57, 111, 0.3);
 }
 
 .sitesUrl {
@@ -369,10 +412,10 @@
 }
 
 .trustLine {
-  font-size: 10.5px;
+  font-size: 13px;
   color: #3a3a3a;
   margin: 0;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* ── WhatsApp Contact Strip ── */
@@ -421,11 +464,12 @@
   gap: 4px;
   background: #25d366;
   color: #fff;
-  padding: 3px 11px;
-  border-radius: 5px;
-  font-size: 11px;
-  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.35);
 }
 
 /* ── Print reset ── */

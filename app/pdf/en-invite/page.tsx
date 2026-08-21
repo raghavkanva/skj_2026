@@ -71,14 +71,15 @@ export default function EnInvite() {
         />
       </div>
 
-      {/* 11. 2025 Highlights one-line */}
+      {/* 11. 2025 Highlights banner */}
       <div className={styles.highlightsLine}>
-        <p className={styles.highlightsText}>
-          Janmashtami 2025 Highlights &middot;{" "}
+        <div className={styles.highlightsBanner}>
+          <span className={styles.highlightsLabel}>Janmashtami 2025 Highlights</span>
+          <span className={styles.highlightsDot} aria-hidden="true">&middot;</span>
           <a href={YT_URL} target="_blank" rel="noopener noreferrer" className={styles.ytLink}>
-            Watch on YouTube
+            ▶ Watch on YouTube
           </a>
-        </p>
+        </div>
       </div>
 
       {/* ═══════════════════════════════════════════
@@ -92,13 +93,13 @@ export default function EnInvite() {
         {/* 2. Wide compact warm invitation panel */}
         <div className={styles.warmPanel}>
           <p className={styles.warmPara}>
-            ISKCON Salem warmly welcomes you to the Grand Celebrations of Sri Krishna Janmashtami!
+            ISKCON Salem warmly welcomes you and your family to the Grand Sri Krishna Janmashtami Celebrations!
+          </p>
+          <p className={styles.warmHighlight}>
+            Over <span className={styles.lakhNum}>1 Lakh Devotees</span> are expected to join us this year.
           </p>
           <p className={styles.warmPara}>
-            More than 1 lakh devotees are expected to participate! Full FEAST PRASADAM will be distributed to all.
-          </p>
-          <p className={styles.warmPara}>
-            Take part in this auspicious celebration by offering your service and contribution and receive the blessings of Sri Krishna.
+            Full Feast Prasadam will be distributed to all who attend. Come, be part of this auspicious occasion and receive the blessings of Sri Krishna.
           </p>
         </div>
 
@@ -141,7 +142,7 @@ export default function EnInvite() {
             To know more about our temple, Bhagavad Gita classes and upcoming festivals, click below:
           </p>
           <a href={SITES_URL} target="_blank" rel="noopener noreferrer" className={styles.sitesBtn}>
-            Temple, Gita Classes &amp; Festivals
+            Temple, Gita Classes &amp; Festivals &rarr; Click Here
           </a>
           <p className={styles.sitesUrl}>
             <a href={SITES_URL} target="_blank" rel="noopener noreferrer" className={styles.sitesUrlLink}>
@@ -160,7 +161,7 @@ export default function EnInvite() {
           <span className={styles.contactPhone}>+91 97107 72621</span>
           <span className={styles.contactDot} aria-hidden="true">&middot;</span>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className={styles.waLink}>
-            WhatsApp
+            Click here to chat on WhatsApp &rarr;
           </a>
         </div>
 
