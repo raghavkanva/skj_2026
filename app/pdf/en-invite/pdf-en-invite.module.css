@@ -1,0 +1,393 @@
+/* ================================================================
+   ISKCON Salem Janmashtami 2026 – English Invitation PDF
+   Target: exactly 2 A4 portrait pages, no gaps, premium devotional
+   ================================================================ */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+  background: #f6c941;
+}
+
+/* ── Root ── */
+.root {
+  width: 210mm;
+  margin: 0 auto;
+  background: #f6c941;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ═══════════════════════════════
+   PAGE 1
+   ═══════════════════════════════ */
+
+/* ── Identity Line (horizontal) ── */
+.identityLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 9mm 12mm 5mm;
+  background: #f6c941;
+}
+
+.logo {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(40, 57, 111, 0.22));
+}
+
+.identityDivider {
+  width: 1.5px;
+  height: 52px;
+  background: rgba(40, 57, 111, 0.25);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.identityText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.orgName {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 27px;
+  font-weight: 700;
+  color: #28396f;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.templeName {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #28396f;
+  opacity: 0.82;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ── Event Title + Year ── */
+.titleSection {
+  background: #f6c941;
+  padding: 4mm 14mm 0;
+  text-align: center;
+}
+
+.eventTitle {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 54px;
+  font-weight: 700;
+  color: #28396f;
+  line-height: 1.05;
+  margin: 0 0 2mm;
+  letter-spacing: -0.01em;
+}
+
+.eventYear {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #28396f;
+  letter-spacing: 0.12em;
+  margin: 0 0 4mm;
+  line-height: 1.1;
+}
+
+/* ── Date (prominent) + Venue ── */
+.dateVenueSection {
+  background: #f6c941;
+  padding: 0 14mm 4mm;
+  text-align: center;
+}
+
+.eventDate {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #28396f;
+  letter-spacing: 0.04em;
+  margin: 0 0 2mm;
+  line-height: 1.15;
+}
+
+.eventVenue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin: 0 0 4mm;
+  line-height: 1.4;
+}
+
+/* ── Cover Invitation ── */
+.coverInvitation {
+  background: #f6c941;
+  padding: 0 14mm 3mm;
+  text-align: center;
+}
+
+.coverPara {
+  font-size: 13.5px;
+  color: #1a1a1a;
+  line-height: 1.62;
+  margin: 0 auto;
+  max-width: 163mm;
+}
+
+/* ── Front Artwork ── */
+.artworkWrap {
+  background: #f6c941;
+  padding: 3mm 12mm 3mm;
+}
+
+.frontImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(40, 57, 111, 0.16);
+}
+
+/* ── Warm Invitation ── */
+.warmInvitation {
+  background: #f6c941;
+  padding: 4mm 14mm 3mm;
+  text-align: center;
+}
+
+.warmHeading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #28396f;
+  margin: 0 0 2mm;
+  line-height: 1.2;
+}
+
+.greeting {
+  font-size: 14px;
+  font-weight: 700;
+  color: #28396f;
+  margin: 0 0 2.5mm;
+  line-height: 1.3;
+}
+
+.warmPara {
+  font-size: 12.5px;
+  color: #1a1a1a;
+  line-height: 1.65;
+  margin: 0 auto 2.5mm;
+  max-width: 166mm;
+}
+
+/* ── YouTube Highlights Line ── */
+.highlightsLine {
+  background: #f6c941;
+  padding: 2mm 14mm 7mm;
+  text-align: center;
+}
+
+.highlightsText {
+  font-size: 11.5px;
+  color: #3a3a3a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ytLink {
+  color: #28396f;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ═══════════════════════════════
+   PAGE 2
+   ═══════════════════════════════ */
+
+.page2 {
+  break-before: page;
+  page-break-before: always;
+  background: #f6c941;
+  padding: 9mm 14mm 0;
+}
+
+/* ── Programme ── */
+.sectionHeading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #28396f;
+  text-align: center;
+  margin: 0 0 2.5mm;
+  line-height: 1.2;
+}
+
+.programmeImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(40, 57, 111, 0.14);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* ── Venue + Feast two-col ── */
+.twoColSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  margin: 4mm 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.52);
+  border: 1.5px solid rgba(40, 57, 111, 0.15);
+  border-radius: 10px;
+  padding: 4mm 4.5mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cardHeading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #28396f;
+  margin: 0 0 1.5mm;
+  line-height: 1.2;
+}
+
+.cardSub {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5mm;
+  line-height: 1.3;
+}
+
+.cardDetail {
+  font-size: 11.5px;
+  color: #3a3a3a;
+  line-height: 1.55;
+  margin: 0 0 2mm;
+}
+
+.mapsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #28396f;
+  color: #f6c941;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ── Prasadam Seva ── */
+.sevaSection {
+  margin: 4mm 0 3mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.sevaImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(40, 57, 111, 0.14);
+}
+
+/* ── Closing ── */
+.closing {
+  background: #f6c941;
+  padding: 4mm 0 9mm;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.closingHeading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #28396f;
+  margin: 0 0 2mm;
+  line-height: 1.2;
+}
+
+.closingBody {
+  font-size: 12.5px;
+  color: #1a1a1a;
+  line-height: 1.65;
+  max-width: 156mm;
+  margin: 0 auto 2mm;
+}
+
+.closingGreeting {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #28396f;
+  margin: 2mm 0 3mm;
+}
+
+.contactLine {
+  font-size: 12px;
+  color: #1a1a1a;
+  margin: 0 0 1mm;
+  line-height: 1.4;
+}
+
+.contactName {
+  font-weight: 700;
+}
+
+.waLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #25d366;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 2mm;
+}
+
+/* ── Print reset ── */
+@media print {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #f6c941;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .root {
+    width: 210mm;
+    background: #f6c941;
+  }
+}
