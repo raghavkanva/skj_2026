@@ -1,4 +1,5 @@
 import type { EventData } from "@/types/event";
+import { siteLinks } from "@/lib/siteLinks";
 
 export const eventData: EventData = {
   name: "Sri Krishna Janmashtami 2026",
@@ -9,9 +10,9 @@ export const eventData: EventData = {
   endTime: "23:59",
   timezone: "Asia/Kolkata",
   venue: "Sona College Ground, Salem",
-  mapUrl: "https://maps.app.goo.gl/h4jugsJbuYzx3Gzc9",
-  officialWebsite: "https://iskconsalem.com",
-  officialLinks: "https://sites.google.com/view/iskconstonetemple/home",
+  mapUrl: siteLinks.mapsUrl,
+  officialWebsite: siteLinks.officialWebsite,
+  officialLinks: siteLinks.officialLinks,
   contact: {
     name: "Srinivasa Krishna Dasa",
     phone: "+919710772621",

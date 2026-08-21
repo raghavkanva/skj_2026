@@ -30,8 +30,9 @@
 }
 
 .brandName {
-  font-family: var(--font-rozha), "Rozha One", serif;
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
   font-size: 22px;
+  font-weight: 700;
   color: var(--festival-gold-soft);
 }
 

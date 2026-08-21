@@ -1,24 +1,11 @@
 "use client";
 
-import { buildBaseUpiUri } from "@/lib/upi";
 import styles from "./StickyFooter.module.css";
 
-interface StickyFooterProps {
-  upiUri?: string;
-}
-
-export default function StickyFooter({ upiUri }: StickyFooterProps) {
-  const uri = upiUri ?? buildBaseUpiUri();
-
+export default function StickyFooter() {
   function handleDonate() {
-    const isMobile =
-      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = uri;
-    } else {
-      const el = document.getElementById("donation");
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    }
+    const el = document.getElementById("donation");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -26,7 +13,7 @@ export default function StickyFooter({ upiUri }: StickyFooterProps) {
       <button
         onClick={handleDonate}
         className={styles.donateBtn}
-        aria-label="Donate now via UPI for Prasadam Seva"
+        aria-label="Go to Prasadam Seva donation section"
       >
         Donate Now
       </button>

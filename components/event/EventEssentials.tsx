@@ -6,31 +6,27 @@ const cards = [
     kicker: "Date",
     value: "4 September 2026",
     label: "Friday",
-    icon: "📅",
   },
   {
     kicker: "Timing",
     value: "From 8:00 AM",
     label: "Programmes throughout the day",
-    icon: "🕗",
   },
   {
     kicker: "Venue",
     value: "Sona College Ground",
-    label: "Salem",
-    icon: "📍",
+    label: "Salem, Tamil Nadu",
   },
   {
     kicker: "Prasadam",
     value: "Feast Prasadam",
     label: "Served throughout the event",
-    icon: "🍽",
   },
 ];
 
 export default function EventEssentials() {
   return (
-    <section className={styles.section} aria-labelledby="essentials-heading">
+    <section id="event-details" className={styles.section} aria-labelledby="essentials-heading">
       <div className="container">
         <h2 id="essentials-heading" className="sr-only">
           Event Details

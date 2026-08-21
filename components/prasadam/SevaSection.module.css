@@ -15,8 +15,8 @@
 }
 
 .heading {
-  font-family: var(--font-rozha), "Rozha One", serif;
-  font-weight: 400;
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
   font-size: clamp(30px, 4vw, 42px);
   color: var(--krishna-blue);
   text-align: center;
@@ -37,20 +37,43 @@
   text-align: center;
   font-size: 18px;
   font-weight: 600;
-  color: var(--festival-red);
+  color: var(--krishna-blue);
   margin-bottom: 40px;
 }
 
-.totalRow {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--krishna-blue);
+.summary {
+  max-width: 480px;
+  margin-inline: auto;
+  background: rgba(40, 57, 111, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 22px 24px;
   margin-bottom: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  text-align: center;
+}
+
+.summaryLabel {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.summaryPlates {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--krishna-blue);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.summaryAmount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--krishna-blue);
 }
 
 .ctaRow {

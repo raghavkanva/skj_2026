@@ -1,0 +1,137 @@
+.section {
+  background: var(--festival-gold-soft);
+  padding-block: var(--section-py-desktop);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--section-py-mobile);
+  }
+}
+
+.inner {
+  max-width: 840px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 16px;
+}
+
+.desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  line-height: 1.7;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.previewRow {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.previewCard {
+  flex: 0 0 auto;
+  width: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 480px) {
+  .previewCard {
+    width: 130px;
+  }
+}
+
+.previewImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.previewLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding: 7px 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--festival-cream-alt);
+  color: var(--krishna-blue);
+  border: 1.5px solid var(--border-medium);
+  padding: 13px 22px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 14.5px;
+  font-family: inherit;
+  cursor: pointer;
+  min-height: 48px;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+}
+.actionBtn:hover {
+  background: rgba(40, 57, 111, 0.07);
+  border-color: var(--krishna-blue);
+  color: var(--krishna-blue);
+}
+.actionBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.primaryAction {
+  background: var(--krishna-blue);
+  color: var(--festival-cream);
+  border-color: var(--krishna-blue);
+}
+.primaryAction:hover {
+  background: var(--krishna-blue-dark);
+  color: var(--festival-cream);
+  border-color: var(--krishna-blue-dark);
+}
+
+.waBtn {
+  background: #25d366;
+  color: #fff;
+  border-color: #25d366;
+}
+.waBtn:hover {
+  background: #1ebe5d;
+  color: #fff;
+  border-color: #1ebe5d;
+}
+
+.fallbackNote {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: 400px;
+  display: block;
+  text-align: center;
+}

@@ -28,12 +28,12 @@
 }
 
 .periodHeading {
-  font-family: var(--font-rozha), "Rozha One", serif;
-  font-weight: 400;
-  font-size: 22px;
-  color: var(--festival-red);
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--krishna-blue);
   margin-bottom: 16px;
-  border-bottom: 2px solid var(--festival-red);
+  border-bottom: 2px solid var(--festival-gold);
   padding-bottom: 10px;
 }
 
@@ -63,38 +63,4 @@
   font-size: 15px;
   color: var(--text-primary);
   line-height: 1.5;
-}
-
-.venueBlock {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-  background: var(--krishna-blue);
-  color: var(--festival-cream) !important;
-  padding: 24px;
-  border-radius: 12px;
-  margin-bottom: 56px;
-  transition: background 0.18s ease;
-}
-.venueBlock:hover {
-  background: var(--krishna-blue-dark);
-  color: var(--festival-cream) !important;
-}
-
-.venueMain {
-  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-  font-weight: 700;
-  font-size: clamp(20px, 2.4vw, 26px);
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-}
-
-.venueSub {
-  font-size: 13.5px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--festival-gold-deep);
 }

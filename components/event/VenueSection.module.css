@@ -1,0 +1,78 @@
+.section {
+  background: var(--festival-cream-alt);
+  padding-block: var(--section-py-desktop);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--section-py-mobile);
+  }
+}
+
+.inner {
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 36px;
+}
+
+.card {
+  background: var(--krishna-blue);
+  border-radius: 18px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  box-shadow: var(--shadow-xl);
+  margin-bottom: 28px;
+}
+
+.venueInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.venueName {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3.2vw, 34px);
+  color: var(--festival-gold-soft);
+  line-height: 1.1;
+}
+
+.venueCity {
+  font-size: 15px;
+  color: rgba(255, 248, 231, 0.7);
+  letter-spacing: 0.06em;
+}
+
+.venueDate {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--festival-cream);
+  margin-top: 10px;
+}
+
+.venueTime {
+  font-size: 14.5px;
+  color: rgba(255, 248, 231, 0.75);
+}
+
+.mapsBtn {
+  background: var(--festival-gold) !important;
+  color: var(--krishna-blue-dark) !important;
+}
+.mapsBtn:hover {
+  background: var(--festival-gold-deep) !important;
+}
+
+.note {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}

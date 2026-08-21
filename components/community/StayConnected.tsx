@@ -1,3 +1,4 @@
+import { siteLinks } from "@/lib/siteLinks";
 import { eventData } from "@/data/eventData";
 import styles from "./StayConnected.module.css";
 
@@ -8,7 +9,7 @@ const WHATSAPP_CONTACT = `https://wa.me/919710772621?text=${encodeURIComponent(
 export default function StayConnected() {
   return (
     <section
-      id="connect"
+      id="stay-connected"
       className={styles.section}
       aria-labelledby="connect-heading"
     >
@@ -25,10 +26,18 @@ export default function StayConnected() {
 
           <div className={styles.ctas}>
             <a
-              href={eventData.officialWebsite}
+              href={siteLinks.janmashtami2026}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
+            >
+              Janmashtami 2026 Event Site
+            </a>
+            <a
+              href={eventData.officialWebsite}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
             >
               Visit ISKCON Salem Website
             </a>

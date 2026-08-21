@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { eventData } from "@/data/eventData";
 import styles from "./Header.module.css";
 
 const navLinks = [
   { href: "#programme", label: "Programme" },
-  { href: "#seva", label: "Prasadam Seva" },
+  { href: "#prasadam-seva", label: "Prasadam Seva" },
   { href: "#official-invitation", label: "Invitation" },
-  { href: "#video", label: "Video" },
-  { href: "#hero", label: "Venue" },
+  { href: "#share-invitation", label: "Share" },
+  { href: "#venue", label: "Venue" },
 ];
 
 export default function Header() {
@@ -19,8 +20,18 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <a href="#home" className={styles.brand} aria-label="ISKCON Salem – back to top">
-          <span className={styles.brandName}>ISKCON Salem</span>
-          <span className={styles.brandSub}>Hare Krishna Land, Karuppur</span>
+          <Image
+            src="/images/logo.png"
+            alt="ISKCON Salem logo"
+            width={44}
+            height={44}
+            className={styles.logo}
+            priority
+          />
+          <div className={styles.brandText}>
+            <span className={styles.brandName}>ISKCON Salem</span>
+            <span className={styles.brandSub}>Hare Krishna Land, Karuppur</span>
+          </div>
         </a>
 
         <nav className={styles.nav} aria-label="Main navigation">
