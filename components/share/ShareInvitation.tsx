@@ -20,6 +20,7 @@ interface ShareImages {
 interface Props {
   content: LocaleContent["shareInvitation"];
   images: ShareImages;
+  pdfHref?: string;
 }
 
 function CopyButton({ text, label, copiedLabel }: { text: string; label: string; copiedLabel: string }) {
@@ -90,7 +91,7 @@ function ShareWithImagesButton({
   );
 }
 
-export default function ShareInvitation({ content, images }: Props) {
+export default function ShareInvitation({ content, images, pdfHref = "/downloads/ISKCON-Salem-Janmashtami-2026-English.pdf" }: Props) {
   const [viewerSrc, setViewerSrc] = useState<string | null>(null);
   const [viewerAlt, setViewerAlt] = useState("");
 
@@ -198,7 +199,7 @@ export default function ShareInvitation({ content, images }: Props) {
               </a>
 
               <a
-                href="/downloads/ISKCON-Salem-Janmashtami-2026-English.pdf"
+                href={pdfHref}
                 download
                 className={`${styles.actionBtn} ${styles.pdfDownloadBtn}`}
               >

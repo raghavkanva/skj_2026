@@ -16,9 +16,10 @@ interface GalleryImages {
 interface Props {
   content: LocaleContent["officialInvitation"];
   images: GalleryImages;
+  pdfHref?: string;
 }
 
-export default function OfficialInvitationGallery({ content, images }: Props) {
+export default function OfficialInvitationGallery({ content, images, pdfHref = "/downloads/ISKCON-Salem-Janmashtami-2026-English.pdf" }: Props) {
   const [viewerSrc, setViewerSrc] = useState<string | null>(null);
   const [viewerAlt, setViewerAlt] = useState("");
 
@@ -90,7 +91,7 @@ export default function OfficialInvitationGallery({ content, images }: Props) {
 
           <div className={styles.pdfDownload}>
             <a
-              href="/downloads/ISKCON-Salem-Janmashtami-2026-English.pdf"
+              href={pdfHref}
               download
               className={styles.pdfDownloadBtn}
             >

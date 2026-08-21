@@ -26,8 +26,15 @@ interface Props {
   locale: Locale;
 }
 
+const pdfPaths: Record<Locale, string> = {
+  en: "/downloads/ISKCON-Salem-Janmashtami-2026-English.pdf",
+  ta: "/downloads/ISKCON-Salem-Janmashtami-2026-Tamil.pdf",
+  hi: "/downloads/ISKCON-Salem-Janmashtami-2026-English.pdf",
+};
+
 export default function JanmashtamiPage({ content, locale }: Props) {
   const imgs = localizedImages[locale];
+  const pdfHref = pdfPaths[locale];
 
   const galleryImages = {
     front: imgs.invitationFront,
@@ -70,10 +77,12 @@ export default function JanmashtamiPage({ content, locale }: Props) {
         <OfficialInvitationGallery
           content={content.officialInvitation}
           images={galleryImages}
+          pdfHref={pdfHref}
         />
         <ShareInvitation
           content={content.shareInvitation}
           images={shareImages}
+          pdfHref={pdfHref}
         />
         <StayConnected content={content.stayConnected} />
         <FinalInvitation
