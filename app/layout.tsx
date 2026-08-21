@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond, Rozha_One } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/lib/constants";
 
@@ -17,13 +17,6 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const rozhaOne = Rozha_One({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-rozha",
-  display: "swap",
-});
-
 export const viewport: Viewport = {
   themeColor: "#28396F",
 };
@@ -32,6 +25,10 @@ export const metadata: Metadata = {
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
   robots: { index: true, follow: true },
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   openGraph: {
     type: "website",
     title: SITE_TITLE,
@@ -76,9 +73,7 @@ const jsonLd = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
@@ -87,9 +82,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className={`${inter.variable} ${cormorant.variable} ${rozhaOne.variable}`}
-      >
+      <body className={`${inter.variable} ${cormorant.variable}`}>
         {children}
       </body>
     </html>

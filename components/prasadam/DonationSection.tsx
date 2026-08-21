@@ -5,39 +5,29 @@ import QRCodeBlock from "./QRCodeBlock";
 import { buildBaseUpiUri, buildUpiUriWithAmount } from "@/lib/upi";
 import { formatINR } from "@/lib/formatCurrency";
 import { eventData } from "@/data/eventData";
-import type { SevaOption } from "@/types/seva";
 import styles from "./DonationSection.module.css";
 
 interface DonationSectionProps {
-  selectedOptions: SevaOption[];
-  total: number;
+  totalPlates: number;
+  totalAmount: number;
 }
 
-function buildWhatsAppUrl(total: number): string {
+function buildWhatsAppUrl(totalAmount: number): string {
   let message =
-    "Hare Krishna. I have offered Prasadam Seva for Sri Krishna Janmashtami 2026. I am sharing the donation details here.";
-  if (total > 0) {
-    message += ` Selected Seva Amount: ${formatINR(total)}.`;
+    "Hare Krishna. I have offered Prasadam Seva for Sri Krishna Janmashtami 2026.";
+  if (totalAmount > 0) {
+    message += ` Seva Amount: ${formatINR(totalAmount)}.`;
   }
   return `https://wa.me/919710772621?text=${encodeURIComponent(message)}`;
 }
 
 export default function DonationSection({
-  selectedOptions,
-  total,
+  totalPlates,
+  totalAmount,
 }: DonationSectionProps) {
+  const requiresNetBanking = totalAmount > 100000;
   const upiUri =
-    total > 0 ? buildUpiUriWithAmount(total) : buildBaseUpiUri();
-
-  function handleDonate() {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = upiUri;
-    } else {
-      const el = document.getElementById("qr-section");
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    }
-  }
+    totalAmount > 0 ? buildUpiUriWithAmount(totalAmount) : buildBaseUpiUri();
 
   return (
     <section
@@ -51,51 +41,41 @@ export default function DonationSection({
             Prasadam Seva Details
           </h2>
 
-          {selectedOptions.length > 0 && (
+          {totalPlates > 0 && (
             <div className={styles.summary}>
-              <h3 className={styles.summaryTitle}>Your Selected Seva</h3>
-              <ul className={styles.summaryList}>
-                {selectedOptions.map((o) => (
-                  <li key={o.amount} className={styles.summaryItem}>
-                    <span>
-                      {o.plates.toLocaleString("en-IN")} Plates
-                    </span>
-                    <span>{formatINR(o.amount)}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className={styles.summaryTotal}>
-                <span>Total Seva</span>
-                <strong>{formatINR(total)}</strong>
+              <p className={styles.summaryLabel}>Your Selected Seva</p>
+              <p className={styles.summaryPlates}>
+                {totalPlates.toLocaleString("en-IN")} Plates
+              </p>
+              <p className={styles.summaryAmount}>{formatINR(totalAmount)}</p>
+            </div>
+          )}
+
+          {requiresNetBanking ? (
+            <div className={styles.netBankingNote}>
+              <p className={styles.netBankingTitle}>
+                For amounts above &#8377;1,00,000, please use Net Banking or NEFT/RTGS.
+              </p>
+              <p className={styles.netBankingBody}>
+                Please use the bank account details below to transfer the seva
+                amount, then share the details with us on WhatsApp.
+              </p>
+            </div>
+          ) : (
+            <div id="qr-section" className={styles.qrRow}>
+              <QRCodeBlock value={upiUri} />
+              <div className={styles.officialQr}>
+                <Image
+                  src="/images/qr-crop.jpg"
+                  alt="Official QR code for ISKCON Salem Prasadam Seva donation"
+                  width={280}
+                  height={470}
+                  className={styles.officialQrImg}
+                  loading="lazy"
+                />
               </div>
             </div>
           )}
-
-          {total > 0 && (
-            <p className={styles.selectedTotal}>
-              Your selected seva total: {formatINR(total)}
-            </p>
-          )}
-
-          <div className={styles.donateRow}>
-            <button onClick={handleDonate} className="btn-red" aria-label="Donate now via UPI">
-              Donate Now via UPI
-            </button>
-          </div>
-
-          <div id="qr-section" className={styles.qrRow}>
-            <QRCodeBlock value={upiUri} />
-            <div className={styles.officialQr}>
-              <Image
-                src="/images/qr-crop.jpg"
-                alt="Official QR code for ISKCON Salem Prasadam Seva donation"
-                width={280}
-                height={470}
-                className={styles.officialQrImg}
-                loading="lazy"
-              />
-            </div>
-          </div>
 
           <div className={styles.bankDetails}>
             <dl className={styles.dl}>
@@ -136,7 +116,7 @@ export default function DonationSection({
             </p>
 
             <a
-              href={buildWhatsAppUrl(total)}
+              href={buildWhatsAppUrl(totalAmount)}
               target="_blank"
               rel="noopener noreferrer"
               className={`btn-primary ${styles.waBtn}`}

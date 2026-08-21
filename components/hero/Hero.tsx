@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { eventData } from "@/data/eventData";
 import InvitationFlipCard from "./InvitationFlipCard";
 import styles from "./Hero.module.css";
@@ -5,13 +6,25 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   return (
     <section
-      id="hero"
+      id="home"
       className={styles.hero}
       aria-label="ISKCON Salem Sri Krishna Janmashtami 2026"
     >
       <div className={`container ${styles.inner}`}>
         <div className={`${styles.textBlock} animate-fade-up`}>
+          <div className={styles.logoWrap}>
+            <Image
+              src="/images/logo.png"
+              alt="ISKCON Salem"
+              width={80}
+              height={80}
+              className={styles.logoImg}
+              priority
+            />
+          </div>
+
           <p className={styles.organiserBadge}>{eventData.organiser}</p>
+          <p className={styles.organiserSub}>Sri Gaura Radha-Gokulananda Temple</p>
 
           <h1 className={styles.title}>
             Sri Krishna
@@ -39,7 +52,7 @@ export default function Hero() {
             <a href="#programme" className="btn-primary">
               View Festival Programme
             </a>
-            <a href="#seva" className="btn-secondary">
+            <a href="#prasadam-seva" className="btn-secondary">
               Offer Prasadam Seva
             </a>
           </div>

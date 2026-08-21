@@ -16,8 +16,8 @@
 }
 
 .heading {
-  font-family: var(--font-rozha), "Rozha One", serif;
-  font-weight: 400;
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 700;
   font-size: clamp(28px, 3.8vw, 40px);
   color: var(--festival-gold-soft);
   margin-bottom: 24px;

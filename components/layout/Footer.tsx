@@ -1,12 +1,14 @@
+import { siteLinks } from "@/lib/siteLinks";
 import { eventData } from "@/data/eventData";
 import styles from "./Footer.module.css";
 
 const footerNav = [
   { href: "#programme", label: "Programme" },
-  { href: "#seva", label: "Prasadam Seva" },
-  { href: "#hero", label: "Venue" },
-  { href: "#video", label: "Video" },
-  { href: "#connect", label: "Contact" },
+  { href: "#prasadam-seva", label: "Prasadam Seva" },
+  { href: "#donation", label: "Donate" },
+  { href: "#venue", label: "Venue" },
+  { href: "#share-invitation", label: "Share" },
+  { href: "#stay-connected", label: "Contact" },
 ];
 
 export default function Footer() {
@@ -33,12 +35,20 @@ export default function Footer() {
 
           <div className={styles.links}>
             <a
+              href={siteLinks.janmashtami2026}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.extLink}
+            >
+              Janmashtami 2026 Site
+            </a>
+            <a
               href={eventData.officialWebsite}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.extLink}
             >
-              Official Website
+              ISKCON Salem Website
             </a>
             <a
               href={eventData.officialLinks}
@@ -47,6 +57,14 @@ export default function Footer() {
               className={styles.extLink}
             >
               Official Links
+            </a>
+            <a
+              href={siteLinks.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.extLink}
+            >
+              Sona College Ground Map
             </a>
             <a
               href={`https://wa.me/919710772621`}
@@ -69,6 +87,15 @@ export default function Footer() {
               className={styles.bottomLink}
             >
               iskconsalem.com
+            </a>
+            {" "}&middot;{" "}
+            <a
+              href={siteLinks.janmashtami2026}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.bottomLink}
+            >
+              skj2026.vercel.app
             </a>
           </span>
         </div>

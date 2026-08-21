@@ -44,19 +44,6 @@ export default function ProgrammeSection() {
           </div>
         </div>
 
-        <a
-          href={eventData.mapUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.venueBlock}
-          aria-label="Open Sona College Ground, Salem in Google Maps"
-        >
-          <span className={styles.venueMain}>
-            Venue: Sona College Ground, Salem
-          </span>
-          <span className={styles.venueSub}>Open in Google Maps</span>
-        </a>
-
         <OfficialPosterViewer />
       </div>
     </section>

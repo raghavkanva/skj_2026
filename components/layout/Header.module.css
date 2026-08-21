@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 248, 231, 0.96);
+  background: rgba(255, 248, 231, 0.97);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(40, 57, 111, 0.12);
@@ -18,18 +18,32 @@
 
 .brand {
   display: flex;
-  flex-direction: column;
-  line-height: 1.15;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
+.logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
 .brandName {
-  font-family: var(--font-rozha), "Rozha One", serif;
-  font-size: 26px;
-  font-weight: 400;
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 700;
   color: var(--krishna-blue);
   letter-spacing: 0.01em;
+  line-height: 1.1;
 }
 
 .brandSub {
@@ -53,9 +67,7 @@
   transition: color 0.15s ease;
   white-space: nowrap;
 }
-.navLink:hover {
-  color: var(--krishna-blue);
-}
+.navLink:hover { color: var(--krishna-blue); }
 
 .navCta {
   background: var(--krishna-blue);
@@ -81,6 +93,10 @@
   background: none;
   border: none;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .bar {
@@ -92,15 +108,9 @@
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.barOpen1 {
-  transform: translateY(7px) rotate(45deg);
-}
-.barOpen2 {
-  opacity: 0;
-}
-.barOpen3 {
-  transform: translateY(-7px) rotate(-45deg);
-}
+.barOpen1 { transform: translateY(7px) rotate(45deg); }
+.barOpen2 { opacity: 0; }
+.barOpen3 { transform: translateY(-7px) rotate(-45deg); }
 
 .mobileMenu {
   display: flex;
@@ -112,22 +122,22 @@
 }
 
 .mobileLink {
-  padding: 12px 0;
+  padding: 13px 0;
   font-size: 16px;
   font-weight: 500;
   color: var(--text-primary);
   border-bottom: 1px solid rgba(40, 57, 111, 0.08);
   transition: color 0.15s ease;
 }
-.mobileLink:hover {
-  color: var(--krishna-blue);
-}
+.mobileLink:hover { color: var(--krishna-blue); }
 
 @media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
-  .menuBtn {
-    display: flex;
-  }
+  .nav { display: none; }
+  .menuBtn { display: flex; }
+}
+
+@media (max-width: 400px) {
+  .brandSub { display: none; }
+  .brandName { font-size: 19px; }
+  .logo { width: 36px; height: 36px; }
 }
