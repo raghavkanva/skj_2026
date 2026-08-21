@@ -7,9 +7,10 @@ interface Props {
   content: LocaleContent["programme"];
   venue: string;
   date: string;
+  programmeSrc: string;
 }
 
-export default function ProgrammeSection({ content, venue, date }: Props) {
+export default function ProgrammeSection({ content, venue, date, programmeSrc }: Props) {
   const morningItems = content.items.filter((i) => i.period === "morning");
   const eveningItems = content.items.filter((i) => i.period === "evening");
 
@@ -53,7 +54,7 @@ export default function ProgrammeSection({ content, venue, date }: Props) {
           </div>
         </div>
 
-        <OfficialPosterViewer />
+        <OfficialPosterViewer programmeSrc={programmeSrc} />
       </div>
     </section>
   );

@@ -131,10 +131,12 @@ export default function ShareInvitation({ content, images }: Props) {
                         <Image
                           src={src}
                           alt={item.caption}
-                          fill
+                          width={0}
+                          height={0}
+                          sizes="(max-width: 768px) 90vw, 300px"
                           className={styles.previewImg}
                           loading="lazy"
-                          sizes="(max-width: 768px) 90vw, 300px"
+                          style={{ width: "100%", height: "auto", display: "block" }}
                         />
                       </div>
                     </button>

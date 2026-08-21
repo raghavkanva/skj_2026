@@ -63,10 +63,8 @@
 }
 
 .previewImgWrap {
-  position: relative;
-  aspect-ratio: 2 / 3;
   width: 100%;
-  background: #f5f2ed;
+  overflow: hidden;
 }
 
 .previewImg {
@@ -137,6 +135,18 @@
   white-space: nowrap;
   transition: background 0.15s ease, border-color 0.15s ease;
   text-decoration: none;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 400px) {
+  .actionBtn {
+    white-space: normal;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13.5px;
+  }
 }
 .actionBtn:hover {
   background: rgba(40, 57, 111, 0.07);

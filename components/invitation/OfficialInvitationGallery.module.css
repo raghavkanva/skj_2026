@@ -43,15 +43,13 @@
 }
 
 .imgWrap {
-  position: relative;
-  aspect-ratio: 2 / 3;
   width: 100%;
-  background: #f5f2ed;
+  overflow: hidden;
   transition: opacity 0.15s ease;
 }
 
 .img {
-  object-fit: contain;
+  display: block;
 }
 
 .cardFooter {

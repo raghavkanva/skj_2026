@@ -4,7 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./InvitationFlipCard.module.css";
 
-export default function InvitationFlipCard() {
+interface Props {
+  frontSrc: string;
+  programmeSrc: string;
+}
+
+export default function InvitationFlipCard({ frontSrc, programmeSrc }: Props) {
   const [showBack, setShowBack] = useState(false);
 
   return (
@@ -12,7 +17,7 @@ export default function InvitationFlipCard() {
       <div className={styles.frame}>
         {/* Front */}
         <Image
-          src="/images/invitation-front-full.jpg"
+          src={frontSrc}
           alt="Official ISKCON Salem Sri Krishna Janmashtami 2026 front invitation"
           fill
           className={styles.img}
@@ -22,7 +27,7 @@ export default function InvitationFlipCard() {
         />
         {/* Back / Programme */}
         <Image
-          src="/images/invitation-programme.jpg"
+          src={programmeSrc}
           alt="ISKCON Salem Janmashtami 2026 programme schedule – backside invitation"
           fill
           className={styles.img}

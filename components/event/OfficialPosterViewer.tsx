@@ -5,7 +5,11 @@ import Image from "next/image";
 import ImageViewer from "@/components/media/ImageViewer";
 import styles from "./OfficialPosterViewer.module.css";
 
-export default function OfficialPosterViewer() {
+interface Props {
+  programmeSrc: string;
+}
+
+export default function OfficialPosterViewer({ programmeSrc }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -20,7 +24,7 @@ export default function OfficialPosterViewer() {
           aria-label="View full Janmashtami programme invitation in full screen"
         >
           <Image
-            src="/images/invitation-programme.jpg"
+            src={programmeSrc}
             alt="ISKCON Salem Janmashtami 2026 programme schedule – official printed invitation"
             width={1600}
             height={565}
@@ -32,7 +36,7 @@ export default function OfficialPosterViewer() {
       </div>
 
       <ImageViewer
-        src="/images/invitation-programme.jpg"
+        src={programmeSrc}
         alt="ISKCON Salem Janmashtami 2026 – full programme invitation"
         open={open}
         onClose={() => setOpen(false)}

@@ -1,11 +1,13 @@
 .section {
   background: var(--festival-cream);
-  padding-block: var(--section-py-desktop);
+  padding-block-start: 28px;
+  padding-block-end: var(--section-py-desktop);
 }
 
 @media (max-width: 768px) {
   .section {
-    padding-block: var(--section-py-mobile);
+    padding-block-start: 20px;
+    padding-block-end: var(--section-py-mobile);
   }
 }
 

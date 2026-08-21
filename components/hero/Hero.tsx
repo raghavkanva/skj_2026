@@ -6,9 +6,11 @@ import styles from "./Hero.module.css";
 
 interface Props {
   content: LocaleContent["hero"];
+  frontSrc: string;
+  programmeSrc: string;
 }
 
-export default function Hero({ content }: Props) {
+export default function Hero({ content, frontSrc, programmeSrc }: Props) {
   return (
     <section
       id="home"
@@ -60,7 +62,7 @@ export default function Hero({ content }: Props) {
           </div>
         </div>
 
-        <InvitationFlipCard />
+        <InvitationFlipCard frontSrc={frontSrc} programmeSrc={programmeSrc} />
       </div>
     </section>
   );

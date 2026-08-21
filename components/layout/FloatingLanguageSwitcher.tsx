@@ -23,6 +23,7 @@ interface Props {
 }
 
 export default function FloatingLanguageSwitcher({ currentLocale }: Props) {
+  if (currentLocale === "en") return null;
   const options = langOptions[currentLocale];
 
   return (

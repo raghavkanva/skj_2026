@@ -6,13 +6,11 @@ import { eventData } from "@/data/eventData";
 import type { Locale } from "@/content/types";
 import styles from "./Header.module.css";
 
-const navLinks = [
-  { href: "#programme", label: "Programme" },
-  { href: "#prasadam-seva", label: "Prasadam Seva" },
-  { href: "#official-invitation", label: "Invitation" },
-  { href: "#share-invitation", label: "Share" },
-  { href: "#venue", label: "Venue" },
-];
+const navLabels: Record<Locale, { programme: string; seva: string; invitation: string; share: string; venue: string; cta: string }> = {
+  en: { programme: "Programme", seva: "Prasadam Seva", invitation: "Invitation", share: "Share", venue: "Venue", cta: "Festival Details" },
+  ta: { programme: "நிகழ்ச்சி", seva: "பிரசாத சேவை", invitation: "அழைப்பிதழ்", share: "பகிரவும்", venue: "இடம்", cta: "விழா விவரங்கள்" },
+  hi: { programme: "कार्यक्रम", seva: "प्रसाद सेवा", invitation: "निमंत्रण", share: "साझा करें", venue: "स्थल", cta: "उत्सव विवरण" },
+};
 
 const langLinks: Record<Locale, { href: string; label: string }[]> = {
   en: [
@@ -35,7 +33,15 @@ interface Props {
 
 export default function Header({ locale = "en" }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const langs = langLinks[locale];
+  const langs = locale !== "en" ? langLinks[locale] : [];
+  const nav = navLabels[locale];
+  const navLinks = [
+    { href: "#programme", label: nav.programme },
+    { href: "#prasadam-seva", label: nav.seva },
+    { href: "#official-invitation", label: nav.invitation },
+    { href: "#share-invitation", label: nav.share },
+    { href: "#venue", label: nav.venue },
+  ];
 
   return (
     <header className={styles.header}>
@@ -68,7 +74,7 @@ export default function Header({ locale = "en" }: Props) {
             </a>
           ))}
           <a href="#programme" className={styles.navCta}>
-            Festival Details
+            {nav.cta}
           </a>
         </nav>
 
@@ -87,7 +93,7 @@ export default function Header({ locale = "en" }: Props) {
 
       {menuOpen && (
         <nav id="mobile-menu" className={styles.mobileMenu} aria-label="Mobile navigation">
-          {langs.map((lang) => (
+          {langs.length > 0 && langs.map((lang) => (
             <a
               key={lang.href}
               href={lang.href}

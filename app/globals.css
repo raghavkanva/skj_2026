@@ -22,8 +22,8 @@
   --shadow-xl: 0 14px 44px rgba(40, 57, 111, 0.18);
 
   /* Spacing */
-  --section-py-desktop: 96px;
-  --section-py-mobile: 64px;
+  --section-py-desktop: 64px;
+  --section-py-mobile: 44px;
 
   /* Layout */
   --content-max: 1320px;
@@ -54,6 +54,10 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+html {
+  overflow-x: hidden;
 }
 
 body {

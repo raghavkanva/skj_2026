@@ -49,7 +49,7 @@ export default function JanmashtamiPage({ content, locale }: Props) {
       </a>
       <Header locale={locale} />
       <main id="home">
-        <Hero content={content.hero} />
+        <Hero content={content.hero} frontSrc={imgs.invitationFront} programmeSrc={imgs.programme} />
         <PersonalInvitation content={content.personalInvitation} />
         <EventEssentials content={content.eventEssentials} />
         <CelebrationIntro content={content.celebrationIntro} />
@@ -58,6 +58,7 @@ export default function JanmashtamiPage({ content, locale }: Props) {
           content={content.programme}
           venue={content.venue.name + ", " + content.venue.city}
           date={content.hero.date}
+          programmeSrc={imgs.programme}
         />
         <VenueSection content={content.venue} date={content.hero.date} />
         <DressContest content={content.dressContest} imageSrc={imgs.dressContest} />

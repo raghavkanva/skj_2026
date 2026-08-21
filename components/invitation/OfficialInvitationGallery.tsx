@@ -55,10 +55,12 @@ export default function OfficialInvitationGallery({ content, images }: Props) {
                       <Image
                         src={src}
                         alt={item.alt}
-                        fill
+                        width={0}
+                        height={0}
+                        sizes="(max-width: 768px) 100vw, 380px"
                         className={styles.img}
                         loading="lazy"
-                        sizes="(max-width: 768px) 100vw, 380px"
+                        style={{ width: "100%", height: "auto", display: "block" }}
                       />
                     </div>
                   </button>
