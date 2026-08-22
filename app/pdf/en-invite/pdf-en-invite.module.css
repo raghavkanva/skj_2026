@@ -287,8 +287,8 @@
 
 .inviteBody {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 18.5px;
-  font-weight: 600;
+  font-size: 21px;
+  font-weight: 700;
   font-style: normal;
   color: var(--ink);
   text-align: center;
@@ -324,8 +324,8 @@
 
 .vipSub {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 700;
   font-style: normal;
   color: var(--ink);
   text-align: center;
@@ -343,16 +343,16 @@
 /* Individual benefit cards — outlined on gold */
 .vipCard {
   background: transparent;
-  border: 2px solid rgba(40, 57, 111, 0.5);
+  border: 2.5px solid rgba(40, 57, 111, 0.7);
   border-radius: 8px;
-  padding: 4mm 4mm;
+  padding: 5mm 4mm;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   color: var(--navy);
   text-align: center;
   line-height: 1.45;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.02em;
 }
 
 /* ════════════════════════════════════════
