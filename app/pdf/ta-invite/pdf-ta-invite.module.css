@@ -1,0 +1,466 @@
+/* ================================================================
+   ISKCON Salem Janmashtami 2026 – Tamil Invitation PDF
+   Design system: Gold throughout · Navy text & accents · Noto Serif Tamil
+   3 A4 portrait pages — compact sizing to match English height budget
+   ================================================================ */
+
+/* ── Page settings ── */
+@page {
+  size: A4 portrait;
+  margin: 0;
+  background: #f6c941;
+}
+
+/* ── CSS variables ── */
+:root {
+  --gold:      #f6c941;
+  --navy:      #28396f;
+  --navy-dark: #1e2d59;
+  --ink:       #1a1a1a;
+}
+
+/* ── Root ── */
+.root {
+  width: 210mm;
+  margin: 0 auto;
+  background: var(--gold);
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ════════════════════════════════════════
+   SHARED ATOMS
+   ════════════════════════════════════════ */
+
+.sectionHeading {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  text-align: center;
+  margin: 0 0 2mm;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.artImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(40, 57, 111, 0.18);
+}
+
+.ornRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3mm;
+}
+
+.ornLine {
+  display: block;
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(40, 57, 111, 0.35),
+    transparent
+  );
+}
+
+.ornFlower {
+  font-size: 11px;
+  color: var(--navy);
+  opacity: 0.7;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════
+   PAGE 1
+   ════════════════════════════════════════ */
+
+.identityLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 4mm 13mm 2mm;
+}
+
+.logo {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(40, 57, 111, 0.22));
+}
+
+.identityDivider {
+  width: 1.5px;
+  height: 48px;
+  background: rgba(40, 57, 111, 0.3);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.identityText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.orgName {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.templeName {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  opacity: 0.82;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.titleSection {
+  text-align: center;
+  padding: 0 14mm 0;
+}
+
+.eventTitle {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0 0 0.5mm;
+  letter-spacing: 0.01em;
+}
+
+.eventYear {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.14em;
+  margin: 0 0 1.5mm;
+  line-height: 1.1;
+}
+
+.dateVenueSection {
+  text-align: center;
+  padding: 0 14mm 1.5mm;
+}
+
+.eventDate {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  margin: 0 0 1mm;
+  line-height: 1.2;
+}
+
+.eventVenue {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 2mm;
+  line-height: 1.35;
+}
+
+.mapsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--navy);
+  color: var(--gold);
+  padding: 4px 14px;
+  border-radius: 5px;
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.shortInvite {
+  padding: 1.5mm 16mm 1.5mm;
+  text-align: center;
+}
+
+.shortInvitePara {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 160mm;
+}
+
+.artworkWrap {
+  padding: 1.5mm 11mm 0;
+}
+
+.progSection {
+  padding: 2mm 11mm 0;
+}
+
+.highlightsBlock {
+  display: block;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+  margin: 2.5mm 11mm 4mm;
+  border-radius: 11px;
+  padding: 3mm 13mm;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(40, 57, 111, 0.28);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.highlightsTitle {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gold);
+  margin: 0 0 1mm;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.highlightsWatch {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+/* ════════════════════════════════════════
+   PAGE 2  — gold background throughout
+   ════════════════════════════════════════ */
+
+.page2 {
+  break-before: page;
+  page-break-before: always;
+  background: var(--gold);
+}
+
+.inviteSection {
+  padding: 5mm 12mm 3mm;
+  text-align: center;
+}
+
+.inviteBody {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.7;
+  margin: 0 0 2mm;
+}
+
+.inviteBody:last-child {
+  margin-bottom: 0;
+}
+
+.lakhHighlight {
+  color: var(--navy-dark);
+  font-weight: 800;
+  background: rgba(30, 45, 89, 0.10);
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+.sevaSection {
+  padding: 3mm 11mm 0;
+}
+
+.vipSection {
+  padding: 8mm 11mm 4mm;
+  text-align: center;
+}
+
+.vipSub {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  margin: 0 0 3mm;
+  line-height: 1.65;
+}
+
+.vipGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm;
+}
+
+.vipCard {
+  background: transparent;
+  border: 2.5px solid rgba(40, 57, 111, 0.7);
+  border-radius: 8px;
+  padding: 4mm 3mm;
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy);
+  text-align: center;
+  line-height: 1.45;
+}
+
+/* ════════════════════════════════════════
+   PAGE 3  — gold background throughout
+   ════════════════════════════════════════ */
+
+.page3 {
+  break-before: page;
+  page-break-before: always;
+  background: var(--gold);
+}
+
+.staySection {
+  padding: 6mm 11mm 0;
+  text-align: center;
+}
+
+.staySub {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 3mm;
+  line-height: 1.65;
+}
+
+.sitesBtn {
+  display: block;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+  color: var(--gold);
+  padding: 9px 0;
+  border-radius: 8px;
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin-bottom: 2.5mm;
+  box-shadow: 0 4px 14px rgba(40, 57, 111, 0.28);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.trustLine {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.contactSection {
+  padding: 5mm 11mm 4mm;
+  text-align: center;
+}
+
+.contactFor {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 1.5mm;
+  line-height: 1.4;
+}
+
+.contactName {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0 0 0.5mm;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.contactPhone {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 3.5mm;
+  line-height: 1.4;
+}
+
+.waBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #25d366;
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 7px;
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.hkEnd {
+  padding: 4mm 14mm 8mm;
+  text-align: center;
+}
+
+.hkText {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* ── Print reset ── */
+@media print {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #f6c941;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .root {
+    width: 210mm;
+    background: #f6c941;
+  }
+}

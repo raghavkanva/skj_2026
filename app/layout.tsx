@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Cormorant_Garamond, Noto_Serif_Tamil } from "next/font/google";
 import "./globals.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/lib/constants";
 
@@ -14,6 +14,13 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
+  display: "swap",
+});
+
+const notoSerifTamil = Noto_Serif_Tamil({
+  subsets: ["tamil"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-noto-tamil",
   display: "swap",
 });
 
@@ -82,7 +89,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${cormorant.variable}`}>
+      <body className={`${inter.variable} ${cormorant.variable} ${notoSerifTamil.variable}`}>
         {children}
       </body>
     </html>
