@@ -75,7 +75,7 @@ export default function EnInvite() {
       {/* Highlights – entire block is one link */}
       <a href={YT_URL} target="_blank" rel="noopener noreferrer" className={styles.highlightsBlock}>
         <p className={styles.highlightsTitle}>Janmashtami 2025 Highlights</p>
-        <p className={styles.highlightsWatch}>&#9654;&ensp;Watch on YouTube</p>
+        <p className={styles.highlightsWatch}>&#9654;&ensp;Click Here to Watch on YouTube &rarr;</p>
       </a>
 
       {/* ══════════════════════════════════════════
