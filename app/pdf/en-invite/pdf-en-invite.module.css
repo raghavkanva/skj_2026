@@ -1,7 +1,7 @@
 /* ================================================================
    ISKCON Salem Janmashtami 2026 – English Invitation PDF
-   Design system: Gold page · Navy ribbons · Cormorant serif
-   3 A4 portrait pages
+   Design system: Gold throughout · Navy text & accents · Cormorant serif
+   3 A4 portrait pages — no navy section backgrounds on pages 2 & 3
    ================================================================ */
 
 /* ── Page settings ── */
@@ -16,7 +16,6 @@
   --gold:      #f6c941;
   --navy:      #28396f;
   --navy-dark: #1e2d59;
-  --cream:     #fffdf0;
   --ink:       #1a1a1a;
 }
 
@@ -35,7 +34,7 @@
    SHARED ATOMS
    ════════════════════════════════════════ */
 
-/* Section heading — used on gold background */
+/* Section heading — navy on gold */
 .sectionHeading {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 28px;
@@ -57,7 +56,14 @@
   box-shadow: 0 4px 18px rgba(40, 57, 111, 0.18);
 }
 
-/* Shared ornament row */
+/* Ornament row — navy lines on gold background */
+.ornRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4mm;
+}
+
 .ornLine {
   display: block;
   flex: 1;
@@ -65,13 +71,15 @@
   background: linear-gradient(
     to right,
     transparent,
-    rgba(246, 201, 65, 0.65),
+    rgba(40, 57, 111, 0.35),
     transparent
   );
 }
+
 .ornFlower {
   font-size: 13px;
-  opacity: 0.8;
+  color: var(--navy);
+  opacity: 0.7;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -196,6 +204,8 @@
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.03em;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 /* — Short invite — */
@@ -235,6 +245,8 @@
   text-align: center;
   text-decoration: none;
   box-shadow: 0 5px 20px rgba(40, 57, 111, 0.28);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 .highlightsTitle {
@@ -258,7 +270,7 @@
 }
 
 /* ════════════════════════════════════════
-   PAGE 2
+   PAGE 2  — gold background throughout
    ════════════════════════════════════════ */
 
 .page2 {
@@ -267,92 +279,85 @@
   background: var(--gold);
 }
 
-/* — Full-width navy block (warm invitation + VIP) — */
-.navyBlock {
-  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
-  padding: 7mm 13mm 6mm;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
-}
-
-.navyHeading {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--gold);
+/* — Warm Invitation (gold bg, navy text) — */
+.inviteSection {
+  padding: 6mm 14mm 4mm;
   text-align: center;
-  margin: 0 0 3mm;
-  line-height: 1.2;
-  letter-spacing: 0.025em;
 }
 
-/* Ornament inside navy blocks — gold lines */
-.blockOrnament {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 4mm;
-}
-
-.navyBody {
+.inviteBody {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 15.5px;
-  font-weight: 600;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 16.5px;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--navy);
   text-align: center;
   line-height: 1.72;
   margin: 0 0 2.5mm;
 }
 
-.navyBody:last-child {
+.inviteBody:last-child {
   margin-bottom: 0;
 }
 
+/* "1 Lakh Devotees" emphasis on gold background */
 .lakhHighlight {
-  color: var(--gold);
+  color: var(--navy-dark);
   font-weight: 800;
   font-style: normal;
+  background: rgba(30, 45, 89, 0.10);
+  padding: 0 4px;
+  border-radius: 3px;
   letter-spacing: 0.02em;
 }
 
-.navySub {
+/* — Prasadam Seva — */
+.sevaSection {
+  padding: 4mm 11mm 0;
+}
+
+/* — VIP Pass (gold bg, navy text, cards navy-filled) — */
+.vipSection {
+  padding: 7mm 13mm 5mm;
+  text-align: center;
+}
+
+.vipSub {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 16px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--navy);
   text-align: center;
   margin: 0 0 4mm;
   line-height: 1.6;
 }
 
-/* VIP 2×2 grid inside navy block */
+/* VIP 2×2 grid */
 .vipGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3mm;
 }
 
+/* Individual benefit cards — navy filled, float on gold */
 .vipCard {
-  border: 1.5px solid rgba(246, 201, 65, 0.5);
-  border-radius: 7px;
-  padding: 3mm 4mm;
+  background: var(--navy);
+  border: 1.5px solid rgba(246, 201, 65, 0.4);
+  border-radius: 8px;
+  padding: 4mm 4mm;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 15px;
   font-weight: 700;
   color: var(--gold);
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.45;
   letter-spacing: 0.015em;
-}
-
-/* — Prasadam Seva (on gold) — */
-.sevaSection {
-  padding: 4mm 11mm 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 /* ════════════════════════════════════════
-   PAGE 3 — Closing Page
+   PAGE 3  — gold background throughout
    ════════════════════════════════════════ */
 
 .page3 {
@@ -361,46 +366,9 @@
   background: var(--gold);
 }
 
-/* — Hare Krishna closing — */
-.closingSection {
-  padding: 12mm 13mm 6mm;
-  text-align: center;
-}
-
-.hkOrnament {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 auto 4mm;
-  max-width: 130mm;
-}
-
-.hkText {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 52px;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: 0.04em;
-  line-height: 1.15;
-  margin: 0 0 4mm;
-}
-
-/* Ornament on gold — navy lines */
-.closingSection .ornLine {
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(40, 57, 111, 0.4),
-    transparent
-  );
-}
-.closingSection .ornFlower {
-  color: var(--navy);
-}
-
-/* — Stay Connected (on gold) — */
+/* — Stay Connected — */
 .staySection {
-  padding: 2mm 13mm 0;
+  padding: 8mm 13mm 0;
   text-align: center;
 }
 
@@ -417,7 +385,7 @@
   display: block;
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
   color: var(--gold);
-  padding: 9px 0;
+  padding: 10px 0;
   border-radius: 8px;
   font-family: "Inter", system-ui, sans-serif;
   font-size: 14.5px;
@@ -427,6 +395,8 @@
   letter-spacing: 0.03em;
   margin-bottom: 3mm;
   box-shadow: 0 4px 14px rgba(40, 57, 111, 0.28);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 .trustLine {
@@ -439,30 +409,26 @@
   opacity: 0.85;
 }
 
-/* — Contact strip (full-width dark navy) — */
-.contactBlock {
-  background: var(--navy-dark);
-  margin-top: 6mm;
-  padding: 6mm 13mm 7mm;
+/* — Contact section (gold bg, navy text) — */
+.contactSection {
+  padding: 6mm 13mm 5mm;
   text-align: center;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
 }
 
 .contactFor {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 18px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--navy);
   margin: 0 0 1.5mm;
   line-height: 1.4;
 }
 
 .contactName {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--navy-dark);
   margin: 0 0 0.5mm;
   letter-spacing: 0.02em;
   line-height: 1.2;
@@ -472,8 +438,8 @@
   font-family: "Inter", system-ui, sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.88);
-  margin: 0 0 3.5mm;
+  color: var(--navy);
+  margin: 0 0 4mm;
   line-height: 1.4;
 }
 
@@ -491,6 +457,24 @@
   text-decoration: none;
   letter-spacing: 0.025em;
   box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* — Hare Krishna at the end — */
+.hkEnd {
+  padding: 5mm 14mm 10mm;
+  text-align: center;
+}
+
+.hkText {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  margin: 0;
 }
 
 /* ── Print reset ── */

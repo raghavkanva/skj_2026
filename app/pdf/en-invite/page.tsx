@@ -6,10 +6,10 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
-const MAPS_URL = "https://maps.app.goo.gl/h4jugsJbuYzx3Gzc9";
-const YT_URL   = "https://youtu.be/GfmlWuVKVEE?si=jNn7weBA6Xu2Csme";
+const MAPS_URL  = "https://maps.app.goo.gl/h4jugsJbuYzx3Gzc9";
+const YT_URL    = "https://youtu.be/GfmlWuVKVEE?si=jNn7weBA6Xu2Csme";
 const SITES_URL = "https://sites.google.com/view/iskconstonetemple/home";
-const WA_URL   =
+const WA_URL    =
   "https://wa.me/919710772621?text=Hare%20Krishna%20Prabhu%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20know%20more%20about%20the%20Sri%20Krishna%20Janmashtami%202026%20celebration%20at%20ISKCON%20Salem.%0A%0AHare%20Krishna%20%F0%9F%99%8F";
 
 export default function EnInvite() {
@@ -79,30 +79,30 @@ export default function EnInvite() {
       </a>
 
       {/* ══════════════════════════════════════════
-          PAGE 2
+          PAGE 2  — all gold, no navy blocks
           ══════════════════════════════════════════ */}
       <div className={styles.page2}>
 
-        {/* — Warm Invitation: full-width navy block — */}
-        <div className={styles.navyBlock}>
-          <h2 className={styles.navyHeading}>
+        {/* — Warm Invitation — */}
+        <div className={styles.inviteSection}>
+          <h2 className={styles.sectionHeading}>
             A Warm Invitation to You and Your Family
           </h2>
-          <div className={styles.blockOrnament} aria-hidden="true">
+          <div className={styles.ornRow} aria-hidden="true">
             <span className={styles.ornLine} />
             <span className={styles.ornFlower}>✦</span>
             <span className={styles.ornLine} />
           </div>
-          <p className={styles.navyBody}>
+          <p className={styles.inviteBody}>
             ISKCON Salem warmly welcomes you and your family to the
             Grand Sri Krishna Janmashtami Celebrations!
           </p>
-          <p className={styles.navyBody}>
+          <p className={styles.inviteBody}>
             Over{" "}
             <strong className={styles.lakhHighlight}>1 Lakh Devotees</strong>
             {" "}are expected to join us this year.
           </p>
-          <p className={styles.navyBody}>
+          <p className={styles.inviteBody}>
             Full Feast Prasadam will be distributed to all who attend.
             Come, be part of this auspicious occasion and receive the
             blessings of Sri Krishna.
@@ -119,10 +119,10 @@ export default function EnInvite() {
           />
         </div>
 
-        {/* — VIP Pass: full-width navy block — */}
-        <div className={styles.navyBlock}>
-          <h2 className={styles.navyHeading}>Donate &amp; Receive a VIP Pass</h2>
-          <p className={styles.navySub}>
+        {/* — VIP Pass — */}
+        <div className={styles.vipSection}>
+          <h2 className={styles.sectionHeading}>Donate &amp; Receive a VIP Pass</h2>
+          <p className={styles.vipSub}>
             For your contribution towards the Sri Krishna Janmashtami 2026
             celebration, receive a VIP Pass for:
           </p>
@@ -137,24 +137,9 @@ export default function EnInvite() {
       </div>
 
       {/* ══════════════════════════════════════════
-          PAGE 3  — Closing Page
+          PAGE 3  — all gold, Hare Krishna at end
           ══════════════════════════════════════════ */}
       <div className={styles.page3}>
-
-        {/* Devotional closing statement */}
-        <div className={styles.closingSection}>
-          <div className={styles.hkOrnament} aria-hidden="true">
-            <span className={styles.ornLine} />
-            <span className={styles.ornFlower}>✦</span>
-            <span className={styles.ornLine} />
-          </div>
-          <p className={styles.hkText}>Hare Krishna.</p>
-          <div className={styles.hkOrnament} aria-hidden="true">
-            <span className={styles.ornLine} />
-            <span className={styles.ornFlower}>✦</span>
-            <span className={styles.ornLine} />
-          </div>
-        </div>
 
         {/* Stay Connected */}
         <div className={styles.staySection}>
@@ -172,14 +157,29 @@ export default function EnInvite() {
           </p>
         </div>
 
-        {/* Contact — full-width dark navy strip */}
-        <div className={styles.contactBlock}>
+        {/* Contact — gold background, navy text */}
+        <div className={styles.contactSection}>
+          <div className={styles.ornRow} aria-hidden="true">
+            <span className={styles.ornLine} />
+            <span className={styles.ornFlower}>✦</span>
+            <span className={styles.ornLine} />
+          </div>
           <p className={styles.contactFor}>For more information</p>
           <p className={styles.contactName}>Srinivasa Krishna Dasa</p>
           <p className={styles.contactPhone}>+91 97107 72621</p>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className={styles.waBtn}>
             Click here to chat on WhatsApp &rarr;
           </a>
+        </div>
+
+        {/* Hare Krishna — small, at the very end */}
+        <div className={styles.hkEnd}>
+          <div className={styles.ornRow} aria-hidden="true">
+            <span className={styles.ornLine} />
+            <span className={styles.ornFlower}>✦</span>
+            <span className={styles.ornLine} />
+          </div>
+          <p className={styles.hkText}>Hare Krishna.</p>
         </div>
 
       </div>
