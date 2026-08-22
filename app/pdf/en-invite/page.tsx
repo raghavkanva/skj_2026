@@ -71,41 +71,43 @@ export default function EnInvite() {
         />
       </div>
 
-      {/* 11. 2025 Highlights banner */}
-      <div className={styles.highlightsLine}>
-        <div className={styles.highlightsBanner}>
-          <span className={styles.highlightsLabel}>Janmashtami 2025 Highlights</span>
-          <span className={styles.highlightsDot} aria-hidden="true">&middot;</span>
-          <a href={YT_URL} target="_blank" rel="noopener noreferrer" className={styles.ytLink}>
-            ▶ Watch on YouTube
-          </a>
-        </div>
-      </div>
+      {/* 11. 2025 Highlights — full clickable block */}
+      <a href={YT_URL} target="_blank" rel="noopener noreferrer" className={styles.highlightsBlock}>
+        <p className={styles.highlightsTitle}>Janmashtami 2025 Highlights</p>
+        <p className={styles.highlightsWatchBtn}>&#9654; Watch on YouTube</p>
+      </a>
 
       {/* ═══════════════════════════════════════════
           PAGE 2
           ═══════════════════════════════════════════ */}
       <div className={styles.page2}>
 
-        {/* 1. Warm invitation heading */}
-        <h2 className={styles.warmHeading}>A Warm Invitation to You and Your Family</h2>
-
-        {/* 2. Wide compact warm invitation panel */}
-        <div className={styles.warmPanel}>
-          <p className={styles.warmPara}>
-            ISKCON Salem warmly welcomes you and your family to the Grand Sri Krishna Janmashtami Celebrations!
-          </p>
-          <p className={styles.warmHighlight}>
-            Over <span className={styles.lakhNum}>1 Lakh Devotees</span> are expected to join us this year.
-          </p>
-          <p className={styles.warmPara}>
-            Full Feast Prasadam will be distributed to all who attend. Come, be part of this auspicious occasion and receive the blessings of Sri Krishna.
-          </p>
+        {/* Warm Invitation */}
+        <div className={styles.warmSection}>
+          <h2 className={styles.warmHeading}>A Warm Invitation to You and Your Family</h2>
+          <div className={styles.warmOrnament} aria-hidden="true">
+            <span className={styles.ornamentLine} />
+            <span className={styles.ornamentFlower}>✦</span>
+            <span className={styles.ornamentLine} />
+          </div>
+          <div className={styles.warmPanel}>
+            <p className={styles.warmPara}>
+              ISKCON Salem warmly welcomes you and your family to the Grand Sri Krishna Janmashtami Celebrations!
+            </p>
+            <p className={styles.warmPara}>
+              Over{" "}
+              <span className={styles.lakhHighlight}>1 Lakh Devotees</span>
+              {" "}are expected to join us this year.
+            </p>
+            <p className={styles.warmPara}>
+              Full Feast Prasadam will be distributed to all who attend. Come, be part of this auspicious occasion and receive the blessings of Sri Krishna.
+            </p>
+          </div>
         </div>
 
-        {/* 3–4. Prasadam Seva */}
-        <h2 className={styles.sectionHeading}>Prasadam Seva</h2>
-        <div className={styles.artworkWrap2}>
+        {/* Prasadam Seva */}
+        <div className={styles.sevaSection}>
+          <h2 className={styles.sectionHeading}>Prasadam Seva</h2>
           <img
             src="/images/invitation-seva.jpg"
             alt="ISKCON Salem Janmashtami 2026 – Prasadam Seva"
@@ -113,29 +115,28 @@ export default function EnInvite() {
           />
         </div>
 
-        {/* 5–6. VIP Pass */}
+      </div>
+
+      {/* ═══════════════════════════════════════════
+          PAGE 3
+          ═══════════════════════════════════════════ */}
+      <div className={styles.page3}>
+
+        {/* VIP Pass */}
         <div className={styles.vipSection}>
           <h2 className={styles.vipHeading}>Donate &amp; Receive a VIP Pass</h2>
           <p className={styles.vipSub}>
             For your contribution towards the Sri Krishna Janmashtami 2026 celebration, receive a VIP Pass for:
           </p>
           <div className={styles.vipGrid}>
-            <div className={styles.vipItem}>
-              <span className={styles.vipCheck}>&#10003;</span> Special Darshan
-            </div>
-            <div className={styles.vipItem}>
-              <span className={styles.vipCheck}>&#10003;</span> Cultural &amp; devotional programs
-            </div>
-            <div className={styles.vipItem}>
-              <span className={styles.vipCheck}>&#10003;</span> Feast Prasadam
-            </div>
-            <div className={styles.vipItem}>
-              <span className={styles.vipCheck}>&#10003;</span> Parking facility
-            </div>
+            <div className={styles.vipCard}>Special Darshan</div>
+            <div className={styles.vipCard}>Cultural &amp; devotional programs</div>
+            <div className={styles.vipCard}>Feast Prasadam</div>
+            <div className={styles.vipCard}>Parking facility</div>
           </div>
         </div>
 
-        {/* 7–11. Stay Connected */}
+        {/* Stay Connected */}
         <div className={styles.staySection}>
           <h2 className={styles.stayHeading}>Stay Connected with ISKCON Salem</h2>
           <p className={styles.staySub}>
@@ -144,22 +145,19 @@ export default function EnInvite() {
           <a href={SITES_URL} target="_blank" rel="noopener noreferrer" className={styles.sitesBtn}>
             Temple, Gita Classes &amp; Festivals &rarr; Click Here
           </a>
-          <p className={styles.sitesUrl}>
-            <a href={SITES_URL} target="_blank" rel="noopener noreferrer" className={styles.sitesUrlLink}>
-              {SITES_URL}
-            </a>
-          </p>
           <p className={styles.trustLine}>
             <strong>Safe to open:</strong> This link contains only our official YouTube, WhatsApp &amp; Facebook links.
           </p>
         </div>
 
-        {/* 12. WhatsApp contact strip */}
+        {/* WhatsApp Contact Strip */}
         <div className={styles.contactStrip}>
-          <span className={styles.contactFor}>For more information</span>
-          <span className={styles.contactName}>Srinivasa Krishna Dasa</span>
-          <span className={styles.contactPhone}>+91 97107 72621</span>
-          <span className={styles.contactDot} aria-hidden="true">&middot;</span>
+          <p className={styles.contactFor}>For more information</p>
+          <p className={styles.contactDetails}>
+            <span className={styles.contactName}>Srinivasa Krishna Dasa</span>
+            <span className={styles.contactSep}>&middot;</span>
+            <span className={styles.contactPhone}>+91 97107 72621</span>
+          </p>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className={styles.waLink}>
             Click here to chat on WhatsApp &rarr;
           </a>

@@ -1,6 +1,6 @@
 /* ================================================================
    ISKCON Salem Janmashtami 2026 – English Invitation PDF
-   Target: exactly 2 A4 portrait pages, compact premium devotional
+   Elegant premium devotional invitation style
    ================================================================ */
 
 @page {
@@ -14,9 +14,9 @@
   width: 210mm;
   margin: 0 auto;
   background: #f6c941;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   color: #1a1a1a;
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
@@ -30,23 +30,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 13px;
-  padding: 7mm 12mm 4mm;
+  gap: 16px;
+  padding: 5mm 12mm 3mm;
   background: #f6c941;
 }
 
 .logo {
-  width: 92px;
-  height: 92px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: drop-shadow(0 2px 5px rgba(40, 57, 111, 0.2));
+  filter: drop-shadow(0 2px 6px rgba(40, 57, 111, 0.22));
 }
 
 .identityDivider {
   width: 1.5px;
-  height: 56px;
-  background: rgba(40, 57, 111, 0.28);
+  height: 60px;
+  background: rgba(40, 57, 111, 0.3);
   border-radius: 1px;
   flex-shrink: 0;
 }
@@ -54,26 +54,26 @@
 .identityText {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .orgName {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 29px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 800;
   color: #28396f;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   line-height: 1.1;
   margin: 0;
 }
 
 .templeName {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #28396f;
   opacity: 0.85;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   line-height: 1.2;
   margin: 0;
 }
@@ -81,17 +81,17 @@
 /* ── Event Title + Year ── */
 .titleSection {
   background: #f6c941;
-  padding: 2mm 14mm 0;
+  padding: 0 14mm 0;
   text-align: center;
 }
 
 .eventTitle {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 50px;
-  font-weight: 700;
+  font-size: 52px;
+  font-weight: 800;
   color: #28396f;
-  line-height: 1.05;
-  margin: 0 0 1mm;
+  line-height: 1.03;
+  margin: 0 0 0.5mm;
   letter-spacing: -0.01em;
 }
 
@@ -100,7 +100,7 @@
   font-size: 32px;
   font-weight: 700;
   color: #28396f;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   margin: 0 0 2mm;
   line-height: 1.1;
 }
@@ -108,22 +108,23 @@
 /* ── Date + Venue + Maps ── */
 .dateVenueSection {
   background: #f6c941;
-  padding: 0 14mm 3mm;
+  padding: 0 14mm 2mm;
   text-align: center;
 }
 
 .eventDate {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 800;
   color: #28396f;
   letter-spacing: 0.04em;
-  margin: 0 0 1.5mm;
-  line-height: 1.15;
+  margin: 0 0 1mm;
+  line-height: 1.1;
 }
 
 .eventVenue {
-  font-size: 13.5px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
   font-weight: 600;
   color: #3a3a3a;
   margin: 0 0 2mm;
@@ -133,36 +134,39 @@
 .mapsLink {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   background: #28396f;
   color: #f6c941;
-  padding: 4px 13px;
+  padding: 6px 18px;
   border-radius: 6px;
-  font-size: 10.5px;
-  font-weight: 600;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 /* ── Short Invitation ── */
 .shortInvite {
   background: #f6c941;
-  padding: 2.5mm 14mm 2mm;
+  padding: 2mm 16mm 2mm;
   text-align: center;
 }
 
 .shortInvitePara {
-  font-size: 12.5px;
-  color: #1a1a1a;
-  line-height: 1.6;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #2a2a2a;
+  line-height: 1.7;
   margin: 0 auto;
   max-width: 162mm;
 }
 
-/* ── Artwork (shared for front + programme) ── */
+/* ── Artwork ── */
 .artworkWrap {
   background: #f6c941;
-  padding: 2mm 11mm 2mm;
+  padding: 2mm 11mm 0;
 }
 
 .artImg {
@@ -170,66 +174,57 @@
   height: auto;
   display: block;
   object-fit: contain;
-  border-radius: 9px;
-  box-shadow: 0 5px 18px rgba(40, 57, 111, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(40, 57, 111, 0.16);
 }
 
-/* ── Programme Section ── */
+/* ── Programme ── */
 .progSection {
   background: #f6c941;
-  padding: 2mm 11mm 2mm;
+  padding: 2mm 11mm 0;
 }
 
 .sectionHeading {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 800;
   color: #28396f;
   text-align: center;
   margin: 0 0 2mm;
   line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
-/* ── Highlights Line ── */
-.highlightsLine {
-  background: #f6c941;
-  padding: 2mm 11mm 6mm;
+/* ── Highlights Block (full clickable) ── */
+.highlightsBlock {
+  display: block;
+  background: linear-gradient(135deg, #28396f 0%, #1e2d59 100%);
+  margin: 2mm 11mm 5mm;
+  border-radius: 12px;
+  padding: 3mm 10mm;
   text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px 22px rgba(40, 57, 111, 0.3);
 }
 
-.highlightsBanner {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(40, 57, 111, 0.08);
-  border: 1.5px solid rgba(40, 57, 111, 0.22);
-  border-radius: 40px;
-  padding: 5px 20px;
-}
-
-.highlightsLabel {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 30px;
-  font-weight: 700;
-  color: #28396f;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-}
-
-.highlightsDot {
-  font-size: 30px;
-  color: rgba(40, 57, 111, 0.45);
-  line-height: 1;
-}
-
-.ytLink {
+.highlightsTitle {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 28px;
-  font-weight: 700;
-  color: #c0392b;
-  text-decoration: none;
-  letter-spacing: 0.01em;
+  font-weight: 800;
+  color: #f6c941;
+  margin: 0 0 1.5mm;
+  letter-spacing: 0.04em;
   line-height: 1.2;
+}
+
+.highlightsWatchBtn {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
 }
 
 /* ═══════════════════════════════
@@ -240,36 +235,70 @@
   break-before: page;
   page-break-before: always;
   background: #f6c941;
-  padding: 8mm 13mm 0;
+  padding: 7mm 13mm 0;
+}
+
+.page3 {
+  break-before: page;
+  page-break-before: always;
+  background: #f6c941;
+  padding: 10mm 13mm 0;
 }
 
 /* ── Warm Invitation ── */
+.warmSection {
+  margin-bottom: 3mm;
+}
+
 .warmHeading {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 800;
   color: #28396f;
   text-align: center;
-  margin: 0 0 3mm;
+  margin: 0 0 2mm;
   line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.warmOrnament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 2mm;
+}
+
+.ornamentLine {
+  display: block;
+  height: 1.5px;
+  width: 44mm;
+  background: linear-gradient(to right, transparent, rgba(40, 57, 111, 0.35), transparent);
+  border-radius: 2px;
+}
+
+.ornamentFlower {
+  font-size: 16px;
+  color: #28396f;
+  opacity: 0.65;
+  line-height: 1;
 }
 
 .warmPanel {
-  background: linear-gradient(135deg, rgba(255,248,215,0.88) 0%, rgba(255,235,160,0.72) 100%);
-  border: 1.5px solid rgba(40, 57, 111, 0.22);
-  border-top: 3px solid #28396f;
-  border-radius: 10px;
-  padding: 4mm 7mm;
-  margin: 0 0 4mm;
-  break-inside: avoid;
-  page-break-inside: avoid;
-  position: relative;
+  background: rgba(255, 252, 235, 0.9);
+  border-left: 5px solid #28396f;
+  border-right: 1.5px solid rgba(40, 57, 111, 0.18);
+  border-top: 1.5px solid rgba(40, 57, 111, 0.18);
+  border-bottom: 1.5px solid rgba(40, 57, 111, 0.18);
+  border-radius: 0 10px 10px 0;
+  padding: 3.5mm 7mm 3.5mm 8mm;
 }
 
 .warmPara {
-  font-size: 12px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14.5px;
   color: #1a1a1a;
-  line-height: 1.62;
+  line-height: 1.7;
   margin: 0 0 2mm;
 }
 
@@ -277,141 +306,116 @@
   margin-bottom: 0;
 }
 
-.warmHighlight {
-  font-size: 13.5px;
-  color: #1a1a1a;
-  line-height: 1.55;
-  margin: 0 0 2mm;
-  text-align: center;
-}
-
-.lakhNum {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 20px;
-  font-weight: 700;
+.lakhHighlight {
+  font-weight: 800;
   color: #28396f;
-  background: rgba(246, 201, 65, 0.55);
-  border-radius: 4px;
-  padding: 0 5px;
-  letter-spacing: 0.02em;
+  background: rgba(246, 201, 65, 0.6);
+  border-radius: 3px;
+  padding: 0 4px;
 }
 
 /* ── Prasadam Seva ── */
-/* .sectionHeading already defined above */
-.artworkWrap2 {
-  background: #f6c941;
-  padding: 2mm 0 3mm;
+.sevaSection {
+  margin-bottom: 3mm;
 }
 
 /* ── VIP Pass ── */
 .vipSection {
-  background: rgba(255, 248, 220, 0.65);
-  border: 1.5px solid rgba(40, 57, 111, 0.15);
+  background: rgba(255, 252, 235, 0.85);
+  border: 1.5px solid rgba(40, 57, 111, 0.2);
+  border-top: 3px solid #28396f;
   border-radius: 10px;
-  padding: 4mm 6mm;
-  margin: 0 0 4mm;
-  break-inside: avoid;
-  page-break-inside: avoid;
+  padding: 4mm 7mm;
+  margin-bottom: 4mm;
 }
 
 .vipHeading {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
   color: #28396f;
   text-align: center;
-  margin: 0 0 1.5mm;
+  margin: 0 0 2mm;
   line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 .vipSub {
-  font-size: 11.5px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
   color: #3a3a3a;
   text-align: center;
   margin: 0 0 3mm;
   line-height: 1.55;
+  font-style: italic;
 }
 
 .vipGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2mm 6mm;
+  gap: 2.5mm 4mm;
 }
 
-.vipItem {
-  font-size: 12px;
-  font-weight: 600;
-  color: #28396f;
-  line-height: 1.5;
-  display: flex;
-  align-items: flex-start;
-  gap: 5px;
-}
-
-.vipCheck {
-  color: #28396f;
+.vipCard {
+  background: rgba(40, 57, 111, 0.07);
+  border: 1px solid rgba(40, 57, 111, 0.18);
+  border-radius: 7px;
+  padding: 2.5mm 4mm;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px;
   font-weight: 700;
-  flex-shrink: 0;
+  color: #28396f;
+  text-align: center;
+  line-height: 1.4;
 }
 
 /* ── Stay Connected ── */
 .staySection {
-  background: rgba(255, 248, 220, 0.65);
-  border: 1.5px solid rgba(40, 57, 111, 0.15);
+  background: rgba(255, 252, 235, 0.85);
+  border: 1.5px solid rgba(40, 57, 111, 0.2);
+  border-top: 3px solid #28396f;
   border-radius: 10px;
-  padding: 4mm 6mm;
-  margin: 0 0 3mm;
+  padding: 4mm 7mm;
+  margin-bottom: 4mm;
   text-align: center;
-  break-inside: avoid;
-  page-break-inside: avoid;
 }
 
 .stayHeading {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
   color: #28396f;
-  margin: 0 0 1.5mm;
+  margin: 0 0 2mm;
   line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 .staySub {
-  font-size: 11.5px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
   color: #3a3a3a;
   margin: 0 0 3mm;
   line-height: 1.55;
+  font-style: italic;
 }
 
 .sitesBtn {
   display: inline-block;
   background: linear-gradient(135deg, #28396f 0%, #1e2d59 100%);
   color: #f6c941;
-  padding: 8px 24px;
+  padding: 10px 28px;
   border-radius: 8px;
-  font-size: 13.5px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.03em;
-  margin-bottom: 2.5mm;
-  box-shadow: 0 3px 10px rgba(40, 57, 111, 0.3);
-}
-
-.sitesUrl {
-  font-size: 10px;
-  margin: 0 0 2mm;
-  line-height: 1.4;
-  word-break: break-all;
-  overflow-wrap: anywhere;
-}
-
-.sitesUrlLink {
-  color: #28396f;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  word-break: break-all;
+  margin-bottom: 3mm;
+  box-shadow: 0 4px 14px rgba(40, 57, 111, 0.3);
 }
 
 .trustLine {
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 13px;
   color: #3a3a3a;
   margin: 0;
@@ -420,56 +424,63 @@
 
 /* ── WhatsApp Contact Strip ── */
 .contactStrip {
-  background: rgba(40, 57, 111, 0.08);
-  border-radius: 8px;
-  padding: 3mm 6mm;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4px 8px;
+  background: rgba(40, 57, 111, 0.07);
+  border-radius: 10px;
+  padding: 4mm 7mm;
   margin-bottom: 8mm;
-  break-inside: avoid;
-  page-break-inside: avoid;
+  text-align: center;
 }
 
 .contactFor {
-  font-size: 11px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+  font-style: italic;
   color: #3a3a3a;
-  width: 100%;
-  text-align: center;
+  margin: 0 0 1.5mm;
   line-height: 1.4;
-  margin-bottom: 1mm;
+}
+
+.contactDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 3mm;
 }
 
 .contactName {
-  font-size: 12px;
-  font-weight: 700;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+  font-weight: 800;
   color: #28396f;
 }
 
-.contactDot {
-  font-size: 12px;
-  color: #28396f;
+.contactSep {
+  font-size: 17px;
+  color: rgba(40, 57, 111, 0.45);
 }
 
 .contactPhone {
-  font-size: 12px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
   color: #28396f;
 }
 
 .waLink {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   background: #25d366;
   color: #fff;
-  padding: 5px 14px;
-  border-radius: 6px;
-  font-size: 12.5px;
+  padding: 8px 20px;
+  border-radius: 7px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35);
+  letter-spacing: 0.02em;
 }
 
 /* ── Print reset ── */
