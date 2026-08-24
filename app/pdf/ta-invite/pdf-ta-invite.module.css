@@ -387,12 +387,12 @@
 }
 
 .trustLine {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 12px;
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", "Inter", system-ui, sans-serif;
+  font-size: 18px;
   font-weight: 500;
   color: var(--navy);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
   opacity: 0.85;
 }
 

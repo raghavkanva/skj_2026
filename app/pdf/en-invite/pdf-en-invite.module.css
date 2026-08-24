@@ -319,13 +319,13 @@
 /* — Existing donor thanks — */
 .donorThanks {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
   font-style: italic;
   color: var(--navy);
   text-align: center;
   margin: 4mm 14mm 0;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 /* — VIP Pass (gold bg, outlined cards) — */
@@ -413,7 +413,7 @@
 
 .trustLine {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--navy);
   margin: 0;
