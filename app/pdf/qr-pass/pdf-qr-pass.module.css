@@ -1,6 +1,6 @@
 /* ================================================================
    ISKCON Salem – QR Pass Information PDF
-   Design: Premium off-white · Navy primary · Antique gold accent
+   Design: Pure white · Bold Inter · Navy text · Gold rule only
    2 A4 portrait pages — English (p1) + Tamil (p2)
    ================================================================ */
 
@@ -10,24 +10,20 @@
 }
 
 :root {
-  --navy:       #1e3568;
-  --navy-dark:  #152650;
-  --gold:       #b8962e;
-  --gold-faint: rgba(184, 150, 46, 0.22);
-  --ink:        #1a1a2e;
-  --off-white:  #fafaf7;
-  --card-bg:    #f4f0e8;
-  --warn-bg:    #fdf8f2;
-  --peak-bg:    rgba(30, 53, 104, 0.05);
-  --minimal-bg: rgba(30, 53, 104, 0.04);
-  --divider:    rgba(30, 53, 104, 0.12);
+  --navy:      #1e3568;
+  --navy-dark: #152650;
+  --gold:      #b8962e;
+  --ink:       #111111;
+  --ink-mid:   #333333;
+  --white:     #ffffff;
+  --divider:   rgba(30, 53, 104, 0.15);
 }
 
 /* ── Root ── */
 .root {
   width: 210mm;
   margin: 0 auto;
-  background: var(--off-white);
+  background: var(--white);
   color: var(--ink);
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -38,15 +34,14 @@
   width: 210mm;
   min-height: 297mm;
   padding: 13mm 18mm 11mm;
-  background: var(--off-white);
+  background: var(--white);
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .page2 {
   break-before: page;
   page-break-before: always;
-  background: var(--off-white);
+  background: var(--white);
 }
 
 /* ════════════════════════════════════════
@@ -61,17 +56,16 @@
 }
 
 .logo {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: drop-shadow(0 1px 4px rgba(30, 53, 104, 0.18));
 }
 
 .headerDivider {
-  width: 1px;
-  height: 40px;
-  background: rgba(30, 53, 104, 0.25);
+  width: 1.5px;
+  height: 38px;
+  background: rgba(30, 53, 104, 0.3);
   flex-shrink: 0;
 }
 
@@ -86,49 +80,49 @@
   font-size: 17px;
   font-weight: 800;
   color: var(--navy);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   margin: 0;
   line-height: 1.1;
 }
 
 .templeName {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 13px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
   font-weight: 500;
   color: var(--navy);
-  opacity: 0.72;
+  opacity: 0.7;
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
-/* Tamil font override for temple name */
-.ta.templeName,
-.ta {
+/* Tamil temple name */
+.ta.templeName {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 12px;
 }
 
 /* ── Dividers ── */
 .goldRule {
-  height: 1px;
+  height: 2px;
   background: linear-gradient(to right, transparent, var(--gold), transparent);
-  margin: 0 0 4mm;
+  margin: 0 0 5mm;
 }
 
 .thinRule {
   height: 1px;
   background: var(--divider);
-  margin: 2.5mm 0 4.5mm;
+  margin: 2mm 0 5mm;
 }
 
 /* ── Document label ── */
 .docLabel {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.25em;
   color: var(--navy);
   text-transform: uppercase;
-  opacity: 0.65;
+  opacity: 0.6;
   margin: 0;
   line-height: 1;
 }
@@ -138,9 +132,9 @@
    ════════════════════════════════════════ */
 
 .opening {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
-  font-weight: 600;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--navy);
   margin: 0 0 4mm;
   line-height: 1.3;
@@ -148,7 +142,8 @@
 
 .opening.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 20px;
+  font-size: 19px;
+  font-weight: 700;
 }
 
 /* ════════════════════════════════════════
@@ -156,141 +151,145 @@
    ════════════════════════════════════════ */
 
 .body {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 17px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14.5px;
   font-weight: 500;
-  color: var(--ink);
-  line-height: 1.68;
+  color: var(--ink-mid);
+  line-height: 1.75;
   margin: 0 0 4mm;
 }
 
 .body.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 15.5px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 .body em {
-  font-style: italic;
-  color: var(--navy);
-  font-weight: 600;
+  font-style: normal;
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .bodyItalic {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 17px;
-  font-style: italic;
-  font-weight: 500;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
   color: var(--navy);
+  font-style: italic;
   margin: 0 0 2mm;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .bodyItalic.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* ════════════════════════════════════════
-   INFO CARD (Programs + Prasadam)
+   INFO ROWS (Programs + Prasadam)
+   Plain — white bg, left navy border only
    ════════════════════════════════════════ */
 
 .infoCard {
-  background: var(--card-bg);
   border-left: 3px solid var(--navy);
-  border-radius: 0 7px 7px 0;
-  padding: 4mm 5mm;
-  margin: 0 0 4mm;
+  padding: 3mm 0 3mm 5mm;
+  margin: 0 0 5mm;
   display: flex;
   flex-direction: column;
   gap: 2.5mm;
+  background: var(--white);
 }
 
 .infoRow {
   display: flex;
   align-items: baseline;
-  gap: 9px;
+  gap: 8px;
 }
 
 .infoEmoji {
-  font-size: 16px;
+  font-size: 15px;
   flex-shrink: 0;
   line-height: 1;
 }
 
 .infoText {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 16px;
-  font-weight: 500;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
   color: var(--ink);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .infoText.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 14.5px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .infoText em {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 800;
   color: var(--navy);
-  font-weight: 700;
 }
 
-/* Bold variant (Tamil info rows — entire line bold) */
 .infoTextBold {
   font-weight: 700;
 }
 
 /* ════════════════════════════════════════
    WARNING BOX (Do Not Forward)
+   Clean border only — white bg
    ════════════════════════════════════════ */
 
 .warningBox {
-  border: 1px solid rgba(184, 150, 46, 0.5);
-  border-radius: 7px;
-  background: var(--warn-bg);
+  border: 1.5px solid var(--navy);
+  border-radius: 6px;
+  background: var(--white);
   padding: 4mm 5mm;
-  margin: 0 0 4mm;
+  margin: 0 0 5mm;
 }
 
 .warningText {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 15.5px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
   color: var(--navy-dark);
   margin: 0;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .warningText.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 14px;
-  line-height: 1.72;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.8;
 }
 
 .warningText em {
-  font-style: italic;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 700;
 }
 
 /* ════════════════════════════════════════
    PEAK HOURS
+   White bg — heading bold, list clean
    ════════════════════════════════════════ */
 
 .peakSection {
-  background: var(--peak-bg);
-  border-radius: 7px;
-  padding: 4mm 5mm;
-  margin: 0 0 4mm;
+  border-left: 3px solid var(--gold);
+  padding: 3mm 0 3mm 5mm;
+  margin: 0 0 5mm;
+  background: var(--white);
 }
 
 .peakHeading {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 17px;
-  font-weight: 600;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
   color: var(--navy);
   margin: 0 0 2.5mm;
   line-height: 1.4;
@@ -298,31 +297,27 @@
 
 .peakHeading.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .peakHeading em {
-  font-style: italic;
-  font-weight: 700;
+  font-style: normal;
 }
 
 .peakList {
   list-style: none;
   padding: 0;
-  margin: 0 0 2.5mm;
+  margin: 0 0 3mm;
   display: flex;
   flex-direction: column;
   gap: 1.5mm;
 }
 
-.peakList.ta {
-  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-}
-
 .peakList li {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 16px;
-  font-weight: 500;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   color: var(--ink);
   line-height: 1.5;
   padding-left: 14px;
@@ -331,7 +326,8 @@
 
 .peakList.ta li {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 14.5px;
+  font-size: 13.5px;
+  font-weight: 600;
 }
 
 .peakList li::before {
@@ -339,54 +335,53 @@
   position: absolute;
   left: 0;
   color: var(--navy);
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .peakList li strong {
-  font-weight: 700;
-  color: var(--navy);
+  font-weight: 800;
+  color: var(--ink);
 }
 
-/* Note below the list (Tamil only — QR Pass benefit moved inside) */
 .peakNote {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 14.5px;
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1.7;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-mid);
+  line-height: 1.8;
   margin: 0;
 }
 
 .peakNote em {
-  font-style: italic;
-  color: var(--navy);
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 /* ════════════════════════════════════════
-   MINIMAL CROWD BOX (Tamil only)
+   MINIMAL CROWD (Tamil only)
+   Plain white, slightly indented
    ════════════════════════════════════════ */
 
 .minimalBox {
-  background: var(--minimal-bg);
-  border-radius: 6px;
-  padding: 3.5mm 5mm;
+  padding: 0 0 0 5mm;
+  border-left: 2px solid var(--divider);
   margin: 0 0 4mm;
 }
 
 .minimalText {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 14.5px;
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1.75;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-mid);
+  line-height: 1.85;
   margin: 0;
 }
 
 .minimalText em {
-  font-style: italic;
-  color: var(--navy);
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 /* ════════════════════════════════════════
@@ -395,27 +390,27 @@
 
 .closing {
   text-align: center;
-  margin-top: 4mm;
+  margin-top: 5mm;
 }
 
 .closingRule {
   height: 1px;
   background: var(--divider);
-  margin-bottom: 3.5mm;
+  margin-bottom: 4mm;
 }
 
 .ornament {
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   color: var(--gold);
   margin-bottom: 3mm;
   line-height: 1;
 }
 
 .hkClosing {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 21px;
-  font-weight: 700;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
   color: var(--navy);
   margin: 2mm 0 0;
   line-height: 1.3;
@@ -423,7 +418,8 @@
 
 .hkClosing.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 19px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 /* ── Print reset ── */
@@ -431,12 +427,12 @@
   html, body {
     margin: 0;
     padding: 0;
-    background: #fafaf7;
+    background: #ffffff;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
   .root {
     width: 210mm;
-    background: #fafaf7;
+    background: #ffffff;
   }
 }
