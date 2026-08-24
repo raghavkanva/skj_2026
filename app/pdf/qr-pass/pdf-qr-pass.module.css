@@ -117,14 +117,13 @@
 /* ── Document label ── */
 .docLabel {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 9.5px;
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.06em;
   color: var(--navy);
   text-transform: uppercase;
-  opacity: 0.65;
   margin: 0;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 /* ════════════════════════════════════════
@@ -152,8 +151,8 @@
 
 .body {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--ink-mid);
   line-height: 1.75;
   margin: 0 0 4mm;
@@ -161,21 +160,21 @@
 
 .body.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 14.5px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.85;
 }
 
 .body em {
   font-style: normal;
   color: var(--ink);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .bodyItalic {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--navy);
   margin: 0 0 2mm;
   line-height: 1.6;
@@ -183,8 +182,8 @@
 
 .bodyItalic.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 14.5px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* ════════════════════════════════════════
@@ -215,8 +214,8 @@
 
 .infoText {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 15.5px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--ink);
   margin: 0;
   line-height: 1.55;
@@ -225,17 +224,17 @@
 .infoText.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .infoText em {
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--navy);
 }
 
 .infoTextBold {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 /* ════════════════════════════════════════
@@ -253,7 +252,7 @@
 .warningText {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--navy-dark);
   margin: 0;
   line-height: 1.72;
@@ -262,13 +261,13 @@
 .warningText.ta {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.82;
 }
 
 .warningText em {
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 /* ════════════════════════════════════════
@@ -313,7 +312,7 @@
 .peakList li {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--ink);
   line-height: 1.5;
   padding-left: 14px;
@@ -323,7 +322,7 @@
 .peakList.ta li {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .peakList li::before {
@@ -342,7 +341,7 @@
 .peakNote {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink-mid);
   line-height: 1.82;
   margin: 0;
@@ -350,7 +349,7 @@
 
 .peakNote em {
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--ink);
 }
 
@@ -367,7 +366,7 @@
 .minimalText {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--ink-mid);
   line-height: 1.85;
   margin: 0;
@@ -375,7 +374,7 @@
 
 .minimalText em {
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--ink);
 }
 
