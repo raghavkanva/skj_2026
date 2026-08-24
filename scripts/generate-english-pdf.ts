@@ -26,6 +26,10 @@ const JOBS = [
     url: "http://localhost:3000/pdf/ta-text",
     out: "public/downloads/ISKCON-Salem-Janmashtami-2026-Tamil-Text-Invitation.pdf",
   },
+  {
+    url: "http://localhost:3000/pdf/qr-pass",
+    out: "public/downloads/ISKCON-Salem-Janmashtami-2026-QR-Pass-Information.pdf",
+  },
 ];
 
 async function generateOne(browser: Browser, url: string, outRel: string) {
