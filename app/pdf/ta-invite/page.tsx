@@ -119,6 +119,11 @@ export default function TaInvite() {
           />
         </div>
 
+        {/* — Existing donor thanks — */}
+        <p className={styles.donorThanks}>
+          நீங்கள் ஏற்கனவே நன்கொடை அளித்திருந்தால், மிக்க நன்றி 🙏
+        </p>
+
         {/* — VIP Pass — */}
         <div className={styles.vipSection}>
           <h2 className={styles.sectionHeading}>நன்கொடை அளித்து VIP Pass பெறுங்கள்</h2>

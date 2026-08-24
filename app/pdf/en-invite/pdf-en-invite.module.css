@@ -316,6 +316,18 @@
   padding: 4mm 11mm 0;
 }
 
+/* — Existing donor thanks — */
+.donorThanks {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--navy);
+  text-align: center;
+  margin: 4mm 14mm 0;
+  line-height: 1.45;
+}
+
 /* — VIP Pass (gold bg, outlined cards) — */
 .vipSection {
   padding: 11mm 13mm 5mm;

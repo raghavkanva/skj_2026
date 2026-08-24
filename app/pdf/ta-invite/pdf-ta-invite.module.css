@@ -299,6 +299,17 @@
   padding: 3mm 11mm 0;
 }
 
+/* — Existing donor thanks — */
+.donorThanks {
+  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  margin: 3mm 12mm 0;
+  line-height: 1.55;
+}
+
 .vipSection {
   padding: 8mm 11mm 4mm;
   text-align: center;

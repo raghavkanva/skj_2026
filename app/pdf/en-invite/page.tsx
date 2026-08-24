@@ -119,6 +119,11 @@ export default function EnInvite() {
           />
         </div>
 
+        {/* — Existing donor thanks — */}
+        <p className={styles.donorThanks}>
+          If you have already donated, Thank you very much 🙏
+        </p>
+
         {/* — VIP Pass — */}
         <div className={styles.vipSection}>
           <h2 className={styles.sectionHeading}>Donate &amp; Receive a VIP Pass</h2>
