@@ -69,7 +69,7 @@ export default function QrPass() {
           <p className={styles.peakHeading}>⚠️ <em>Peak Hours:</em></p>
           <ul className={styles.peakList}>
             <li>12:00 Noon <strong>–</strong> 2:00 PM</li>
-            <li>5:00 PM <strong>–</strong> 9:00 PM</li>
+            <li>5:00 PM <strong>–</strong> 8:00 PM</li>
           </ul>
         </div>
 
@@ -154,7 +154,7 @@ export default function QrPass() {
           நிகழ்ச்சி நடைபெறும் இடத்தில் உள்ள{" "}
           <em>Reception Stall-க்கு</em> வந்து, என்னை தனிப்பட்ட முறையில்
           தொடர்பு கொண்டு{" "}
-          <em>QUICK DARSHAN &amp; PRASADAM-க்கான QR Pass-ஐ</em>{" "}
+          <em>விரைவு தரிசனம் &amp; பிரசாதத்திற்கான QR Pass-ஐ</em>{" "}
           பெற்றுக்கொள்ளவும். 📲
         </p>
 
@@ -165,11 +165,11 @@ export default function QrPass() {
           </p>
           <ul className={`${styles.peakList} ${styles.ta}`}>
             <li>மதியம் 12:00 – 2:00 மணி</li>
-            <li>மாலை 5:00 – 9:00 மணி</li>
+            <li>மாலை 5:00 – 8:00 மணி</li>
           </ul>
           <p className={`${styles.peakNote} ${styles.ta}`}>
             QR Pass மூலம் வழக்கமான கூட்டத்தைத் தவிர்த்து{" "}
-            <em>Quick Darshan</em> மற்றும் <em>Prasadam</em> பெறலாம்.
+            <em>விரைவு தரிசனம்</em> மற்றும் <em>பிரசாதம்</em> பெறலாம்.
           </p>
         </div>
 
