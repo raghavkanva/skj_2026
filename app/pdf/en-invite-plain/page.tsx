@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./pdf-en-invite.module.css";
+import styles from "../en-invite/pdf-en-invite.module.css";
 
 export const metadata = {
   title: "ISKCON Salem Sri Krishna Janmashtami 2026 – English Invitation",
@@ -11,7 +11,7 @@ const WEBSITE_URL = "https://iskconsalem.com";
 const WA_URL      =
   "https://wa.me/919710772621?text=Hare%20Krishna%20Prabhu%20%F0%9F%99%8F%0A%0AI%20would%20like%20to%20know%20more%20about%20the%20Sri%20Krishna%20Janmashtami%202026%20celebration%20at%20ISKCON%20Salem.%0A%0AHare%20Krishna%20%F0%9F%99%8F";
 
-export default function EnInvite() {
+export default function EnInvitePlain() {
   return (
     <div className={styles.root}>
 
@@ -72,7 +72,7 @@ export default function EnInvite() {
       </div>
 
       {/* ══════════════════════════════════════════
-          PAGE 2  — all gold, no navy blocks
+          PAGE 2
           ══════════════════════════════════════════ */}
       <div className={styles.page2}>
 
@@ -135,11 +135,11 @@ export default function EnInvite() {
       </div>
 
       {/* ══════════════════════════════════════════
-          PAGE 3  — all gold, Hare Krishna at end
+          PAGE 3
           ══════════════════════════════════════════ */}
       <div className={styles.page3}>
 
-        {/* Stay Connected */}
+        {/* Stay Connected — no trust line */}
         <div className={styles.staySection}>
           <h2 className={styles.sectionHeading}>Stay Connected with ISKCON Salem</h2>
           <p className={styles.staySub}>
@@ -149,12 +149,9 @@ export default function EnInvite() {
           <a href={WEBSITE_URL} target="_blank" rel="noopener noreferrer" className={styles.sitesBtn}>
             Visit iskconsalem.com &rarr;
           </a>
-          <p className={styles.trustLine}>
-            <strong>Safe to open:</strong> This is the official ISKCON Salem website.
-          </p>
         </div>
 
-        {/* Contact — gold background, navy text */}
+        {/* Contact */}
         <div className={styles.contactSection}>
           <div className={styles.ornRow} aria-hidden="true">
             <span className={styles.ornLine} />
@@ -169,7 +166,7 @@ export default function EnInvite() {
           </a>
         </div>
 
-        {/* Hare Krishna — small, at the very end */}
+        {/* Hare Krishna */}
         <div className={styles.hkEnd}>
           <div className={styles.ornRow} aria-hidden="true">
             <span className={styles.ornLine} />

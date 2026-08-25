@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./pdf-ta-invite.module.css";
+import styles from "../ta-invite/pdf-ta-invite.module.css";
 
 export const metadata = {
   title: "ISKCON Salem Sri Krishna Janmashtami 2026 – Tamil Invitation",
@@ -11,7 +11,7 @@ const WEBSITE_URL = "https://iskconsalem.com";
 const WA_URL      =
   "https://wa.me/919710772621?text=ஹரே%20கிருஷ்ண%20பிரபு%20%F0%9F%99%8F%0A%0AISKCON%20Salem%20ஸ்ரீ%20கிருஷ்ண%20ஜன்மாஷ்டமி%202026%20விழா%20பற்றி%20மேலும்%20அறிய%20விரும்புகிறேன்.%0A%0Aஹரே%20கிருஷ்ண%20%F0%9F%99%8F";
 
-export default function TaInvite() {
+export default function TaInvitePlain() {
   return (
     <div className={styles.root}>
 
@@ -72,7 +72,7 @@ export default function TaInvite() {
       </div>
 
       {/* ══════════════════════════════════════════
-          PAGE 2  — all gold, no navy blocks
+          PAGE 2
           ══════════════════════════════════════════ */}
       <div className={styles.page2}>
 
@@ -135,11 +135,11 @@ export default function TaInvite() {
       </div>
 
       {/* ══════════════════════════════════════════
-          PAGE 3  — all gold, Hare Krishna at end
+          PAGE 3
           ══════════════════════════════════════════ */}
       <div className={styles.page3}>
 
-        {/* Stay Connected */}
+        {/* Stay Connected — no trust line */}
         <div className={styles.staySection}>
           <h2 className={styles.sectionHeading}>ISKCON Salem உடன் இணைந்திருங்கள்</h2>
           <p className={styles.staySub}>
@@ -148,12 +148,9 @@ export default function TaInvite() {
           <a href={WEBSITE_URL} target="_blank" rel="noopener noreferrer" className={styles.sitesBtn}>
             iskconsalem.com-ஐ பார்வையிடவும் &rarr;
           </a>
-          <p className={styles.trustLine}>
-            <strong>திறப்பதற்கு பாதுகாப்பானது:</strong> இது ISKCON Salem-இன் அதிகாரப்பூர்வ இணையதளம்
-          </p>
         </div>
 
-        {/* Contact — gold background, navy text */}
+        {/* Contact */}
         <div className={styles.contactSection}>
           <div className={styles.ornRow} aria-hidden="true">
             <span className={styles.ornLine} />
@@ -168,7 +165,7 @@ export default function TaInvite() {
           </a>
         </div>
 
-        {/* Hare Krishna — small, at the very end */}
+        {/* Hare Krishna */}
         <div className={styles.hkEnd}>
           <div className={styles.ornRow} aria-hidden="true">
             <span className={styles.ornLine} />

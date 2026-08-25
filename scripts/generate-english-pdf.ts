@@ -34,6 +34,14 @@ const JOBS = [
     url: "http://localhost:3000/pdf/qr-pass-plain",
     out: "public/downloads/ISKCON-Salem-Janmashtami-2026-QR-Pass-Information-Plain.pdf",
   },
+  {
+    url: "http://localhost:3000/pdf/en-invite-plain",
+    out: "public/downloads/ISKCON-Salem-Janmashtami-2026-English-Invitation-Plain.pdf",
+  },
+  {
+    url: "http://localhost:3000/pdf/ta-invite-plain",
+    out: "public/downloads/ISKCON-Salem-Janmashtami-2026-Tamil-Invitation-Plain.pdf",
+  },
 ];
 
 async function generateOne(browser: Browser, url: string, outRel: string) {
