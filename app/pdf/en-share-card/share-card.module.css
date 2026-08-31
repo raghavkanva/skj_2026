@@ -1,6 +1,6 @@
 /* ================================================================
    ISKCON Salem – WhatsApp Share Card
-   1080 px wide · auto height · Gold + Navy · HD quality
+   1080 px wide · full gold · navy text · HD quality
    ================================================================ */
 
 :root {
@@ -9,46 +9,44 @@
   --navy-dark: #1e2d59;
   --ink:       #1a1a1a;
   --cream:     #fffef5;
-  --divider:   rgba(246, 201, 65, 0.35);
 }
 
-/* ── Root card ── */
 .card {
   width: 1080px;
   background: var(--gold);
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  color: var(--ink);
+  color: var(--navy);
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
   overflow: hidden;
 }
 
 /* ════════════════════════════════
-   HEADER — navy bar
+   HEADER — gold bg, logo visible
    ════════════════════════════════ */
 
 .header {
   display: flex;
   align-items: center;
-  gap: 24px;
-  background: var(--navy);
-  padding: 26px 52px;
+  gap: 22px;
+  background: var(--gold);
+  padding: 28px 52px 20px;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
 
 .logo {
-  width: 86px;
-  height: 86px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 2px 8px rgba(40,57,111,0.18));
 }
 
 .headerDivider {
   width: 2px;
-  height: 56px;
-  background: var(--divider);
+  height: 58px;
+  background: rgba(40,57,111,0.3);
   flex-shrink: 0;
   border-radius: 1px;
 }
@@ -56,42 +54,39 @@
 .headerText {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 .orgName {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 800;
-  color: var(--gold);
-  letter-spacing: 0.05em;
+  color: var(--navy);
+  letter-spacing: 0.04em;
   line-height: 1.1;
+  margin: 0;
 }
 
 .templeName {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   font-size: 19px;
   font-weight: 600;
-  color: rgba(246, 201, 65, 0.78);
-  letter-spacing: 0.025em;
+  color: var(--navy);
+  opacity: 0.75;
+  letter-spacing: 0.02em;
   line-height: 1.3;
+  margin: 0;
 }
 
 /* ════════════════════════════════
-   TITLE SECTION — gold bg
+   ORNAMENT
    ════════════════════════════════ */
-
-.titleSection {
-  padding: 36px 60px 28px;
-  text-align: center;
-  background: var(--gold);
-}
 
 .ornRow {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 10px;
+  padding: 0 52px 18px;
 }
 
 .ornLine {
@@ -109,135 +104,40 @@
   flex-shrink: 0;
 }
 
-.eventTitle {
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 96px;
-  font-weight: 800;
-  color: var(--navy);
-  line-height: 1.04;
-  margin: 0 0 6px;
-  letter-spacing: -0.01em;
-}
-
-.eventYear {
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 54px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.22em;
-  margin: 0 0 10px;
-  line-height: 1.1;
-}
-
 /* ════════════════════════════════
-   DATE + VENUE — navy bar
+   FULL-WIDTH IMAGES
    ════════════════════════════════ */
 
-.dateSection {
-  background: var(--navy);
-  padding: 26px 52px;
-  text-align: center;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
+.imgWrap {
+  padding: 0 32px 22px;
 }
 
-.eventDate {
+.imgLabel {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 42px;
+  font-size: 34px;
   font-weight: 800;
-  color: var(--gold);
-  letter-spacing: 0.025em;
-  margin: 0 0 8px;
+  color: var(--navy);
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin: 0 0 12px;
   line-height: 1.2;
 }
 
-.eventVenue {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--cream);
-  margin: 0 0 12px;
-  line-height: 1.35;
-  letter-spacing: 0.01em;
-}
-
-.freeTag {
-  display: inline-block;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--navy);
-  background: var(--gold);
-  padding: 5px 22px;
-  border-radius: 30px;
-  letter-spacing: 0.04em;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
+.fullImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(40,57,111,0.22);
 }
 
 /* ════════════════════════════════
-   PROGRAMME — gold bg
-   ════════════════════════════════ */
-
-.progSection {
-  padding: 32px 52px 28px;
-  background: var(--gold);
-}
-
-.progHeading {
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 38px;
-  font-weight: 800;
-  color: var(--navy);
-  text-align: center;
-  margin: 0 0 20px;
-  letter-spacing: 0.03em;
-}
-
-.progList {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.progRow {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  border-left: 4px solid var(--navy);
-  padding: 8px 0 8px 22px;
-  background: rgba(40,57,111,0.06);
-  border-radius: 0 8px 8px 0;
-}
-
-.progTime {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--navy);
-  min-width: 158px;
-  flex-shrink: 0;
-  letter-spacing: 0.01em;
-}
-
-.progEvent {
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--ink);
-  line-height: 1.3;
-}
-
-/* ════════════════════════════════
-   DONATION QR — cream bg
+   DONATION QR
    ════════════════════════════════ */
 
 .qrSection {
-  padding: 30px 52px 24px;
-  background: var(--cream);
+  padding: 8px 52px 28px;
   text-align: center;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
 }
 
 .qrHeading {
@@ -245,17 +145,18 @@
   font-size: 36px;
   font-weight: 800;
   color: var(--navy);
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   letter-spacing: 0.025em;
+  line-height: 1.2;
 }
 
 .qrImg {
-  width: 340px;
+  width: 320px;
   height: auto;
   display: block;
-  margin: 0 auto 14px;
+  margin: 0 auto 12px;
   border-radius: 14px;
-  box-shadow: 0 8px 28px rgba(40,57,111,0.22);
+  box-shadow: 0 6px 24px rgba(40,57,111,0.2);
 }
 
 .qrSub {
@@ -263,86 +164,84 @@
   font-size: 19px;
   font-weight: 600;
   color: var(--navy);
-  opacity: 0.78;
+  opacity: 0.75;
   letter-spacing: 0.02em;
+  margin: 0;
 }
 
 /* ════════════════════════════════
-   LINKS — navy bg
+   LINKS — readable text
    ════════════════════════════════ */
 
 .linksSection {
-  background: var(--navy);
-  padding: 24px 40px;
+  padding: 10px 52px 28px;
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
+  flex-direction: column;
+  gap: 0;
+  border-top: 2px solid rgba(40,57,111,0.18);
+  margin: 0 32px;
 }
 
-.linkBtn {
-  background: var(--gold);
-  color: var(--navy);
+.linkRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
   padding: 14px 0;
-  border-radius: 10px;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  text-decoration: none;
+  border-bottom: 1px solid rgba(40,57,111,0.12);
+}
+
+.linkRow:last-child {
+  border-bottom: none;
+}
+
+.linkEmoji {
+  font-size: 28px;
+  flex-shrink: 0;
+  width: 38px;
   text-align: center;
-  flex: 1;
+  line-height: 1;
+}
+
+.linkText {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy);
   letter-spacing: 0.01em;
   line-height: 1.3;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
 }
 
-/* ════════════════════════════════
-   CONTACT — navy bg (continued)
-   ════════════════════════════════ */
-
-.contactSection {
-  background: var(--navy);
-  padding: 4px 52px 22px;
-  text-align: center;
-  border-top: 1px solid rgba(246,201,65,0.18);
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
-}
-
-.contactName {
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--gold);
-  margin: 0 0 4px;
-  letter-spacing: 0.025em;
-  line-height: 1.3;
-}
-
-.contactPhone {
+.linkSub {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--cream);
-  opacity: 0.88;
-  letter-spacing: 0.03em;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+  opacity: 0.65;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.linkTextWrap {
+  display: flex;
+  flex-direction: column;
 }
 
 /* ════════════════════════════════
-   FOOTER — gold bg
+   FOOTER
    ════════════════════════════════ */
 
 .footer {
   background: var(--gold);
-  padding: 22px 52px;
+  padding: 22px 52px 28px;
   text-align: center;
+  border-top: 2px solid rgba(40,57,111,0.18);
+  margin-top: 8px;
 }
 
 .hkText {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 48px;
+  font-size: 50px;
   font-weight: 800;
   color: var(--navy);
   letter-spacing: 0.06em;
@@ -351,7 +250,7 @@
 }
 
 /* ════════════════════════════════
-   TAMIL OVERRIDES  (.card.ta …)
+   TAMIL OVERRIDES
    ════════════════════════════════ */
 
 .card.ta {
@@ -365,31 +264,12 @@
 
 .card.ta .templeName {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 17px;
+  font-size: 16px;
 }
 
-.card.ta .eventTitle {
+.card.ta .imgLabel {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 74px;
-}
-
-.card.ta .eventYear {
-  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-}
-
-.card.ta .eventDate {
-  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 36px;
-}
-
-.card.ta .progHeading {
-  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 34px;
-}
-
-.card.ta .progEvent {
-  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .card.ta .qrHeading {
@@ -397,12 +277,11 @@
   font-size: 30px;
 }
 
-.card.ta .contactName {
-  font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
+.card.ta .linkText {
   font-size: 24px;
 }
 
 .card.ta .hkText {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 44px;
+  font-size: 46px;
 }
