@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function TaShareCard() {
   return (
-    <div className={`${styles.card} ${styles.ta}`}>
+    <div className={`${styles.card} ${styles.ta}`} data-card="1">
 
       {/* Header */}
       <header className={styles.header}>

@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function EnShareCard() {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} data-card="1">
 
       {/* Header */}
       <header className={styles.header}>
