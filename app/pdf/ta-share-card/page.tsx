@@ -47,47 +47,52 @@ export default function TaShareCard() {
         />
       </div>
 
-      {/* Donation QR */}
-      <div className={styles.qrSection}>
-        <h2 className={styles.qrHeading}>நன்கொடை அளித்து VIP Pass பெறுங்கள்</h2>
-        <img
-          src="/images/qr-crop.jpg"
-          alt="நன்கொடை செய்ய ஸ்கேன் செய்யவும்"
-          className={styles.qrImg}
-        />
-        <p className={styles.qrSub}>PhonePe &nbsp;·&nbsp; Google Pay &nbsp;·&nbsp; Paytm மூலம் ஸ்கேன் செய்யவும்</p>
-      </div>
+      {/* QR + Links side by side */}
+      <div className={styles.qrLinksRow}>
 
-      {/* Links — readable text */}
-      <div className={styles.linksSection}>
-        <div className={styles.linkRow}>
-          <span className={styles.linkEmoji}>🌐</span>
-          <div className={styles.linkTextWrap}>
-            <span className={styles.linkText}>iskconsalem.com</span>
-            <span className={styles.linkSub}>அதிகாரப்பூர்வ இணையதளம்</span>
+        {/* Donation QR */}
+        <div className={styles.qrSection}>
+          <h2 className={styles.qrHeading}>நன்கொடை அளித்து VIP Pass பெறுங்கள்</h2>
+          <img
+            src="/images/qr-crop.jpg"
+            alt="நன்கொடை செய்ய ஸ்கேன் செய்யவும்"
+            className={styles.qrImg}
+          />
+          <p className={styles.qrSub}>PhonePe &nbsp;·&nbsp; Google Pay &nbsp;·&nbsp; Paytm</p>
+        </div>
+
+        {/* Links — readable text */}
+        <div className={styles.linksSection}>
+          <div className={styles.linkRow}>
+            <span className={styles.linkEmoji}>🌐</span>
+            <div className={styles.linkTextWrap}>
+              <span className={styles.linkText}>iskconsalem.com</span>
+              <span className={styles.linkSub}>அதிகாரப்பூர்வ இணையதளம்</span>
+            </div>
+          </div>
+          <div className={styles.linkRow}>
+            <span className={styles.linkEmoji}>💬</span>
+            <div className={styles.linkTextWrap}>
+              <span className={styles.linkText}>+91 97107 72621</span>
+              <span className={styles.linkSub}>WhatsApp</span>
+            </div>
+          </div>
+          <div className={styles.linkRow}>
+            <span className={styles.linkEmoji}>📍</span>
+            <div className={styles.linkTextWrap}>
+              <span className={styles.linkText}>Sona College Ground, Salem</span>
+              <span className={styles.linkSub}>Google Maps-ல் தேடுங்கள்</span>
+            </div>
+          </div>
+          <div className={styles.linkRow}>
+            <span className={styles.linkEmoji}>📞</span>
+            <div className={styles.linkTextWrap}>
+              <span className={styles.linkText}>+91 97107 72621</span>
+              <span className={styles.linkSub}>தொடர்பு கொள்ளுங்கள்</span>
+            </div>
           </div>
         </div>
-        <div className={styles.linkRow}>
-          <span className={styles.linkEmoji}>💬</span>
-          <div className={styles.linkTextWrap}>
-            <span className={styles.linkText}>+91 97107 72621</span>
-            <span className={styles.linkSub}>WhatsApp</span>
-          </div>
-        </div>
-        <div className={styles.linkRow}>
-          <span className={styles.linkEmoji}>📍</span>
-          <div className={styles.linkTextWrap}>
-            <span className={styles.linkText}>Sona College Ground, Salem</span>
-            <span className={styles.linkSub}>Google Maps-ல் தேடுங்கள்</span>
-          </div>
-        </div>
-        <div className={styles.linkRow}>
-          <span className={styles.linkEmoji}>📞</span>
-          <div className={styles.linkTextWrap}>
-            <span className={styles.linkText}>+91 97107 72621</span>
-            <span className={styles.linkSub}>தொடர்பு கொள்ளுங்கள்</span>
-          </div>
-        </div>
+
       </div>
 
       {/* Footer */}

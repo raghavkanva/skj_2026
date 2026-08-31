@@ -47,47 +47,52 @@ export default function EnShareCard() {
         />
       </div>
 
-      {/* Donation QR */}
-      <div className={styles.qrSection}>
-        <h2 className={styles.qrHeading}>Donate &amp; Receive a VIP Pass</h2>
-        <img
-          src="/images/qr-crop.jpg"
-          alt="Scan to Donate — PhonePe, Google Pay, Paytm"
-          className={styles.qrImg}
-        />
-        <p className={styles.qrSub}>Scan with PhonePe &nbsp;·&nbsp; Google Pay &nbsp;·&nbsp; Paytm</p>
-      </div>
+      {/* QR + Links side by side */}
+      <div className={styles.qrLinksRow}>
 
-      {/* Links — readable text */}
-      <div className={styles.linksSection}>
-        <div className={styles.linkRow}>
-          <span className={styles.linkEmoji}>🌐</span>
-          <div className={styles.linkTextWrap}>
-            <span className={styles.linkText}>iskconsalem.com</span>
-            <span className={styles.linkSub}>Official Website</span>
+        {/* Donation QR */}
+        <div className={styles.qrSection}>
+          <h2 className={styles.qrHeading}>Donate &amp; Receive a VIP Pass</h2>
+          <img
+            src="/images/qr-crop.jpg"
+            alt="Scan to Donate — PhonePe, Google Pay, Paytm"
+            className={styles.qrImg}
+          />
+          <p className={styles.qrSub}>PhonePe &nbsp;·&nbsp; Google Pay &nbsp;·&nbsp; Paytm</p>
+        </div>
+
+        {/* Links — readable text */}
+        <div className={styles.linksSection}>
+          <div className={styles.linkRow}>
+            <span className={styles.linkEmoji}>🌐</span>
+            <div className={styles.linkTextWrap}>
+              <span className={styles.linkText}>iskconsalem.com</span>
+              <span className={styles.linkSub}>Official Website</span>
+            </div>
+          </div>
+          <div className={styles.linkRow}>
+            <span className={styles.linkEmoji}>💬</span>
+            <div className={styles.linkTextWrap}>
+              <span className={styles.linkText}>+91 97107 72621</span>
+              <span className={styles.linkSub}>WhatsApp</span>
+            </div>
+          </div>
+          <div className={styles.linkRow}>
+            <span className={styles.linkEmoji}>📍</span>
+            <div className={styles.linkTextWrap}>
+              <span className={styles.linkText}>Sona College Ground, Salem</span>
+              <span className={styles.linkSub}>Search on Google Maps</span>
+            </div>
+          </div>
+          <div className={styles.linkRow}>
+            <span className={styles.linkEmoji}>📞</span>
+            <div className={styles.linkTextWrap}>
+              <span className={styles.linkText}>+91 97107 72621</span>
+              <span className={styles.linkSub}>Call us</span>
+            </div>
           </div>
         </div>
-        <div className={styles.linkRow}>
-          <span className={styles.linkEmoji}>💬</span>
-          <div className={styles.linkTextWrap}>
-            <span className={styles.linkText}>+91 97107 72621</span>
-            <span className={styles.linkSub}>WhatsApp</span>
-          </div>
-        </div>
-        <div className={styles.linkRow}>
-          <span className={styles.linkEmoji}>📍</span>
-          <div className={styles.linkTextWrap}>
-            <span className={styles.linkText}>Sona College Ground, Salem</span>
-            <span className={styles.linkSub}>Search on Google Maps</span>
-          </div>
-        </div>
-        <div className={styles.linkRow}>
-          <span className={styles.linkEmoji}>📞</span>
-          <div className={styles.linkTextWrap}>
-            <span className={styles.linkText}>+91 97107 72621</span>
-            <span className={styles.linkSub}>Call us</span>
-          </div>
-        </div>
+
       </div>
 
       {/* Footer */}
