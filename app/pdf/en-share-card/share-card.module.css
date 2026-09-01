@@ -222,13 +222,13 @@
 .contactBlock {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 10px 0;
+  gap: 5px;
+  padding: 0;
 }
 
 .linkLabel {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--navy);
   opacity: 0.5;
@@ -239,11 +239,11 @@
 
 .linkText {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--navy);
   letter-spacing: 0.01em;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .contactOrn {
@@ -270,23 +270,23 @@
 
 .dateInRight {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 800;
   color: var(--navy);
   letter-spacing: 0.01em;
-  line-height: 1.3;
+  line-height: 1.25;
   margin: 0;
-  padding: 6px 0 2px;
+  padding: 0;
 }
 
 .thankYou {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 26px;
+  font-size: 32px;
   font-style: italic;
   font-weight: 800;
   color: var(--navy);
-  line-height: 1.45;
-  padding: 6px 0 4px;
+  line-height: 1.4;
+  padding: 0;
   margin: 0;
 }
 
@@ -345,12 +345,12 @@
 }
 
 .card.ta .dateInRight {
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .card.ta .thankYou {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .card.ta .hkText {
