@@ -215,7 +215,7 @@
   padding: 8px 0 8px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0;
 }
 
@@ -268,16 +268,26 @@
   flex-shrink: 0;
 }
 
+.dateInRight {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin: 0;
+  padding: 6px 0 2px;
+}
+
 .thankYou {
   font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  font-size: 19px;
+  font-size: 26px;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 800;
   color: var(--navy);
-  line-height: 1.5;
-  padding: 10px 0 4px;
+  line-height: 1.45;
+  padding: 6px 0 4px;
   margin: 0;
-  opacity: 0.85;
 }
 
 /* ════════════════════════════════
@@ -334,9 +344,13 @@
   font-size: 17px;
 }
 
+.card.ta .dateInRight {
+  font-size: 20px;
+}
+
 .card.ta .thankYou {
   font-family: var(--font-noto-tamil), "Noto Serif Tamil", Georgia, serif;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .card.ta .hkText {

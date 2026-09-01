@@ -1,7 +1,7 @@
 import { chromium, type Browser } from "playwright";
 import path from "path";
 
-const SCALE = 2; // retina / HD
+const SCALE = 4; // 4K quality (4320 px wide)
 
 const JOBS = [
   {

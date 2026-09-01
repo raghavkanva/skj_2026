@@ -60,11 +60,17 @@ export default function TaShareCard() {
             className={styles.qrImg}
           />
           <p className={styles.qrSub}>PhonePe &nbsp;·&nbsp; Google Pay &nbsp;·&nbsp; Paytm</p>
-          <p className={styles.qrDate}>வெள்ளிக்கிழமை, 4 செப்டம்பர் 2026</p>
         </div>
 
         {/* Right — Contact */}
         <div className={styles.linksSection}>
+
+          <p className={styles.dateInRight}>வெள்ளிக்கிழமை, 4 செப்டம்பர் 2026</p>
+
+          <div className={styles.contactOrn} aria-hidden="true">
+            <span className={styles.contactOrnLine} />
+            <span className={styles.contactOrnFlower}>✦</span>
+          </div>
 
           <div className={styles.contactBlock}>
             <span className={styles.linkLabel}>இடம்</span>
