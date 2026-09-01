@@ -29,7 +29,7 @@ export default function EnShareCard() {
 
       {/* Invitation artwork */}
       <div className={styles.imgWrap}>
-        <p className={styles.imgLabel}>Sri Krishna Janmashtami 2026 — Invitation</p>
+        <p className={styles.imgLabel}>Sri Krishna Janmashtami 2026 · Invitation</p>
         <img
           src="/images/invitation-front-full.jpg"
           alt="ISKCON Salem Janmashtami 2026 Invitation"
@@ -47,50 +47,49 @@ export default function EnShareCard() {
         />
       </div>
 
-      {/* QR + Links side by side */}
+      {/* QR + Contact side by side */}
       <div className={styles.qrLinksRow}>
 
-        {/* Donation QR */}
+        {/* Left — Donation QR */}
         <div className={styles.qrSection}>
           <h2 className={styles.qrHeading}>Donate &amp; Receive a VIP Pass</h2>
+          <p className={styles.qrDonateDetail}>Donate 200 Plates for ₹10,000</p>
           <img
             src="/images/qr-crop.jpg"
-            alt="Scan to Donate — PhonePe, Google Pay, Paytm"
+            alt="Scan to Donate"
             className={styles.qrImg}
           />
           <p className={styles.qrSub}>PhonePe &nbsp;·&nbsp; Google Pay &nbsp;·&nbsp; Paytm</p>
+          <p className={styles.qrDate}>Friday, 4 September 2026</p>
         </div>
 
-        {/* Links — readable text */}
+        {/* Right — Contact */}
         <div className={styles.linksSection}>
-          <div className={styles.linkRow}>
-            <span className={styles.linkEmoji}>🌐</span>
-            <div className={styles.linkTextWrap}>
-              <span className={styles.linkText}>iskconsalem.com</span>
-              <span className={styles.linkSub}>Official Website</span>
-            </div>
+
+          <div className={styles.contactBlock}>
+            <span className={styles.linkLabel}>VENUE</span>
+            <span className={styles.linkText}>Sona College Ground, Salem</span>
           </div>
-          <div className={styles.linkRow}>
-            <span className={styles.linkEmoji}>💬</span>
-            <div className={styles.linkTextWrap}>
-              <span className={styles.linkText}>+91 97107 72621</span>
-              <span className={styles.linkSub}>WhatsApp</span>
-            </div>
+
+          <div className={styles.contactOrn} aria-hidden="true">
+            <span className={styles.contactOrnLine} />
+            <span className={styles.contactOrnFlower}>✦</span>
           </div>
-          <div className={styles.linkRow}>
-            <span className={styles.linkEmoji}>📍</span>
-            <div className={styles.linkTextWrap}>
-              <span className={styles.linkText}>Sona College Ground, Salem</span>
-              <span className={styles.linkSub}>Search on Google Maps</span>
-            </div>
+
+          <div className={styles.contactBlock}>
+            <span className={styles.linkLabel}>PHONE</span>
+            <span className={styles.linkText}>+91 97107 72621</span>
           </div>
-          <div className={styles.linkRow}>
-            <span className={styles.linkEmoji}>📞</span>
-            <div className={styles.linkTextWrap}>
-              <span className={styles.linkText}>+91 97107 72621</span>
-              <span className={styles.linkSub}>Call us</span>
-            </div>
+
+          <div className={styles.contactOrn} aria-hidden="true">
+            <span className={styles.contactOrnLine} />
+            <span className={styles.contactOrnFlower}>✦</span>
           </div>
+
+          <p className={styles.thankYou}>
+            If you have already donated,<br />Thank you very much!
+          </p>
+
         </div>
 
       </div>

@@ -29,7 +29,7 @@ export default function TaShareCard() {
 
       {/* Invitation artwork */}
       <div className={styles.imgWrap}>
-        <p className={styles.imgLabel}>ஸ்ரீ கிருஷ்ண ஜன்மாஷ்டமி 2026 — அழைப்பிதழ்</p>
+        <p className={styles.imgLabel}>ஸ்ரீ கிருஷ்ண ஜன்மாஷ்டமி 2026 · அழைப்பிதழ்</p>
         <img
           src="/images/invitation-front-full-ta.jpg"
           alt="ISKCON Salem Janmashtami 2026 Tamil Invitation"
@@ -47,57 +47,56 @@ export default function TaShareCard() {
         />
       </div>
 
-      {/* QR + Links side by side */}
+      {/* QR + Contact side by side */}
       <div className={styles.qrLinksRow}>
 
-        {/* Donation QR */}
+        {/* Left — Donation QR */}
         <div className={styles.qrSection}>
           <h2 className={styles.qrHeading}>நன்கொடை அளித்து VIP Pass பெறுங்கள்</h2>
+          <p className={styles.qrDonateDetail}>200 தட்டுகளுக்கு ₹10,000 நன்கொடை அளிக்கவும்</p>
           <img
             src="/images/qr-crop.jpg"
             alt="நன்கொடை செய்ய ஸ்கேன் செய்யவும்"
             className={styles.qrImg}
           />
           <p className={styles.qrSub}>PhonePe &nbsp;·&nbsp; Google Pay &nbsp;·&nbsp; Paytm</p>
+          <p className={styles.qrDate}>வெள்ளிக்கிழமை, 4 செப்டம்பர் 2026</p>
         </div>
 
-        {/* Links — readable text */}
+        {/* Right — Contact */}
         <div className={styles.linksSection}>
-          <div className={styles.linkRow}>
-            <span className={styles.linkEmoji}>🌐</span>
-            <div className={styles.linkTextWrap}>
-              <span className={styles.linkText}>iskconsalem.com</span>
-              <span className={styles.linkSub}>அதிகாரப்பூர்வ இணையதளம்</span>
-            </div>
+
+          <div className={styles.contactBlock}>
+            <span className={styles.linkLabel}>இடம்</span>
+            <span className={styles.linkText}>Sona College Ground, Salem</span>
           </div>
-          <div className={styles.linkRow}>
-            <span className={styles.linkEmoji}>💬</span>
-            <div className={styles.linkTextWrap}>
-              <span className={styles.linkText}>+91 97107 72621</span>
-              <span className={styles.linkSub}>WhatsApp</span>
-            </div>
+
+          <div className={styles.contactOrn} aria-hidden="true">
+            <span className={styles.contactOrnLine} />
+            <span className={styles.contactOrnFlower}>✦</span>
           </div>
-          <div className={styles.linkRow}>
-            <span className={styles.linkEmoji}>📍</span>
-            <div className={styles.linkTextWrap}>
-              <span className={styles.linkText}>Sona College Ground, Salem</span>
-              <span className={styles.linkSub}>Google Maps-ல் தேடுங்கள்</span>
-            </div>
+
+          <div className={styles.contactBlock}>
+            <span className={styles.linkLabel}>தொலைபேசி</span>
+            <span className={styles.linkText}>+91 97107 72621</span>
           </div>
-          <div className={styles.linkRow}>
-            <span className={styles.linkEmoji}>📞</span>
-            <div className={styles.linkTextWrap}>
-              <span className={styles.linkText}>+91 97107 72621</span>
-              <span className={styles.linkSub}>தொடர்பு கொள்ளுங்கள்</span>
-            </div>
+
+          <div className={styles.contactOrn} aria-hidden="true">
+            <span className={styles.contactOrnLine} />
+            <span className={styles.contactOrnFlower}>✦</span>
           </div>
+
+          <p className={styles.thankYou}>
+            நன்கொடை அளித்திருந்தால்,<br />மிக்க நன்றி!
+          </p>
+
         </div>
 
       </div>
 
       {/* Footer */}
       <div className={styles.footer}>
-        <p className={styles.hkText}>ஹரே கிருஷ்ண 🙏</p>
+        <p className={styles.hkText}>ஹரே கிருஷ்ணா 🙏</p>
       </div>
 
     </div>
