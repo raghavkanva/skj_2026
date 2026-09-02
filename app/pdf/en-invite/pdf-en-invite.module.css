@@ -429,8 +429,8 @@
 
 .receiptInstr {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 800;
   color: var(--navy);
   margin: 0 0 3mm;
   line-height: 1.5;

@@ -162,8 +162,7 @@ export default function EnInvite() {
             <span className={styles.ornLine} />
           </div>
           <p className={styles.receiptInstr}>
-            📸 Please share your payment screenshot<br />
-            to collect your donation receipt
+            📸 Please share your payment screenshot to the given WhatsApp number and collect your donation receipt
           </p>
           <p className={styles.receiptNumber}>+91 8870016108</p>
           <a

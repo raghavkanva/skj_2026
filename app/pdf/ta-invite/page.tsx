@@ -161,8 +161,7 @@ export default function TaInvite() {
             <span className={styles.ornLine} />
           </div>
           <p className={styles.receiptInstr}>
-            📸 உங்கள் கட்டண screenshot-ஐ அனுப்பி<br />
-            நன்கொடை ரசீதைப் பெறுங்கள்
+            📸 உங்கள் பணம் செலுத்தியதற்கான ஸ்கிரீன்ஷாட்டை கொடுக்கப்பட்டுள்ள வாட்ஸ்அப் எண்ணிற்கு அனுப்பி, உங்கள் நன்கொடை ரசீதைப் பெற்றுக்கொள்ளுங்கள்.
           </p>
           <p className={styles.receiptNumber}>+91 8870016108</p>
           <a
