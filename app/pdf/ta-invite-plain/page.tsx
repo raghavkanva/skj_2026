@@ -157,11 +157,18 @@ export default function TaInvitePlain() {
             <span className={styles.ornFlower}>✦</span>
             <span className={styles.ornLine} />
           </div>
-          <p className={styles.contactFor}>மேலும் தகவலுக்கு</p>
-          <p className={styles.contactName}>Srinivasa Krishna Dasa</p>
-          <p className={styles.contactPhone}>+91 97107 72621</p>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className={styles.waBtn}>
-            WhatsApp-இல் பேச இங்கே கிளிக் செய்யவும் &rarr;
+          <p className={styles.receiptInstr}>
+            📸 உங்கள் கட்டண screenshot-ஐ அனுப்பி<br />
+            நன்கொடை ரசீதைப் பெறுங்கள்
+          </p>
+          <p className={styles.receiptNumber}>+91 8870016108</p>
+          <a
+            href="https://wa.me/918870016108"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.waBtn}
+          >
+            💬 WhatsApp-ல் பேசுங்கள் &rarr;
           </a>
         </div>
 

@@ -154,18 +154,25 @@ export default function EnInvite() {
           </p>
         </div>
 
-        {/* Contact — gold background, navy text */}
+        {/* Receipt — share screenshot */}
         <div className={styles.contactSection}>
           <div className={styles.ornRow} aria-hidden="true">
             <span className={styles.ornLine} />
             <span className={styles.ornFlower}>✦</span>
             <span className={styles.ornLine} />
           </div>
-          <p className={styles.contactFor}>For more information</p>
-          <p className={styles.contactName}>Srinivasa Krishna Dasa</p>
-          <p className={styles.contactPhone}>+91 97107 72621</p>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className={styles.waBtn}>
-            Click here to chat on WhatsApp &rarr;
+          <p className={styles.receiptInstr}>
+            📸 Please share your payment screenshot<br />
+            to collect your donation receipt
+          </p>
+          <p className={styles.receiptNumber}>+91 8870016108</p>
+          <a
+            href="https://wa.me/918870016108"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.waBtn}
+          >
+            💬 Chat on WhatsApp &rarr;
           </a>
         </div>
 
